@@ -1,0 +1,7 @@
+{
+  "name": "30c434e6-14d2-488f-bd0c-b065b70ad0f8",
+  "displayName": "general.agent_request",
+  "priority": 500000,
+  "description": "User wants to speak with a human agent",
+  "numTrainingPhrases": 11
+}

@@ -1,0 +1,8 @@
+{
+  "name": "8aefd02f-981b-4004-9c2b-b889ee0c93f6",
+  "displayName": "dropped_calls",
+  "priority": 500000,
+  "description": "user facing call drops",
+  "numTrainingPhrases": 11,
+  "dtmfPattern": "3"
+}

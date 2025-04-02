@@ -1,0 +1,7 @@
+{
+  "name": "bd54ed53-216b-45cc-8a48-bddec6a0ef9d",
+  "displayName": "slowdata_",
+  "priority": 500000,
+  "description": "user facing issue with slow data",
+  "numTrainingPhrases": 1
+}

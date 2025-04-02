@@ -1,0 +1,49 @@
+{
+  "name": "1ea83594-bbca-4c05-b6bc-14c3a7a9acbf",
+  "displayName": "Confirm phone",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.phone_exists = true",
+    "triggerFulfillment": {
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetPage": "Ask password",
+    "name": "a9cd6ec2-d66f-4625-ab79-0a45aba5928b"
+  }, {
+    "condition": "$session.params.phone_exists != true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Your $session.params.phone_no is not exists is our database. Please enter correct phone no" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "phone_no",
+        "value": null
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetPage": "Ask Phone",
+    "name": "839388b5-7da2-4644-8c44-5d59e8cab02c"
+  } ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "6e7df38d-77cd-43fe-808f-784caa337f6b",
+  "displayName": "slow_data",
+  "priority": 500000,
+  "description": "user having trouble with slow data",
+  "numTrainingPhrases": 11,
+  "dtmfPattern": "2"
+}

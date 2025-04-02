@@ -1,0 +1,98 @@
+{
+  "name": "e6bc21c1-1e39-4084-bdf7-6d995841f7ab",
+  "displayName": "check Issue",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "payload": {
+        "richContent": [ [ {
+          "options": [ {
+            "text": "No Signal Troubleshoot"
+          }, {
+            "text": "slow data"
+          }, {
+            "text": "Dropped Calls Troubleshoot"
+          } ],
+          "type": "chips"
+        } ] ]
+      },
+      "languageCode": "en"
+    }, {
+      "outputAudioText": {
+        "ssml": "\u003cspeak\u003e\n  For troubleshooting options: \u003cbreak time=\"300ms\"/\u003e\n  \u003cemphasis level=\"moderate\"\u003eNo Signal Troubleshoot\u003c/emphasis\u003e, \u003cbreak time=\"500ms\"/\u003e\n  \u003cprosody rate=\"90%\" pitch=\"-5%\"\u003eslow data\u003c/prosody\u003e, \u003cbreak time=\"500ms\"/\u003e\n  \u003cemphasis level=\"moderate\"\u003eDropped Calls Troubleshoot\u003c/emphasis\u003e\n  \u003cbreak time=\"300ms\"/\u003e\n  Please select an option.\n\u003c/speak\u003e"
+      },
+      "languageCode": "en"
+    } ],
+    "advancedSettings": {
+      "playbackInterruptionSettings": {
+      
+      },
+      "dtmfSettings": {
+        "useSystemEntityRule": false
+      }
+    }
+  },
+  "transitionRoutes": [ {
+    "intent": "No_Signal_Troubleshoot",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I understand you're having trouble with your signal. Let's troubleshoot this together." ]
+        },
+        "languageCode": "en"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetPage": "No_Signal_Troubleshoot",
+    "name": "779d2d00-1e72-482c-a5dd-8e7340e4f32f"
+  }, {
+    "intent": "slow_data",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I see you're experiencing slow data. Let's check what might be causing this." ]
+        },
+        "languageCode": "en"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetPage": "Slow_Data_Troubleshoot",
+    "name": "3ffc12d4-4442-4de5-a0c5-46303e9ab63c"
+  }, {
+    "intent": "dropped_calls",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I understand your calls are dropping. Let's look into this issue." ]
+        },
+        "languageCode": "en"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetPage": "Dropped_Calls_Troubleshoot",
+    "name": "7a56c1d8-eff5-47e2-aec2-1a43bddf13d8"
+  } ]
+}

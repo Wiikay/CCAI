@@ -1,0 +1,7 @@
+{
+  "name": "efaf3f8c-e0d8-4f06-b504-58f68d3892ea",
+  "displayName": "account.check_balance Intent",
+  "priority": 500000,
+  "description": "User wants to check their account balance",
+  "numTrainingPhrases": 21
+}

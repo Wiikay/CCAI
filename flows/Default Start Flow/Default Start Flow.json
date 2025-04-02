@@ -1,0 +1,85 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$sys.func.FORMAT_DATE($sys.func.NOW(), \"H\") \u003c \"12\"",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Good morning! Hello! I'm Mobile's virtual assistant. What can I assist you with today?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$sys.func.FORMAT_DATE($sys.func.NOW(), \"H\") \u003e= \"12\" AND \u0026\u0026 AND $sys.func.FORMAT_DATE($sys.func.NOW(), \"H\") \u003c \"17\"",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Good afternoon! Hello! I'm Mobile's virtual assistant. What can I assist you with today?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Good evening! Hello! I'm Mobile's virtual assistant. What can I assist you with today?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetPage": "Menu_Options",
+    "name": "3ea27316-ba8c-442d-9747-a6811b31797c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fc14836e-97d3-4ea1-8bdb-5ea7b2d4274c"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6e3aee11-0919-4563-a3af-1478ded3afc6"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "customConfigKey": "9a848b3a-1724-4a2f-943a-d281fc5818f4",
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,81 @@
+{
+  "name": "0d28f778-7230-4aba-b6c0-842345603b32",
+  "displayName": "Menu_Options",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "I can help you with account management, billing, technical support, plan information, or connect you with a live agent. What would you like to do?" ]
+      },
+      "languageCode": "en"
+    } ],
+    "advancedSettings": {
+      "playbackInterruptionSettings": {
+      
+      },
+      "dtmfSettings": {
+        "useSystemEntityRule": false
+      }
+    }
+  },
+  "transitionRoutes": [ {
+    "intent": "account.check_balance Intent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "flag",
+        "value": "account"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetFlow": "Auth",
+    "name": "eb0c4b88-9d97-490f-8374-eb542790aa74"
+  }, {
+    "intent": "billing.explain_charges",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "flag",
+        "value": "billing"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetFlow": "Auth",
+    "name": "a22d15b5-0b9a-4586-9e85-b8304fd885ae"
+  }, {
+    "intent": "technical.network_issues",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Technical_Support",
+    "name": "242093b1-b2a5-42b4-9687-add280541283"
+  }, {
+    "intent": "general.agent_request",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent_Handoff",
+    "name": "78e8231f-b866-47c7-a5ef-7065f26b2ae3"
+  }, {
+    "intent": "offer.promotions",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "New_Promotions",
+    "name": "8c4c966b-0956-4673-b17b-8af3a27c29c1"
+  } ]
+}

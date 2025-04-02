@@ -1,0 +1,11 @@
+{
+  "name": "a239e616-369c-4455-9610-a20a6c083926",
+  "displayName": "tia-webhook",
+  "genericWebService": {
+    "uri": "https://tia-func-907971469140.us-central1.run.app",
+    "webhookType": "STANDARD"
+  },
+  "timeout": {
+    "seconds": 30
+  }
+}

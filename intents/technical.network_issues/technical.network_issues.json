@@ -1,0 +1,7 @@
+{
+  "name": "3634375e-1c96-457d-9a4b-f62a68b51d91",
+  "displayName": "technical.network_issues",
+  "priority": 500000,
+  "description": "User has network connectivity problems",
+  "numTrainingPhrases": 12
+}

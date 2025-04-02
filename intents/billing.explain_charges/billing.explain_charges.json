@@ -1,0 +1,7 @@
+{
+  "name": "c0716204-53d3-42d9-a149-c81a0cc91bd7",
+  "displayName": "billing.explain_charges",
+  "priority": 500000,
+  "description": "User wants explanation of their bill charges",
+  "numTrainingPhrases": 11
+}

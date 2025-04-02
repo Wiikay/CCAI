@@ -1,0 +1,7 @@
+{
+  "name": "5651860a-a5a6-40ae-83e3-a78a5996c90c",
+  "displayName": "No_Signal_Troubleshoot",
+  "priority": 500000,
+  "numTrainingPhrases": 11,
+  "dtmfPattern": "1"
+}
