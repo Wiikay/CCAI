@@ -1,0 +1,40 @@
+{
+  "name": "b02a2db5-dc35-4b5d-8928-ac5e021cdb61",
+  "displayName": "\u003e collect beneficiary name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.name_collection_first_name = null OR $session.params.name_collection_last_name = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Beneficiary Name Collection",
+    "name": "9417cb12-ea1e-422d-a266-74e623c62867"
+  }, {
+    "condition": "$session.params.name_collection_first_name != null AND $session.params.name_collection_last_name != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e verify beneficiary account API",
+    "name": "434be64d-e2ad-4c36-9ebc-aa2e3354d91a"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "3ac829b2-b2a6-4c94-ab1c-173f97e93941"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "56b1314f-2eeb-4cd5-ae29-9fe29eb42744"
+  } ]
+}

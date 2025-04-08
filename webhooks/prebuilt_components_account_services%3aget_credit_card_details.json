@@ -1,0 +1,23 @@
+{
+  "name": "16ab9558-033b-4be5-9eb0-a31ad397ccd0",
+  "displayName": "prebuilt_components_account_services:get_credit_card_details",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"getCardDetails\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "credit_card_count",
+      "value": "credit_card_count"
+    }, {
+      "key": "email",
+      "value": "email"
+    }, {
+      "key": "last_four_digit_of_card_number",
+      "value": "credit_card"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

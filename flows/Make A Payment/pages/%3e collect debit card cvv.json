@@ -1,0 +1,46 @@
+{
+  "name": "84abba4c-e1eb-4064-acec-1b8dda7623a8",
+  "displayName": "\u003e collect debit card cvv",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.cvv_collection_cvv = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Cvv Collection",
+    "name": "0bcda408-b4a2-453e-b72c-e4d700fd1017"
+  }, {
+    "condition": "$session.params.cvv_collection_cvv != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.debit_card_cvv_code",
+        "value": "$session.params.cvv_collection_cvv"
+      }, {
+        "parameter": "cvv_collection_cvv",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e verify debit card API",
+    "name": "d54e205f-86d1-4d5f-a994-32e714d4d2ae"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "e05f4076-d394-4d7e-bead-e7ba44c38910"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "8a8d1121-4a17-4a64-94dd-81c3a2f51a1d"
+  } ]
+}

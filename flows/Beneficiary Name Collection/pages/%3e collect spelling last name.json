@@ -1,0 +1,155 @@
+{
+  "name": "0c93f9ad-09b9-4061-a3e6-ff64dc0a334f",
+  "displayName": "\u003e collect spelling last name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please spell out the last name." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please spell out the last name."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_spell_out_name",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_last_name",
+        "value": "$sys.func.SUBSTITUTE($session.params.spell_out_name, \"[^a-zA-Z]\", \"\")"
+      }, {
+        "parameter": "spell_out_name",
+        "value": null
+      } ]
+    },
+    "name": "cba59bfa-7f21-4e2f-89cc-07c821a88a6b"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "0ef7b7ab-d01f-437f-9eac-56f4265b08fc"
+  }, {
+    "condition": "$flow.last_name_spell_out_counter = 2 AND $flow.user_provided_last_name = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "68f76220-505c-432a-b33f-f1fe841133ff"
+  }, {
+    "condition": "$flow.user_provided_last_name = \"\" AND $flow.last_name_spell_out_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell the last name." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_name_spell_out_counter",
+        "value": "$sys.func.ADD($flow.last_name_spell_out_counter,1)"
+      } ]
+    },
+    "name": "27375286-ad48-4907-b0c5-8b93286c0307"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "24cf6601-8d34-4f8a-b5bc-db35a08d3418"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "70e3a314-771d-4fa0-9f0c-733d9e3832ef"
+  }, {
+    "condition": "$flow.user_provided_last_name != null AND $flow.user_provided_last_name != \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm last name",
+    "name": "ab066b23-7027-4c46-860a-7f414660ce2a"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please spell the last name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "aba6353c-b50f-4608-a23c-eefbdf2bc54b"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4bdf2054-1260-4bc5-bdbc-15907e2b76a4"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "40e3eb81-b83b-4020-9b29-e9092951d2e1"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell the last name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8b089a75-f0db-4729-9df8-1e5adea8ab9a"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please spell the last name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "40b13176-db9d-4dff-bb34-ef1c2e1158a9"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "b0508eac-4144-423f-9000-b88b6f490b95"
+  } ]
+}

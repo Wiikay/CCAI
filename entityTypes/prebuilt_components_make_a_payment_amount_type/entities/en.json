@@ -1,0 +1,15 @@
+{
+  "entities": [ {
+    "value": "total_amount",
+    "synonyms": [ "full", "full amount", "pay full", "pay total", "total", "total amount", "whole amount" ],
+    "languageCode": "en"
+  }, {
+    "value": "minimum_amount",
+    "synonyms": [ "half amount ", "minimum", "minimum amount", "pay minimum" ],
+    "languageCode": "en"
+  }, {
+    "value": "other_amount",
+    "synonyms": [ "another", "another amount", "other", "other amount", "pay other", "pay other amount" ],
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,250 @@
+{
+  "name": "08f86d36-597f-4fb1-b5b8-f9a6c1f70dab",
+  "displayName": "\u003e collect day",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.intent_triggered",
+      "value": false
+    }, {
+      "parameter": "$flow.invalid_input",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_dob_collection_collect_day",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.day",
+        "value": "$sys.func.IF(\"$session.params.day != null\", $session.params.day, null)"
+      }, {
+        "parameter": "$flow.intent_triggered",
+        "value": true
+      }, {
+        "parameter": "day",
+        "value": null
+      } ]
+    },
+    "name": "5734329a-b2e7-4f19-99f7-d603e371f787"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "71e37595-71c7-4b23-9fd1-d81d98b408d5"
+  }, {
+    "intent": "prebuilt_components_dob_collection_composite_intent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.intent_triggered",
+        "value": true
+      }, {
+        "parameter": "$flow.day",
+        "value": "$sys.func.IF(\"$session.params.dob.day != null\", $session.params.dob.day, $session.params.day)"
+      }, {
+        "parameter": "$flow.year",
+        "value": "$sys.func.IF(\"$session.params.dob.year != null\", $session.params.dob.year, $session.params.year)"
+      }, {
+        "parameter": "day",
+        "value": null
+      }, {
+        "parameter": "month",
+        "value": null
+      } ]
+    },
+    "name": "34c8ba75-fb0b-49f0-b2e1-b1786a83f348"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "b9b4cc43-3387-4c1b-b462-71456bf4a09d"
+  }, {
+    "condition": "$session.params.dob.year_short != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.year",
+        "value": "$session.params.dob.year_short"
+      } ]
+    },
+    "name": "5f9bd87d-1120-4000-b236-5c1f8425d25c"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "c8443da1-3e40-492d-9b76-e423f6af9ee2"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "3201bce3-c182-4c18-9b65-1112a03b2b61"
+  }, {
+    "condition": "$flow.year \u003e= 2023",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.year",
+        "value": null
+      } ]
+    },
+    "name": "a7b475da-ad77-449f-902f-928085250aeb"
+  }, {
+    "condition": "$flow.day != NULL AND $flow.year = NULL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "What year were you born in?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "What year were you born in?"
+      }, {
+        "parameter": "dob",
+        "value": null
+      }, {
+        "parameter": "month",
+        "value": null
+      }, {
+        "parameter": "day",
+        "value": null
+      }, {
+        "parameter": "year",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "1fd9b435-d935-44e6-80c9-b8a790161328"
+  }, {
+    "condition": "$flow.year != NULL AND $flow.day != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "dob",
+        "value": null
+      } ]
+    },
+    "targetPage": "year validation",
+    "name": "f8cad72c-15e1-4de2-af16-48ec14af137f"
+  }, {
+    "condition": "$flow.intent_triggered = true AND $flow.day = NULL AND $flow.invalid_input \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Can you please say or enter the day again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.intent_triggered",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_input",
+        "value": "$sys.func.ADD($flow.invalid_input,1)"
+      } ]
+    },
+    "name": "bf800fb4-b7e8-4ab6-be26-04257459b63e"
+  }, {
+    "condition": "$flow.invalid_input = 2 AND $flow.intent_triggered = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "a5f75c99-4d20-4751-a87b-f7e8493bc806"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Can you please say or enter the day again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6f8fafd2-ba6b-4a4d-80e2-84ccbbfd2a28"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please make sure you're saying the day. If we’re having trouble hearing you, you can also use the keypad to enter the day." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ffdbeab8-6e2b-4339-857b-b2dda77564db"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "aee39b83-77e1-4126-aaba-1fedf1d444e5"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Can you please say or enter the day again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "80887428-cbef-4ba5-aad7-36d23aa93a5c"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area, or use the keypad to enter the day." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "0da067c0-0057-47a4-a055-0f8dbf365eff"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "59542e39-2fac-4262-ae84-8f0804de4ee1"
+  } ]
+}

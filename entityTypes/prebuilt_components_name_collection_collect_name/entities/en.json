@@ -1,0 +1,19 @@
+{
+  "entities": [ {
+    "value": "first name",
+    "synonyms": [ "first", "first name", "firstname" ],
+    "languageCode": "en"
+  }, {
+    "value": "middle name",
+    "synonyms": [ "middle", "middle name", "middlename" ],
+    "languageCode": "en"
+  }, {
+    "value": "last name",
+    "synonyms": [ "last", "last name", "lastname" ],
+    "languageCode": "en"
+  }, {
+    "value": "all of them",
+    "synonyms": [ "all ", "all of them", "all three", "full name", "fullname" ],
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,234 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I need to pay my "
+    }, {
+      "text": "beneficiary",
+      "parameterId": "payment_type"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want ",
+      "auto": true
+    }, {
+      "text": "to"
+    }, {
+      "text": " make a payment on my ",
+      "auto": true
+    }, {
+      "text": "credit card",
+      "parameterId": "payment_type"
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'd like ",
+      "auto": true
+    }, {
+      "text": "to"
+    }, {
+      "text": " pay my ",
+      "auto": true
+    }, {
+      "text": "credit card bill",
+      "parameterId": "payment_type",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you help ",
+      "auto": true
+    }, {
+      "text": "me"
+    }, {
+      "text": " pay my ",
+      "auto": true
+    }, {
+      "text": "credit card bill",
+      "parameterId": "payment_type",
+      "auto": true
+    }, {
+      "text": "?",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need ",
+      "auto": true
+    }, {
+      "text": "to"
+    }, {
+      "text": " make a ",
+      "auto": true
+    }, {
+      "text": "credit card",
+      "parameterId": "payment_type",
+      "auto": true
+    }, {
+      "text": " payment.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I would like to pay "
+    }, {
+      "text": "credit bill",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "beneficiary account",
+      "parameterId": "payment_type"
+    }, {
+      "text": " transfer payment"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "credit card",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "credit card due",
+      "parameterId": "payment_type"
+    }, {
+      "text": " payment"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want to pay "
+    }, {
+      "text": "beneficiary account",
+      "parameterId": "payment_type"
+    }, {
+      "text": " balance"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "pay "
+    }, {
+      "text": "credit card",
+      "parameterId": "payment_type"
+    }, {
+      "text": " due"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I will pay "
+    }, {
+      "text": "beneficiary due",
+      "parameterId": "payment_type"
+    }, {
+      "text": " amount"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Want to pay "
+    }, {
+      "text": "credit card bill",
+      "parameterId": "payment_type"
+    }, {
+      "text": " "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I will pay "
+    }, {
+      "text": "credit card bill",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i would like to pay the "
+    }, {
+      "text": "beneficiary account",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "beneficiary",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want to make a "
+    }, {
+      "text": "beneficiary payment",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want to pay "
+    }, {
+      "text": "beneficiary account",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "credit card",
+      "parameterId": "payment_type"
+    }, {
+      "text": " transfer"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "credit card bill",
+      "parameterId": "payment_type"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want to make a "
+    }, {
+      "text": "credit card",
+      "parameterId": "payment_type"
+    }, {
+      "text": " payment"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

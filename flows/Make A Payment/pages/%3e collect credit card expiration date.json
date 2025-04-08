@@ -1,0 +1,52 @@
+{
+  "name": "8b57eb11-c867-4201-b32f-b92c34aaf48e",
+  "displayName": "\u003e collect credit card expiration date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "card_type",
+      "value": "credit"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.card_expiration_date_collection_card_expiration_date = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Card Expiration Date Collection",
+    "name": "d4105dd2-8e82-42ad-bb38-eb7dbd01ec57"
+  }, {
+    "condition": "$session.params.card_expiration_date_collection_card_expiration_date != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_expiration_date_collection_card_expiration",
+        "value": "$session.params.card_expiration_date_collection_card_expiration_date"
+      }, {
+        "parameter": "card_expiration_date_collection",
+        "value": null
+      }, {
+        "parameter": "$flow.credit_card_exp_date",
+        "value": "$sys.func.TO_OBJECT($session.params.card_expiration_date_collection_card_expiration)"
+      } ]
+    },
+    "targetPage": "\u003e collect credit card cvv",
+    "name": "fad900fb-e191-4f97-a444-999718355786"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "bac0cfeb-3dc4-4e0e-bf7f-2213ca521437"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "c735721c-6a80-4e64-8724-cfbff9e58e34"
+  } ]
+}

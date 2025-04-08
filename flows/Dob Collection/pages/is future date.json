@@ -1,0 +1,67 @@
+{
+  "name": "6b375ce9-9dd1-4872-a870-14e7d0290bad",
+  "displayName": "is future date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.is_future_dob",
+      "value": "$sys.func.IS_FUTURE_DATE($flow.dob_object)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.is_future_dob = false",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "72a3cac5-1a89-4297-a7c4-729ba60ef7a9"
+  }, {
+    "condition": "$flow.is_future_dob = true AND $flow.future_dob \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, you have provided a future date. Let's start again." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "Which month were you born in?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.future_dob",
+        "value": "$sys.func.ADD($flow.future_dob, 1)"
+      }, {
+        "parameter": "$flow.dob",
+        "value": null
+      }, {
+        "parameter": "$flow.day",
+        "value": null
+      }, {
+        "parameter": "$flow.month",
+        "value": null
+      }, {
+        "parameter": "$flow.year",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "You have provided a future date. Let's start again. Which month were you born in?"
+      } ]
+    },
+    "targetPage": "\u003e collect month",
+    "name": "b7484b57-28e6-4cf6-a315-0cf0d4caefcd"
+  }, {
+    "condition": "$flow.is_future_dob = true AND $flow.future_dob = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "b2dd2c98-1e70-4947-a30e-3dbc8be83433"
+  } ]
+}

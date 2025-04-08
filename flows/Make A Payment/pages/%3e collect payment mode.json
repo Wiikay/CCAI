@@ -1,0 +1,168 @@
+{
+  "name": "5dd61a8d-8662-4bd9-a322-4a127adaada0",
+  "displayName": "\u003e collect payment mode",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.payment_mode",
+      "required": true,
+      "entityType": "@prebuilt_components_make_a_payment_payment_mode",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Can you please let us know how you want to pay? If you want to pay by debit card, say debit card." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "58d1ef14-28d5-4005-b235-c26caeb841b3"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Can you please let us know how you want to pay? If you want to pay by debit card, say debit card." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "d3b95fc2-a297-4869-82ac-46cde876198f"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "c59aca38-6fdc-4ab3-ae1c-93978112f999"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn’t get that. Can you please let us know how you want to pay? If you want to pay by debit card, say debit card." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "6dec2046-e087-4bb4-8332-94c8a8850f12"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we're still not getting that. Can you please let us know how you want to pay? If you want to pay by debit card, say debit card." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "2d6f6421-4332-4235-93cd-936e7bdbb32d"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "9b32f40b-8c3d-4680-92e9-00ae82d27b32"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "0c3b9d17-ee3c-4c27-9956-a5d1b9c7833e"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5a50e992-a61e-47d9-a867-7326dc14f831"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.payment_mode = \"account\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_mop",
+        "value": "account"
+      } ]
+    },
+    "targetPage": "route check account count",
+    "name": "12d48118-dc64-4615-97fe-9ac661b2e0e8"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.payment_mode = \"debit_card\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_mop",
+        "value": "debit card"
+      } ]
+    },
+    "targetPage": "route check MOP debit card count",
+    "name": "ffa6dd92-bbeb-4383-b3f4-3dbcf9932ad7"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.payment_mode = \"mobile_payment\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "select mobile payment",
+    "name": "583ea614-5fe9-48ef-be1a-07cdde7b2eb0"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.payment_type = \"beneficiary_pay\" AND $flow.payment_mode = \"credit_card\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_mop",
+        "value": "credit card"
+      } ]
+    },
+    "targetPage": "route check MOP credit card count",
+    "name": "cb5d3795-88d6-4b11-8942-f37709f900aa"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND ($flow.payment_mode = \"credit_card\" AND $flow.payment_type = \"credit_card_pay\") AND $flow.retry_credit_card_payment \u003c $flow.max_retry_credit_card_payment",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_mode",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_credit_card_payment",
+        "value": "$sys.func.ADD($flow.retry_credit_card_payment,1)"
+      } ]
+    },
+    "targetPage": "retry credit card payment",
+    "name": "f4b1873d-754f-4877-883e-a9c8a7ce1aee"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND ($flow.payment_mode = \"credit_card\" AND $flow.payment_type = \"credit_card_pay\") AND $flow.retry_credit_card_payment = $flow.max_retry_credit_card_payment",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "You cannot pay the credit card bill using the credit card." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d20f47fa-0853-4f3a-9f6c-022116b3b229"
+  } ],
+  "description": "New parameter $flow.user_mop defined at Routes"
+}

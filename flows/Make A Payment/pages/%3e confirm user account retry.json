@@ -1,0 +1,115 @@
+{
+  "name": "9cfe3db6-f3cb-49a7-97ac-a50637c6d546",
+  "displayName": "\u003e confirm user account retry",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The account number you provided is not found. If you want to try again, please say yes." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "route check account count",
+    "name": "dea485db-89f1-45bb-af9e-0a57627f3889"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "868d3082-6bfb-492b-afe9-f20e1faadbe9"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "03b97acc-bf23-4ea8-bdb5-ab169dde4501"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "341aedec-5436-4d36-8fce-02170bc0f0c7"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "75098a33-b6e7-4823-9be0-b4988011b863"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ef31aeee-b8b0-4c78-a09f-7351b8ec663e"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "aa2239ff-fc16-48dd-ba21-6734175acdde"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b5ffe680-c3bf-4037-ae00-ad730159516f"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9c0b8a56-6a12-437a-b986-69b3164358f3"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "e03772a4-3301-47ff-a78b-4b2ee8b63059"
+  } ]
+}

@@ -1,0 +1,130 @@
+{
+  "name": "c2615804-82c6-405e-9c67-0c4ee0d6b756",
+  "displayName": "\u003e collect first part of name",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.verify_person_name",
+      "required": true,
+      "entityType": "@prebuilt_components_name_collection_common_name",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "\u003e collect alternate first part",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. Please tell us the first part of the $flow.collect_part before any special characters." ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "$flow.last_prompt",
+              "value": "Sorry, we didn't get that. Please tell us the first part of your $flow.collect_part before any special characters."
+            } ]
+          },
+          "name": "3284c3dd-b85b-42b9-b65a-e03db66e8b84"
+        }, {
+          "targetPage": "\u003e collect next part of name",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "verify_person_name",
+              "value": ""
+            } ]
+          },
+          "name": "65a1b4e8-2bbe-4848-ad86-8cd02d150ad1"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we weren't able to hear you. Please tell us the first part of the $flow.collect_part before any special characters." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "74aeb950-4b9f-47b8-847c-d9b19b305667"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "fa642710-984b-4190-a875-8894d3b06932"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+          
+          },
+          "name": "e4a7416a-ed2b-42b3-b5be-bc2be60906dc"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please tell us the first part of the $flow.collect_part before any special characters." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please tell us the first part of the $flow.collect_part before any special characters."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "bf4efc10-f249-4d5f-a941-e69cad84b305"
+  }, {
+    "condition": "$page.params.status = FINAL AND $flow.verify_person_name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": "$sys.func.SUBSTITUTE($flow.verify_person_name.name, \"[^a-zA-Z0-9]\", \"\")"
+      } ]
+    },
+    "targetPage": "\u003e confirm first part of name",
+    "name": "8cac6046-b46f-4ccd-8fab-f00428893cc0"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "6bc457c6-d2cb-426a-90ca-199fae1203ad"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "df94306d-4798-4e9c-ac2d-36a7c88b6e55"
+  } ]
+}

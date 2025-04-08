@@ -1,0 +1,59 @@
+{
+  "name": "64d5ac26-4c0b-4c31-866f-f9933bcec956",
+  "displayName": "validate cvv",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.LEN($flow.cvv_code) = 3 OR $sys.func.LEN($flow.cvv_code) = 4",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_cvv_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.cvv_code",
+        "value": "$sys.func.SUBSTITUTE($flow.cvv_code, \" \", \"\")"
+      } ]
+    },
+    "targetPage": "\u003e confirm cvv",
+    "name": "07ac9172-ccb0-4900-bbc6-fb9df3a7a626"
+  }, {
+    "condition": "$sys.func.LEN($flow.cvv_code) != 3 AND $flow.invalid_cvv_code_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eWe heard \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.actual_captured\u003c/say-as\u003e\u003c/prosody\u003e, which is not a valid 3 or 4 digit CVV code.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_cvv_code_counter",
+        "value": "$sys.func.ADD($flow.invalid_cvv_code_counter,1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eWe heard \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e, which is not a valid 3 or 4 digit CVV code. Please say or enter the 3 or 4 digit CVV present on your card.\u003c/speak\u003e"
+      }, {
+        "parameter": "$flow.actual_captured",
+        "value": "$flow.cvv_code"
+      }, {
+        "parameter": "$flow.cvv_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect cvv",
+    "name": "57cf4c6d-dea2-4201-bf6e-3e9f171c18f8"
+  }, {
+    "condition": "$sys.func.LEN($flow.cvv_code) != 3 AND $flow.invalid_cvv_code_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we have tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "91d59eaa-9c82-496a-8fe1-db3e31f8ead8"
+  } ]
+}

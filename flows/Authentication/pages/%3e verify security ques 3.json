@@ -1,0 +1,29 @@
+{
+  "name": "47febd6c-dbd8-4d04-a053-b8b316249357",
+  "displayName": "\u003e verify security ques 3",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.transaction_amount = $flow.security_last_trans_amount",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.secure_ans_count",
+        "value": "$sys.func.ADD($flow.secure_ans_count, 1)"
+      } ]
+    },
+    "targetPage": "verify security ques level 2",
+    "name": "bf795f3a-d0d7-476c-91fe-2cfc861b570a"
+  }, {
+    "condition": "$flow.transaction_amount != $flow.security_last_trans_amount",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "verify security ques level 2",
+    "name": "68ed22a4-8a5e-4eee-bb52-a6e73d873d4d"
+  } ],
+  "description": "If Ans is correct, we are using \"$sys.func.ADD($flow.secure_ans_count, 1)\""
+}

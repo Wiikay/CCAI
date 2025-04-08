@@ -1,0 +1,118 @@
+{
+  "name": "245800b7-ad6d-4481-bd5c-a8bfab7609f4",
+  "displayName": "retry debit card details",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The debit card details you provided were not found. If you want to try again, please say yes." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect card number",
+    "name": "ca86e5b5-63bb-40b4-b629-960ff19435c6"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5816bb89-2490-4ca3-b149-6c67308a182a"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "1da398ec-8f47-4ba5-8437-b7fce6a04915"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "39eb0eaf-760f-4e1c-96a9-3ebb358593d2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. The debit card details you provided were not found. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "de554079-81c0-4050-a566-73b186c11f0d"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. The debit card details you provided were not found. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "32d6a56c-362a-4afa-aa98-d0d18f11fb8c"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "80e8cbcf-2a97-46f8-b061-e8443953385d"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. The debit card details you provided were not found. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c92b011d-0d3f-4216-90fd-4717b233c29b"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. The debit card details you provided were not found. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fff8b396-46d5-4018-9a7e-895808902351"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "2fd6767e-d8cd-4e38-ac7d-6eedb8ffe4d3"
+  } ]
+}

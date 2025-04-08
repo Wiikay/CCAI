@@ -1,0 +1,20 @@
+{
+  "name": "e839647c-14a3-4826-b3f0-01b7c18e342d",
+  "displayName": "prebuilt_components_make_a_payment:get_due_amount",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"credit_card_number\": \"$flow.payee_last_four_digit_of_credit_card_number\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"getDueAmount\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.minimum_amount",
+      "value": "minimum_bill"
+    }, {
+      "key": "$flow.total_amount",
+      "value": "total_bill"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

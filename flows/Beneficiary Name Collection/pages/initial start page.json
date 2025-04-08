@@ -1,0 +1,57 @@
+{
+  "name": "92ae2fa0-9fd8-4df5-9a80-09198b6382ac",
+  "displayName": "initial start page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.is_select_initial_path = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Before capturing the name, could you please help me confirm whether you have any hyphens, extra spaces, or apostrophes in the name?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "Before capturing the name, could you please help me confirm whether you have any hyphens, extra spaces, or apostrophes in the name?"
+      } ]
+    },
+    "targetPage": "\u003e confirm special character",
+    "name": "669d8215-e42e-4141-92d5-83edf52a3253"
+  }, {
+    "condition": "$flow.collect_first_name = \"first name\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_first_name",
+        "value": "$flow.verify_person_name"
+      } ]
+    },
+    "targetPage": "\u003e collect last name",
+    "name": "1e099f2c-c688-4ec2-b77e-a4925d7dca62"
+  }, {
+    "condition": "$flow.collect_last_name = \"last name\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_last_name",
+        "value": "$flow.verify_person_name"
+      } ]
+    },
+    "targetPage": "\u003e collect if middle name exists",
+    "name": "5a9d4f9b-2bb1-4c22-9709-a1370110f5c2"
+  }, {
+    "condition": "$flow.collect_middle_name = \"middle name\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_middle_name",
+        "value": "$flow.verify_person_name"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "83838bf4-44db-4f9a-86fe-ce27ec656ba5"
+  } ]
+}

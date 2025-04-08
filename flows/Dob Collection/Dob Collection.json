@@ -1,0 +1,181 @@
+{
+  "name": "27a607da-ec85-4840-8d16-67f1f67d1368",
+  "displayName": "Dob Collection",
+  "description": "This flow allows you to collect a date of birth (DOB).",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "targetFlow": "Waiting Room",
+    "name": "930acea8-6ff4-4a88-86e9-963458676bac"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "c81303f9-8bf5-4972-acb8-bf2a50e1a92a"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, let me repeat it." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": "$sys.func.ADD($flow.replay_counter,1)"
+      } ]
+    },
+    "name": "461222b2-ed79-4533-afe9-28fb27359e53"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "c4afac24-7b69-4f85-aae7-558287b62b83"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Please provide your date of birth. Please say your birth month, followed by your birth day, and then your birth year." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.incorrect_dob",
+        "value": 0
+      }, {
+        "parameter": "$flow.future_year",
+        "value": 0
+      }, {
+        "parameter": "$flow.month_match",
+        "value": {
+          "1": "January",
+          "10": "October",
+          "11": "November",
+          "12": "December",
+          "2": "February",
+          "3": "March",
+          "4": "April",
+          "5": "May",
+          "6": "June",
+          "7": "July",
+          "8": "August",
+          "9": "September",
+          "April": "April",
+          "August": "August",
+          "December": "December",
+          "February": "February",
+          "January": "January",
+          "July": "July",
+          "June": "June",
+          "March": "March",
+          "May": "May",
+          "November": "November",
+          "October": "October",
+          "September": "September"
+        }
+      }, {
+        "parameter": "$flow.invalid_dob_count",
+        "value": 0
+      }, {
+        "parameter": "$flow.invalid_input",
+        "value": 0
+      }, {
+        "parameter": "$flow.future_dob",
+        "value": 0
+      }, {
+        "parameter": "$flow.is_future_dob",
+        "value": null
+      }, {
+        "parameter": "$flow.month_convert",
+        "value": {
+          "April": "4",
+          "August": "8",
+          "December": "12",
+          "February": "2",
+          "January": "1",
+          "July": "7",
+          "June": "6",
+          "March": "3",
+          "May": "5",
+          "November": "11",
+          "October": "10",
+          "September": "9"
+        }
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please tell us your date of birth."
+      }, {
+        "parameter": "$flow.reset_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.replay_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.current_date",
+        "value": "$sys.func.NOW()"
+      }, {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we are having difficulty understanding your response."
+      } ]
+    },
+    "targetPage": "\u003e collect date of birth",
+    "name": "4f7c5f31-2556-4c36-8a65-fb1771210a47"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8cc16258-26a0-4e50-ae64-7851d42018b0"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c6a530e0-775d-4f36-8ae0-12e715c5e554"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

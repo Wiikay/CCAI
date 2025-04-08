@@ -1,0 +1,74 @@
+{
+  "name": "4c491574-6f16-4031-be95-e6c54f7fe167",
+  "displayName": "telephone number validation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.country_code",
+      "value": "$sys.func.IF(\"$flow.to_phone_number.country-code != null\", $flow.to_phone_number.country-code, $flow.country_code)"
+    }, {
+      "parameter": "$flow.phone_number",
+      "value": "$sys.func.IF(\"$flow.to_phone_number.area-code != null\", $sys.func.CONCATENATE($flow.to_phone_number.area-code, $flow.to_phone_number.number), null)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.is_valid = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eGot it, the number you mentioned is plus \u003csay-as interpret-as=\"telephone\" google:style=\"zero-as-zero\"\u003e $flow.country_code $flow.phone_number\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.telephone_number",
+        "value": "$flow.phone_number"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eThe number you mentioned is plus \u003csay-as interpret-as=\"telephone\" google:style=\"zero-as-zero\"\u003e $flow.country_code $flow.phone_number \u003c/say-as\u003e, is that correct?\u003c/speak\u003e"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e confirm telephone number",
+    "name": "8d9a96d9-1908-4bcb-8420-c434a4585c5d"
+  }, {
+    "condition": "$flow.is_valid = false AND $flow.invalid_phonenumber_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, but this telephone number cannot be recognized. We have collected country code as plus \u003csay-as interpret-as=\"verbatim\"\u003e$flow.country_code \u003c/say-as\u003e. Please provide a valid telephone number.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_phonenumber_counter",
+        "value": "$sys.func.ADD($flow.invalid_phonenumber_counter, 1)"
+      }, {
+        "parameter": "$flow.telephone_number",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eThis telephone number cannot be recognized. We have collected country code as plus \u003csay-as interpret-as=\"verbatim\"\u003e$flow.country_code \u003c/say-as\u003e. Please provide a valid telephone number.\u003c/speak\u003e"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect telephone number",
+    "name": "103cc7a2-3dea-482a-83d6-8449d3d7943c"
+  }, {
+    "condition": "$flow.invalid_phonenumber_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "765094ff-6df7-46dd-8c48-87ba81a58974"
+  } ]
+}

@@ -1,0 +1,203 @@
+{
+  "name": "af310830-3fca-4e0c-b1b1-03896b47a63a",
+  "displayName": "route payment confirmation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$flow.payment_type = \"credit_card_pay\" AND $flow.amount_type = \"total_amount\" AND $flow.payment_mode = \"account\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.total_amount\u003c/say-as\u003e for your credit card bill ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.payee_last_four_digit_of_credit_card_number\u003c/say-as\u003e with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"credit_card_pay\" AND $flow.amount_type = \"minimum_amount\" AND $flow.payment_mode = \"account\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.minimum_amount\u003c/say-as\u003e for your credit card bill ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.payee_last_four_digit_of_credit_card_number\u003c/say-as\u003e with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"credit_card_pay\" AND $flow.amount_type = \"other_amount\" AND $flow.payment_mode = \"account\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.other_amount\u003c/say-as\u003e for your credit card bill ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.payee_last_four_digit_of_credit_card_number\u003c/say-as\u003e with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"credit_card_pay\" AND $flow.amount_type = \"total_amount\" AND $flow.payment_mode = \"debit_card\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.total_amount\u003c/say-as\u003e for your credit card bill ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.payee_last_four_digit_of_credit_card_number\u003c/say-as\u003e with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.last_four_digit_of_debit_card_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"credit_card_pay\" AND $flow.amount_type = \"minimum_amount\" AND $flow.payment_mode = \"debit_card\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.minimum_amount\u003c/say-as\u003e for your credit card bill ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.payee_last_four_digit_of_credit_card_number\u003c/say-as\u003e with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.last_four_digit_of_debit_card_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"credit_card_pay\" AND $flow.amount_type = \"other_amount\" AND $flow.payment_mode = \"debit_card\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.other_amount\u003c/say-as\u003e for your credit card bill ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.payee_last_four_digit_of_credit_card_number\u003c/say-as\u003e with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.last_four_digit_of_debit_card_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"beneficiary_pay\" AND $flow.payment_mode = \"account\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.other_amount\u003c/say-as\u003e to $session.params.name_collection_first_name with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"beneficiary_pay\" AND $flow.payment_mode = \"debit_card\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.other_amount\u003c/say-as\u003e to $session.params.name_collection_first_name with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.last_four_digit_of_debit_card_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"beneficiary_pay\" AND $flow.payment_mode = \"credit_card\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "\u003cspeak\u003eOkay, we are going to make a payment of \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.other_amount\u003c/say-as\u003e to $session.params.name_collection_first_name with the $flow.user_mop number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.last_four_digit_of_credit_card_number\u003c/say-as\u003e. Do you confirm this action?\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check user email",
+    "name": "198d6ee4-e213-432e-8178-40d2f73abd49"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "e2680743-2450-40a6-ad1d-8f061b6ba4ea"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "71b9b17d-fd66-43d6-8e15-d9e8976366ff"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "b3011f23-8ba3-4f6e-a98f-a9d495d18bf5"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Can you please please say yes to confirm your payment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8bc1c23e-15a1-4f61-842b-53fd691e2dd4"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Can you please say yes to confirm your payment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b243fa45-a397-4141-b9d0-00330d084362"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "64017d2d-39ac-4afa-9d32-2cf879ecfc23"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Can you please say yes to confirm your payment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b6ef7c00-823c-4ae4-b17c-a36c4313623e"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Can you please say yes to confirm your payment?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f28a3cd7-0d86-4afc-9cde-f5368eded6f5"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "58d9fd29-2a53-438e-bb40-01cea1066cba"
+  } ],
+  "description": "Conditional response defined at Entry fulfillment"
+}

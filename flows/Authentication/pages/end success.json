@@ -1,0 +1,24 @@
+{
+  "name": "ec9284aa-122f-46b3-a0c9-f9c76637ae52",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Thank you, you have been successfully authenticated." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "aaed231c-4960-48b6-9003-e8dd24ec3e62"
+  } ],
+  "description": "Conditional response at entry fulfillment"
+}

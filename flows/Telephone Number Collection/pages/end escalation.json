@@ -1,0 +1,18 @@
+{
+  "name": "b1e2e2e2-7889-4630-ba19-3b5de3399ae3",
+  "displayName": "end escalation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "END_FLOW_WITH_HUMAN_ESCALATION",
+    "name": "8caba7a4-8e5d-4df8-80cb-246dc5f8d525"
+  } ]
+}

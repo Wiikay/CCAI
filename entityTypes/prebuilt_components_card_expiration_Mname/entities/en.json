@@ -1,0 +1,51 @@
+{
+  "entities": [ {
+    "value": "January",
+    "synonyms": [ "01", "1", "jan", "January" ],
+    "languageCode": "en"
+  }, {
+    "value": "February",
+    "synonyms": [ "02", "2", "feb", "February" ],
+    "languageCode": "en"
+  }, {
+    "value": "March",
+    "synonyms": [ "03", "3", "mar", "March" ],
+    "languageCode": "en"
+  }, {
+    "value": "April",
+    "synonyms": [ "04", "4", "April" ],
+    "languageCode": "en"
+  }, {
+    "value": "May",
+    "synonyms": [ "05", "5", "May", "me" ],
+    "languageCode": "en"
+  }, {
+    "value": "June",
+    "synonyms": [ "06", "6", "June" ],
+    "languageCode": "en"
+  }, {
+    "value": "July",
+    "synonyms": [ "07", "7", "July" ],
+    "languageCode": "en"
+  }, {
+    "value": "August",
+    "synonyms": [ "08", "8", "Aug", "August" ],
+    "languageCode": "en"
+  }, {
+    "value": "September",
+    "synonyms": [ "09", "9", "Sept", "September" ],
+    "languageCode": "en"
+  }, {
+    "value": "October",
+    "synonyms": [ "10", "oct", "October" ],
+    "languageCode": "en"
+  }, {
+    "value": "November",
+    "synonyms": [ "11", "nov", "November" ],
+    "languageCode": "en"
+  }, {
+    "value": "December",
+    "synonyms": [ "12", "dec", "December" ],
+    "languageCode": "en"
+  } ]
+}

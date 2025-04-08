@@ -1,0 +1,137 @@
+{
+  "name": "bd398d22-780a-42ed-a02f-31e068400f66",
+  "displayName": "Telephone Number Collection",
+  "description": "This flow collects and validates a telephone number.",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "targetFlow": "Waiting Room",
+    "name": "ad7d43bd-f85b-4f40-a397-87a79f2e63b1"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "82a06525-cf0a-487c-b06b-dd2efc21fff8"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, let me repeat it." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": "$sys.func.ADD($flow.replay_counter,1)"
+      } ]
+    },
+    "name": "1fb393ac-05d3-4e47-943a-8ea1e39130bf"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "ce2e034a-1797-40f8-bc5d-f4dffb246e62"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "What is your country name or code?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_cc_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.invalid_phonenumber_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_phonenumber_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.invalid_input_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.wrong_country_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.is_valid",
+        "value": null
+      }, {
+        "parameter": "$flow.phone_number",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "What is your country name or code?"
+      }, {
+        "parameter": "$flow.replay_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.reset_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we are having difficulty understanding your response."
+      } ]
+    },
+    "targetPage": "\u003e collect country code",
+    "name": "c29b4034-2c04-465e-8a8e-968c128ae9d2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "we missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "da197ff5-f0fc-40a0-bb45-1a8cae15b34c"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e31fae38-82fa-4179-b7ed-e6b590023f86"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

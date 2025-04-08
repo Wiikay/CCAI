@@ -1,0 +1,27 @@
+{
+  "name": "8afb3e86-5491-4c0c-89dc-911c5415c18a",
+  "displayName": "alternate format year",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.LEN($flow.card_expiration_year) = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_year",
+        "value": "$sys.func.CONCATENATE(\"20\", $flow.card_expiration_year)"
+      } ]
+    },
+    "name": "69d9b80c-9f42-4849-96e0-d2f4c02aa3ca"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "validate year",
+    "name": "8ef628f2-f95a-4459-a7f6-4a16c430a5fa"
+  } ]
+}

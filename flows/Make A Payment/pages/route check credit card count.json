@@ -1,0 +1,35 @@
+{
+  "name": "e70eb100-8049-489c-befd-71444f2d3d99",
+  "displayName": "route check credit card count",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.credit_card_count = 1 AND $flow.last_four_digit_of_credit_card_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.payee_last_four_digit_of_credit_card_number",
+        "value": "$flow.last_four_digit_of_credit_card_number"
+      }, {
+        "parameter": "$flow.payee_number",
+        "value": "$flow.payee_last_four_digit_of_credit_card_number"
+      } ]
+    },
+    "targetPage": "\u003e get due amount API",
+    "name": "0a160364-d594-4dd5-9885-ae9a775efd71"
+  }, {
+    "condition": "$flow.credit_card_count \u003e 1 AND $flow.last_four_digit_of_credit_card_number = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "last_four_digit_of_card_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect card number",
+    "name": "115649ed-630f-4b10-8654-3eb44031aca3"
+  } ],
+  "description": "For Route $flow.credit_card_count \u003e 1 AND $flow.credit_card_number = null, setting last_four_digit_of_card_number = null"
+}

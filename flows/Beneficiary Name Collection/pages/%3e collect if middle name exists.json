@@ -1,0 +1,185 @@
+{
+  "name": "e5b0e509-ebb5-4c8a-845f-bc8c33c3115f",
+  "displayName": "\u003e collect if middle name exists",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Does the beneficiary have a middle name?"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ],
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$flow.collect_middle_name != \"middle name\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "Does the beneficiary have a middle name?" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect middle name",
+    "name": "b97ac469-1d3d-4043-86bc-67a581ca5ff6"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.middle-name",
+        "value": null
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "c4bf2287-0fab-4e58-a8e3-a86b13fb9a62"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "46cbf9a7-8100-42f7-b4a3-d0642202776b"
+  }, {
+    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.middle-name",
+        "value": null
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "59826460-552c-4ca9-b4a6-f0438d750a04"
+  }, {
+    "intent": "prebuilt_components_name_collection_middle_name",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_middle_name",
+        "value": "$flow.user_provided_middle_name"
+      } ]
+    },
+    "targetPage": "\u003e confirm middle name",
+    "name": "26ab1487-917f-493b-9458-2566e75a580d"
+  }, {
+    "condition": "$flow.collect_middle_name = \"middle name\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect middle name",
+    "name": "d4a2c491-6c27-4cf7-8277-18c82de82256"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "44522e80-3d56-4f7c-819b-a1c41ca9adf4"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "a94f7b3a-9c50-48fa-8e39-481e52fa258a"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Do you have a middle name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d1140ccd-8f05-42f5-93e4-33d42f2fe506"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "81b258f3-8aa0-4d6e-9a88-682dd5f973a7"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "239c2645-94ee-4c8e-8a73-55624e102b8d"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Do you have a middle name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7e490208-e61f-4db9-9d9e-1f925bd931ae"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Do you have a middle name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "dc8489b3-9c6c-4fb0-bb8f-b5c04b71085d"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "69294f30-d7b6-43d1-a1bb-3aa2b1f5b46f"
+  } ],
+  "advancedSettings": {
+    "speechAdaptationSettings": {
+      "enableManualSpeechAdaptation": true,
+      "biasingPhraseSets": [ {
+        "biasingPhrases": [ {
+          "value": "no"
+        } ],
+        "displayName": "middle_name_collection_no"
+      } ]
+    }
+  },
+  "speakerIdSettings": {
+  
+  }
+}

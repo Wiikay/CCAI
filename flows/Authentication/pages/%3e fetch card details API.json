@@ -1,0 +1,85 @@
+{
+  "name": "c777b195-914f-485e-9dcb-b11045606399",
+  "displayName": "\u003e fetch card details API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_account_services:get_credit_card_details",
+    "tag": "getCardDetails"
+  },
+  "transitionRoutes": [ {
+    "condition": "($session.params.credit_card_count \u003c 1 OR $session.params.credit_card_count = \"\" OR $session.params.credit_card_count = null) AND $flow.retry_telephone_counter = $flow.max_retry_telephone_counter",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "a1b90865-8ef1-482e-beb5-3bfbdb078109"
+  }, {
+    "condition": "$session.params.credit_card_count \u003c 1 OR $session.params.credit_card_count = \"\" OR $session.params.credit_card_count = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "auth_level",
+        "value": null
+      }, {
+        "parameter": "$flow.otp_retry_count",
+        "value": 0
+      } ]
+    },
+    "targetPage": "verify unidentified user auth level",
+    "name": "fc6f514b-52a8-455d-9c6f-aa49d67b72c4"
+  }, {
+    "condition": "$flow.retry_telephone_counter \u003e 0 AND $session.params.credit_card_count \u003e= 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "auth_level",
+        "value": 0
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "1623cbda-280d-47b6-9f18-15ebec733db1"
+  }, {
+    "condition": "$session.params.credit_card_count \u003e= 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "auth_level",
+        "value": 0
+      } ]
+    },
+    "targetPage": "check auth level required",
+    "name": "4f27dfc5-82da-4457-ac69-ae568432eeda"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "218f7c0e-08f1-423a-9843-f4534d71a008"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "e826f015-3f14-421c-8457-f91d30f80d73"
+  } ]
+}

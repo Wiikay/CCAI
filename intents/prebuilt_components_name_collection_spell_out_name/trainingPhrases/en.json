@@ -1,0 +1,373 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "T h o m a s",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is the spelling for last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The correct spelling of my first name is "
+    }, {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My first name is spelled as "
+    }, {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": ", that's how my first name is spelled"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My middle name starts with "
+    }, {
+      "text": "D a l e",
+      "parameterId": "spell_out_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "s mit h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is spelling of my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "john "
+    }, {
+      "text": "J O H N",
+      "parameterId": "spell_out_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "fresics",
+      "parameterId": "spell_out_name",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "ann",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "L e e",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": ", that's how I spell my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": ", that's how I spell my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The spelling of my middle name is "
+    }, {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The spelling of my last name is "
+    }, {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The spelling of my first name is "
+    }, {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "J o n e s",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": ", this is the correct spelling of my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": ", this is the correct spelling of my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": ", that's how my middle name is spelled"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": ", that's how my last name is spelled"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "D a l e",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is the beginning of my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The first part of my middle name is "
+    }, {
+      "text": "D a l e",
+      "parameterId": "spell_out_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "j u l i",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": "  is the initial component of my first name."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "J o n e s",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": "  is the initial component of my last name."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "D a l e",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is the initial component of my middle name."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "A n n",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S h a w",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "D a l e",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is the first part of middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "K a y l a",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my  first part of first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "W o o d",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S a r a h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is spelling of my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "T h o m a s",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is my spelling for last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "P e t e r",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "H a r r y",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "D a v i d",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my first part of middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "E m m a",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this my first part of first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "R o b e r t",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "G r e e n",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " is my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "S m i t h",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is a spelling of my first part of first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "J o h n",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is a spelling of my first part of first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "maria",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is my middle name spelling"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "J a c k",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is my last name spelling"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "J O H N",
+      "parameterId": "spell_out_name"
+    }, {
+      "text": " this is my first name spelling"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

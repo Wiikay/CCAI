@@ -1,0 +1,228 @@
+{
+  "name": "64206815-ad5b-4d03-9e14-b988241aebd6",
+  "displayName": "\u003e confirm telephone number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.telephone_number_final",
+        "value": "$sys.func.CONCATENATE(\"+\", \"$flow.country_code\", \"$flow.telephone_number\")"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "02f9550c-80ae-4204-a30c-3796aba8b491"
+  }, {
+    "intent": "prebuilt_components_telephone_number_collection_incorrect_country_code",
+    "condition": "$flow.invalid_cc_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "No worries, what is your country name or code?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.country_code",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_cc_counter",
+        "value": "$sys.func.ADD($flow.invalid_cc_counter,1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "What is your country name or code?"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect country code",
+    "name": "43948fe2-36e6-41b3-ad3b-eddf0f8a4e07"
+  }, {
+    "intent": "prebuilt_components_telephone_number_collection_incorrect_country_code",
+    "condition": "$flow.invalid_cc_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "06118bc2-de14-4b12-836b-789d8bb6da42"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_phonenumber_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Ok, please say or enter your telephone number again." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.telephone_number",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_phonenumber_counter",
+        "value": "$sys.func.ADD($flow.incorrect_phonenumber_counter,1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please say or enter your telephone number again."
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect telephone number",
+    "name": "3ea8759e-12e9-4421-abce-f55d1c172653"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_phonenumber_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "31500137-e5ee-4ecb-aa02-d26906b4e727"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "5759153b-c1c1-49b1-b426-6dab411fb8f7"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eWe have collected phone number as plus \u003csay-as interpret-as=\"telephone\" google:style=\"zero-as-zero\"\u003e $flow.country_code $flow.phone_number \u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eWe have collected phone number as plus \u003csay-as interpret-as=\"telephone\" google:style=\"zero-as-zero\"\u003e $flow.country_code $flow.phone_number \u003c/say-as\u003e, is that correct?\u003c/speak\u003e"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": "$sys.func.ADD($flow.playback_counter,1)"
+      } ]
+    },
+    "name": "1e30ba6e-827e-4c08-9ce8-0da017db10fb"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "c2bb6164-c9bd-4cad-b08a-1d6a6fd5e28a"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "628550a8-db21-45af-ace6-ef434f81c03d"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "3c7c674a-7a1e-4a02-b2af-8513ee5382b5"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that. The number you mentioned is, plus \u003csay-as interpret-as=\"telephone\" google:style=\"zero-as-zero\"\u003e $flow.country_code $flow.telephone_number \u003c/say-as\u003ecorrect?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "054cb87d-8fa0-417b-8e95-3d34825c997a"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren’t able to get that. Please make sure you are saying yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c5a9a8ac-6960-49f8-9805-2e8c3edc88a1"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "a10e464e-c605-4bf0-b9d0-54903934d75b"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren’t able to hear you. The number you mentioned is, plus \u003csay-as interpret-as=\"telephone\" google:style=\"zero-as-zero\"\u003e $flow.country_code $flow.telephone_number \u003c/say-as\u003ecorrect?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ffa01da7-85e6-4e55-a31f-a3c9802a1d47"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fbf3f99e-9fe7-473f-a157-781d0d4692c6"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "9a3bf255-bf40-4e36-8e27-4aec9c52b792"
+  } ]
+}

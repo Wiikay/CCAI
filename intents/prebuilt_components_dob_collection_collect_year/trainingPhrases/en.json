@@ -1,0 +1,237 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I was born in the year "
+    }, {
+      "text": "2000",
+      "parameterId": "year"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I was born in the year "
+    }, {
+      "text": "1976",
+      "parameterId": "year"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "you can take it as ",
+      "auto": true
+    }, {
+      "text": "1984",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1999",
+      "parameterId": "year",
+      "auto": true
+    }, {
+      "text": " this is the ",
+      "auto": true
+    }, {
+      "text": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1982",
+      "parameterId": "year",
+      "auto": true
+    }, {
+      "text": " is the ",
+      "auto": true
+    }, {
+      "text": "year",
+      "auto": true
+    }, {
+      "text": " I was born in",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1976",
+      "parameterId": "year"
+    }, {
+      "text": " is my birth year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my birth year is "
+    }, {
+      "text": "2000",
+      "parameterId": "year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I was brought into existence in "
+    }, {
+      "text": "1988",
+      "parameterId": "year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I entered this world in "
+    }, {
+      "text": "1998",
+      "parameterId": "year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "so my year of birth is ",
+      "auto": true
+    }, {
+      "text": "77",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the year I was born is ",
+      "auto": true
+    }, {
+      "text": "1987",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it should be ",
+      "auto": true
+    }, {
+      "text": "1968",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i think it was ",
+      "auto": true
+    }, {
+      "text": "1988",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the year was ",
+      "auto": true
+    }, {
+      "text": "1976",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1999",
+      "parameterId": "year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it was ",
+      "auto": true
+    }, {
+      "text": "1978",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "born in the year of ",
+      "auto": true
+    }, {
+      "text": "1999",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2003",
+      "parameterId": "year"
+    }, {
+      "text": " is the year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i was born in ",
+      "auto": true
+    }, {
+      "text": "1987",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is ",
+      "auto": true
+    }, {
+      "text": "76",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "year is ",
+      "auto": true
+    }, {
+      "text": "1976",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1998",
+      "parameterId": "year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

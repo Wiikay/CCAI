@@ -1,0 +1,279 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Continuing my middle name, "
+    }, {
+      "text": "jacky",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " is the subsequent part."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The next segment of my middle name is "
+    }, {
+      "text": "luis",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "juli",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " is the succeeding portion of my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "joe",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " this is next part of my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "After the initial part of my middle name, "
+    }, {
+      "text": "jack",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " comes next"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The subsequent part of my middle name is "
+    }, {
+      "text": "marlow",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Following my middle name is "
+    }, {
+      "text": "jay",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My middle name continues with '"
+    }, {
+      "text": "jeah",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": "' as the next part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "In the middle name section, "
+    }, {
+      "text": "jeah",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " follows"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The second part of my middle name is "
+    }, {
+      "text": "jeah",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "leel",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the next part is "
+    }, {
+      "text": "joe",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "kaul",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " is my next part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "yep that's nothing but "
+    }, {
+      "text": "joe",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "mue",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " this will be my next part of first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jones",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " Here is next part of my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jack",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " would be my next part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "joe",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " is the next part of my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "doey",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": "  is the next part of my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jeah",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " is the next part of my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "maria",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " that's my next part of my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "joey",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " that's my next part of my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "davis",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " that's my next part of my middle  name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my next part would be "
+    }, {
+      "text": "davis",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "john",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " that's the next part of middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jack",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " that's the next part of last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "john",
+      "parameterId": "verify_name_part"
+    }, {
+      "text": " that's the next part of first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the next part of my middle name is "
+    }, {
+      "text": "davis",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the next part of my last name is "
+    }, {
+      "text": "smith",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the next part of my first name is "
+    }, {
+      "text": "john",
+      "parameterId": "verify_name_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,114 @@
+{
+  "name": "c8518623-734a-4dd7-bd1d-e7a0efded564",
+  "displayName": "\u003e confirm channel",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$flow.new_channel = \"mobile\" OR $flow.new_channel = \"email\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.channel",
+        "value": "$flow.new_channel"
+      } ]
+    },
+    "targetPage": "\u003e send OTP API",
+    "name": "eef18e80-1e86-41ba-842d-c08fa2e7b950"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "security question message",
+    "name": "3b6f7c89-8058-402b-99bc-d6486ac8440c"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "84ee630e-295d-4547-a3a9-15e95b26469b"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "93d308bc-0002-4510-ad15-0e685aac8505"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. if you want to retry please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7b5bff21-a757-4adc-aeae-6fda70414379"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. if you want to retry please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8e7320a4-fef2-48e0-9271-743950045717"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "98291f4f-9c48-43f7-aa7d-b1e6908d9d8b"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. if you want to try again please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "14f5018b-9574-4fd8-bd25-5b807599bd4f"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. If you want to try again please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d01e3959-8f96-499c-9bda-f2701be7add1"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "4c5b9d4a-ef16-4396-a2f7-1ff7430b3328"
+  } ]
+}

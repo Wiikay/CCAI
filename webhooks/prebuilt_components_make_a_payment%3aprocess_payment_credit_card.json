@@ -1,0 +1,17 @@
+{
+  "name": "f9d7ccc5-a1d9-4217-ba99-a53f37d34220",
+  "displayName": "prebuilt_components_make_a_payment:process_payment_credit_card",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"payee_number\": \"$flow.payee_number\",\n  \"payment_type\": \"$flow.payment_type\",\n  \"credit_card_number\": \"$flow.last_four_digit_of_credit_card_number\",\n  \"credit_card_exp_date\": \"$flow.credit_card_exp_date\",\n  \"credit_card_cvv_code\": \"$flow.credit_card_cvv_code\",\n  \"payment_amount\": \"$flow.payment_amount\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"processPaymentCreditCard\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.payment_status_code",
+      "value": "payment_status_code"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

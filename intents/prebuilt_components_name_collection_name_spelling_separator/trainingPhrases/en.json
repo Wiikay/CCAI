@@ -1,0 +1,254 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "My ",
+      "auto": true
+    }, {
+      "text": "last name",
+      "parameterId": "prebuilt_components_name_collection_collect_name",
+      "auto": true
+    }, {
+      "text": " includes a ",
+      "auto": true
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have an ",
+      "auto": true
+    }, {
+      "text": "apostrophe",
+      "parameterId": "spelling_separator",
+      "auto": true
+    }, {
+      "text": " in my ",
+      "auto": true
+    }, {
+      "text": "full name",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have an "
+    }, {
+      "text": "apostrophe",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my last name."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "a "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "apostrophe",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "that will be "
+    }, {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my name contains a "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my name includes a "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my name has a "
+    }, {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in it"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The name is composed of two parts separated by a "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "go ahead with "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my name having "
+    }, {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in between"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The "
+    }, {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " is important in my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I prefer to use a "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " is part of my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have a "
+    }, {
+      "text": "hyphenated",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My last name has a "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I use a "
+    }, {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There's a "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My name has a "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in it"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "its "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "space",
+      "parameterId": "spelling_separator",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

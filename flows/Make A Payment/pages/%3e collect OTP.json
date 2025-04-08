@@ -1,0 +1,136 @@
+{
+  "name": "292de263-353d-4332-b308-972cf019555d",
+  "displayName": "\u003e collect OTP",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_authentication_collect_code",
+    "condition": "$session.params.collect_code != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_otp",
+        "value": "$sys.func.JOIN(\"\", $session.params.collect_code)"
+      }, {
+        "parameter": "collect_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "route validate OTP length",
+    "name": "d59663e9-9f7e-4ffa-97ab-f2b2ea3da7f6"
+  }, {
+    "intent": "prebuilt_components_authentication_otp_not_received",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.channel",
+        "value": null
+      }, {
+        "parameter": "$flow.otp_not_received",
+        "value": "true"
+      }, {
+        "parameter": "$flow.retry_otp_count",
+        "value": "$sys.func.ADD($flow.retry_otp_count,1)"
+      } ]
+    },
+    "targetPage": "retry OTP",
+    "name": "5e7e47ac-e7dc-4559-b564-5670619ce3b2"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "c9b3751c-18b2-4146-b15b-c17563638497"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "4bbc0584-ecec-40e3-b228-585ae845a844"
+  }, {
+    "intent": "prebuilt_components_authentication_denial",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "6dfff989-db59-4236-aa5b-d92fb1997f3b"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Can you please help us with the OTP you received?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "76ba53de-8af2-4ac3-8930-c3893551303d"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Can you please help us with the OTP you received?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8610a7c2-5393-4e72-be09-541a7328dd62"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "f4d6b8f3-86b6-45ea-94cd-96e595be3a41"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Can you please help us with the OTP you have received?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "230d337a-e1fc-4c7b-aa0a-19592d35895d"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Can you please help us with the OTP you have received?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "28f2589d-d97d-4830-8b7c-1895eff8961e"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "866baba5-4c64-4c13-ac1d-96a6405dc4db"
+  } ]
+}

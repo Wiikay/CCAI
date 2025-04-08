@@ -1,0 +1,17 @@
+{
+  "name": "c6188f44-7f33-4b84-84da-5b6677ad2462",
+  "displayName": "prebuilt_components_authentication:send_otp",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"channel\": \"$flow.channel\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"sendOTP\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.generated_otp",
+      "value": "generated_otp"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

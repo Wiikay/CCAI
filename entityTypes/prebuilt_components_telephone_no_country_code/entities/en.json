@@ -1,0 +1,739 @@
+{
+  "entities": [ {
+    "value": "91",
+    "synonyms": [ "9 1", "91", "IND", "India", "ninety one" ],
+    "languageCode": "en"
+  }, {
+    "value": "44",
+    "synonyms": [ "44", "britain", "england", "forty four", "scotland", "scottish", "UK", "United Kingdom", "wales", "welsh" ],
+    "languageCode": "en"
+  }, {
+    "value": "1",
+    "synonyms": [ "1", "american", "Canada", "canadian", "one", "United States", "United States of America", "US", "USA" ],
+    "languageCode": "en"
+  }, {
+    "value": "33",
+    "synonyms": [ "33", "FR", "France", "French", "thirty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "49",
+    "synonyms": [ "49", "forty nine", "German", "Germany" ],
+    "languageCode": "en"
+  }, {
+    "value": "30",
+    "synonyms": [ "30", "greece", "greek", "thirty" ],
+    "languageCode": "en"
+  }, {
+    "value": "98",
+    "synonyms": [ "98", "iran", "iranian", "ninety eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "353",
+    "synonyms": [ "353", "ireland", "irish", "three hundred and fifty three", "three hundred fifty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "39",
+    "synonyms": [ "39", "italian", "italy", "thirty nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "81",
+    "synonyms": [ "81", "eighty one", "japan", "japanese" ],
+    "languageCode": "en"
+  }, {
+    "value": "86",
+    "synonyms": [ "86", "china", "chinese", "eighty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "60",
+    "synonyms": [ "60", "malaysia", "malaysian", "sixty" ],
+    "languageCode": "en"
+  }, {
+    "value": "52",
+    "synonyms": [ "52", "fifty two", "mexican", "mexico" ],
+    "languageCode": "en"
+  }, {
+    "value": "31",
+    "synonyms": [ "31", "dutch", "netherlands", "thirty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "64",
+    "synonyms": [ "64", "kiwi", "new zealand", "newzealand", "newzealander", "sixty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "234",
+    "synonyms": [ "234", "nigeria", "nigerian", "two hundred and thirty four", "two hundred thirty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "48",
+    "synonyms": [ "48", "forty eight", "poland", "polish" ],
+    "languageCode": "en"
+  }, {
+    "value": "351",
+    "synonyms": [ "351", "portugal", "portuguese", "three hundred and fifty one", "three hundred fifty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "55",
+    "synonyms": [ "55", "brazil", "brazilian", "fifty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "7",
+    "synonyms": [ "7", "Kazakhstan", "russia", "russian", "seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "65",
+    "synonyms": [ "65", "singapore", "singaporean", "sixty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "27",
+    "synonyms": [ "27", "south africa", "south african", "twenty seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "82",
+    "synonyms": [ "82", "eighty two", "south korea", "south korean" ],
+    "languageCode": "en"
+  }, {
+    "value": "34",
+    "synonyms": [ "34", "spain", "spanish", "thirty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "46",
+    "synonyms": [ "46", "forty six", "sweden", "swedish" ],
+    "languageCode": "en"
+  }, {
+    "value": "41",
+    "synonyms": [ "41", "forty one", "swiss", "switzerland" ],
+    "languageCode": "en"
+  }, {
+    "value": "90",
+    "synonyms": [ "90", "ninty", "turkey", "turkish" ],
+    "languageCode": "en"
+  }, {
+    "value": "971",
+    "synonyms": [ "971", "nine hundred and seventy one", "nine hundred seventy one", "uae", "united arab emirates" ],
+    "languageCode": "en"
+  }, {
+    "value": "36",
+    "synonyms": [ "36", "hungarian", "hungary", "thirty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "374",
+    "synonyms": [ "374", "armenia", "armenian", "three hundred and seventy four", "three hundred seventy four" ],
+    "languageCode": "en"
+  }, {
+    "value": "61",
+    "synonyms": [ "61", "Aus", "aussie", "Australia", "Australian", "sixty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "84",
+    "synonyms": [ "84", "eighty four", "vietnam", "vietnamese" ],
+    "languageCode": "en"
+  }, {
+    "value": "998",
+    "synonyms": [ "998", "nine hundred and ninety eight", "nine hundred ninety eight", "uzbek", "uzbekistan" ],
+    "languageCode": "en"
+  }, {
+    "value": "380",
+    "synonyms": [ "380", "three hundred and eighty", "three hundred eighty", "ukrain", "ukrainian" ],
+    "languageCode": "en"
+  }, {
+    "value": "993",
+    "synonyms": [ "993", "nine hundred and ninety three", "nine hundred ninety three", "turkmenistan" ],
+    "languageCode": "en"
+  }, {
+    "value": "66",
+    "synonyms": [ "66", "sixty six", "thai", "thailand" ],
+    "languageCode": "en"
+  }, {
+    "value": "94",
+    "synonyms": [ "94", "ninety four", "sri lanka", "srilanka", "srilankan" ],
+    "languageCode": "en"
+  }, {
+    "value": "992",
+    "synonyms": [ "992", "nine hundred and ninety two", "nine hundred ninety two", "tajikistan" ],
+    "languageCode": "en"
+  }, {
+    "value": "252",
+    "synonyms": [ "252", "somalia", "somalian", "two hundred and fifty two", "two hundred fifty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "386",
+    "synonyms": [ "386", "slovenia", "slovenian", "three hundred and eighty six", "three hundred eighty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "421",
+    "synonyms": [ "421", "four hundred and twenty one", "four hundred twenty one", "slovak", "slovakia" ],
+    "languageCode": "en"
+  }, {
+    "value": "381",
+    "synonyms": [ "381", "serbia", "serbian", "three hundred and eighty one", "three hundred eighty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "964",
+    "synonyms": [ "964", "iraq", "nine hundred and sixty four", "nine hundred sixty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "47",
+    "synonyms": [ "47", "forty seven", "norway", "norwegian" ],
+    "languageCode": "en"
+  }, {
+    "value": "977",
+    "synonyms": [ "977", "nepal", "nepali", "nine hundred and seventy seven", "nine hundred seventy seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "976",
+    "synonyms": [ "976", "mongolia", "mongolian", "nine hundred and seventy six", "nine hundred seventy six" ],
+    "languageCode": "en"
+  }, {
+    "value": "356",
+    "synonyms": [ "356", "malta", "maltese", "three hundred and fifty six", "three hundred fifty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "389",
+    "synonyms": [ "389", "macedonia", "macedonian", "three hundred and eighty nine", "three hundred eighty nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "352",
+    "synonyms": [ "352", "luxembourg", "luxembourgish", "three hundred and fifty two", "three hundred fifty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "370",
+    "synonyms": [ "370", "lithuania", "lithuanian", "three hundred and seventy", "three hundred seventy" ],
+    "languageCode": "en"
+  }, {
+    "value": "371",
+    "synonyms": [ "371", "latvia", "latvian", "three hundred and seventy one", "three hundred seventy one" ],
+    "languageCode": "en"
+  }, {
+    "value": "212",
+    "synonyms": [ "212", "Morocco", "moroccon", "two hundred and twelve", "two hundred twelve", "western sahara" ],
+    "languageCode": "en"
+  }, {
+    "value": "243",
+    "synonyms": [ "243", "Congo", "Democratic Republic of Congo", "two hundred and forty three", "two hundred forty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "263",
+    "synonyms": [ "263", "Zimbabwe" ],
+    "languageCode": "en"
+  }, {
+    "value": "260",
+    "synonyms": [ "260", "zambia" ],
+    "languageCode": "en"
+  }, {
+    "value": "967",
+    "synonyms": [ "967", "yemen" ],
+    "languageCode": "en"
+  }, {
+    "value": "58",
+    "synonyms": [ "58", "venezuela" ],
+    "languageCode": "en"
+  }, {
+    "value": "379",
+    "synonyms": [ "379", "vatican" ],
+    "languageCode": "en"
+  }, {
+    "value": "678",
+    "synonyms": [ "678", "vanuatu" ],
+    "languageCode": "en"
+  }, {
+    "value": "598",
+    "synonyms": [ "598", "uruguay" ],
+    "languageCode": "en"
+  }, {
+    "value": "256",
+    "synonyms": [ "256", "uganda" ],
+    "languageCode": "en"
+  }, {
+    "value": "216",
+    "synonyms": [ "216", "tunisia" ],
+    "languageCode": "en"
+  }, {
+    "value": "255",
+    "synonyms": [ "255", "tanzania" ],
+    "languageCode": "en"
+  }, {
+    "value": "886",
+    "synonyms": [ "886", "taiwan" ],
+    "languageCode": "en"
+  }, {
+    "value": "963",
+    "synonyms": [ "963", "syria" ],
+    "languageCode": "en"
+  }, {
+    "value": "268",
+    "synonyms": [ "268", "swaziland" ],
+    "languageCode": "en"
+  }, {
+    "value": "597",
+    "synonyms": [ "597", "suriname" ],
+    "languageCode": "en"
+  }, {
+    "value": "249",
+    "synonyms": [ "249", "sudan" ],
+    "languageCode": "en"
+  }, {
+    "value": "211",
+    "synonyms": [ "211", "south sudan" ],
+    "languageCode": "en"
+  }, {
+    "value": "45",
+    "synonyms": [ "45", "Denmark", "forty-five" ],
+    "languageCode": "en"
+  }, {
+    "value": "253",
+    "synonyms": [ "253", "Djibouti" ],
+    "languageCode": "en"
+  }, {
+    "value": "\t1767",
+    "synonyms": [ "\t1-767", "\t1767", "Dominica" ],
+    "languageCode": "en"
+  }, {
+    "value": "1809",
+    "synonyms": [ "1-809", "1-829", "1-849", "1809", "Dominican Republic" ],
+    "languageCode": "en"
+  }, {
+    "value": "670",
+    "synonyms": [ "670", "East Timor" ],
+    "languageCode": "en"
+  }, {
+    "value": "593",
+    "synonyms": [ "593", "Ecuador" ],
+    "languageCode": "en"
+  }, {
+    "value": "20",
+    "synonyms": [ "20", "Egypt" ],
+    "languageCode": "en"
+  }, {
+    "value": "503",
+    "synonyms": [ "503", "El Salvador" ],
+    "languageCode": "en"
+  }, {
+    "value": "240",
+    "synonyms": [ "240", "Equatorial Guinea" ],
+    "languageCode": "en"
+  }, {
+    "value": "291",
+    "synonyms": [ "291", "Eritrea" ],
+    "languageCode": "en"
+  }, {
+    "value": "372",
+    "synonyms": [ "372", "Estonia" ],
+    "languageCode": "en"
+  }, {
+    "value": "251",
+    "synonyms": [ "251", "Ethiopia" ],
+    "languageCode": "en"
+  }, {
+    "value": "500\t",
+    "synonyms": [ "500\t", "Falkland Islands" ],
+    "languageCode": "en"
+  }, {
+    "value": "298",
+    "synonyms": [ "298", "Faroe Islands" ],
+    "languageCode": "en"
+  }, {
+    "value": "679",
+    "synonyms": [ "679", "Fiji" ],
+    "languageCode": "en"
+  }, {
+    "value": "358",
+    "synonyms": [ "358", "Finland" ],
+    "languageCode": "en"
+  }, {
+    "value": "689",
+    "synonyms": [ "689", "French Polynesia" ],
+    "languageCode": "en"
+  }, {
+    "value": "241",
+    "synonyms": [ "241", "Gabon" ],
+    "languageCode": "en"
+  }, {
+    "value": "220",
+    "synonyms": [ "220", "Gambia" ],
+    "languageCode": "en"
+  }, {
+    "value": "995",
+    "synonyms": [ "995", "Georgia" ],
+    "languageCode": "en"
+  }, {
+    "value": "233",
+    "synonyms": [ "233", "Ghana" ],
+    "languageCode": "en"
+  }, {
+    "value": "350",
+    "synonyms": [ "350", "Gibraltar" ],
+    "languageCode": "en"
+  }, {
+    "value": "299",
+    "synonyms": [ "299", "Greenland" ],
+    "languageCode": "en"
+  }, {
+    "value": "1473",
+    "synonyms": [ "1-473", "1473", "Grenada" ],
+    "languageCode": "en"
+  }, {
+    "value": "1671",
+    "synonyms": [ "1-671", "1671", "Guam" ],
+    "languageCode": "en"
+  }, {
+    "value": "502",
+    "synonyms": [ "502", "Guatemala" ],
+    "languageCode": "en"
+  }, {
+    "value": "224",
+    "synonyms": [ "224", "Guinea" ],
+    "languageCode": "en"
+  }, {
+    "value": "245",
+    "synonyms": [ "245", "Guinea-Bissau" ],
+    "languageCode": "en"
+  }, {
+    "value": "592",
+    "synonyms": [ "592", "Guyana" ],
+    "languageCode": "en"
+  }, {
+    "value": "509",
+    "synonyms": [ "509", "Haiti" ],
+    "languageCode": "en"
+  }, {
+    "value": "504",
+    "synonyms": [ "504", "Honduras" ],
+    "languageCode": "en"
+  }, {
+    "value": "852",
+    "synonyms": [ "852", "Hong Kong" ],
+    "languageCode": "en"
+  }, {
+    "value": "354",
+    "synonyms": [ "354", "Iceland" ],
+    "languageCode": "en"
+  }, {
+    "value": "62",
+    "synonyms": [ "62", "Indonesia" ],
+    "languageCode": "en"
+  }, {
+    "value": "972",
+    "synonyms": [ "972", "Israel" ],
+    "languageCode": "en"
+  }, {
+    "value": "225",
+    "synonyms": [ "225", "Ivory Coast" ],
+    "languageCode": "en"
+  }, {
+    "value": "1876",
+    "synonyms": [ "1-876", "1876", "Jamaica" ],
+    "languageCode": "en"
+  }, {
+    "value": "962",
+    "synonyms": [ "962", "Jordan" ],
+    "languageCode": "en"
+  }, {
+    "value": "254",
+    "synonyms": [ "254", "Kenya" ],
+    "languageCode": "en"
+  }, {
+    "value": "686",
+    "synonyms": [ "686", "Kiribati" ],
+    "languageCode": "en"
+  }, {
+    "value": "383",
+    "synonyms": [ "383", "Kosovo" ],
+    "languageCode": "en"
+  }, {
+    "value": "965",
+    "synonyms": [ "965", "Kuwait" ],
+    "languageCode": "en"
+  }, {
+    "value": "996",
+    "synonyms": [ "996", "Kyrgyzstan" ],
+    "languageCode": "en"
+  }, {
+    "value": "856",
+    "synonyms": [ "856", "Laos" ],
+    "languageCode": "en"
+  }, {
+    "value": "961",
+    "synonyms": [ "961", "Lebanon" ],
+    "languageCode": "en"
+  }, {
+    "value": "266",
+    "synonyms": [ "266", "Lesotho" ],
+    "languageCode": "en"
+  }, {
+    "value": "231",
+    "synonyms": [ "231", "Liberia" ],
+    "languageCode": "en"
+  }, {
+    "value": "218",
+    "synonyms": [ "218", "Libya" ],
+    "languageCode": "en"
+  }, {
+    "value": "1684",
+    "synonyms": [ "1-684", "1684", "american samoa" ],
+    "languageCode": "en"
+  }, {
+    "value": "1264",
+    "synonyms": [ "1-264", "1264", "anguilla" ],
+    "languageCode": "en"
+  }, {
+    "value": "1242",
+    "synonyms": [ "1-242", "1242", "bahamas" ],
+    "languageCode": "en"
+  }, {
+    "value": "1246",
+    "synonyms": [ "1-246", "1246", "barbados" ],
+    "languageCode": "en"
+  }, {
+    "value": "1441",
+    "synonyms": [ "1-441", "1441", "bermunda" ],
+    "languageCode": "en"
+  }, {
+    "value": "1340",
+    "synonyms": [ "1-340", "1340", "U.S Virgin Islands" ],
+    "languageCode": "en"
+  }, {
+    "value": "1649",
+    "synonyms": [ "1-649", "1649", "Turks and Caicos Islands" ],
+    "languageCode": "en"
+  }, {
+    "value": "1868",
+    "synonyms": [ "1-868", "1868", "Trinidad and Tobago" ],
+    "languageCode": "en"
+  }, {
+    "value": "423",
+    "synonyms": [ "423", "four hundred twenty three", "Liechtenstein" ],
+    "languageCode": "en"
+  }, {
+    "value": "853",
+    "synonyms": [ "853", "eight hundred and fifty three", "macau" ],
+    "languageCode": "en"
+  }, {
+    "value": "261",
+    "synonyms": [ "261", "Madagascar", "two hundred and sixty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "265",
+    "synonyms": [ "265", "Malawi", "two hundred and sixty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "960",
+    "synonyms": [ "960", "maldives", "nine hundred and sixty" ],
+    "languageCode": "en"
+  }, {
+    "value": "223",
+    "synonyms": [ "223", "mali", "two hundred and twenty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "692",
+    "synonyms": [ "692", "marshall islands" ],
+    "languageCode": "en"
+  }, {
+    "value": "222",
+    "synonyms": [ "222", "Mauritania" ],
+    "languageCode": "en"
+  }, {
+    "value": "230",
+    "synonyms": [ "230", "Mauritius" ],
+    "languageCode": "en"
+  }, {
+    "value": "262",
+    "synonyms": [ "262", "mayotte" ],
+    "languageCode": "en"
+  }, {
+    "value": "373",
+    "synonyms": [ "373", "moldova" ],
+    "languageCode": "en"
+  }, {
+    "value": "691",
+    "synonyms": [ "691", "micronesia" ],
+    "languageCode": "en"
+  }, {
+    "value": "377",
+    "synonyms": [ "377", "monaco" ],
+    "languageCode": "en"
+  }, {
+    "value": "382",
+    "synonyms": [ "382", "montenegro" ],
+    "languageCode": "en"
+  }, {
+    "value": "258",
+    "synonyms": [ "258", "Mozambique" ],
+    "languageCode": "en"
+  }, {
+    "value": "95",
+    "synonyms": [ "95", "myanmar" ],
+    "languageCode": "en"
+  }, {
+    "value": "264",
+    "synonyms": [ "264", "namibia" ],
+    "languageCode": "en"
+  }, {
+    "value": "505",
+    "synonyms": [ "505", "nicaragua" ],
+    "languageCode": "en"
+  }, {
+    "value": "227",
+    "synonyms": [ "227", "niger" ],
+    "languageCode": "en"
+  }, {
+    "value": "968",
+    "synonyms": [ "968", "oman" ],
+    "languageCode": "en"
+  }, {
+    "value": "92",
+    "synonyms": [ "92", "pakistan" ],
+    "languageCode": "en"
+  }, {
+    "value": "680",
+    "synonyms": [ "680", "palau" ],
+    "languageCode": "en"
+  }, {
+    "value": "970",
+    "synonyms": [ "970", "palestine" ],
+    "languageCode": "en"
+  }, {
+    "value": "507",
+    "synonyms": [ "507", "panama" ],
+    "languageCode": "en"
+  }, {
+    "value": "675",
+    "synonyms": [ "675", "Papua New Guinea" ],
+    "languageCode": "en"
+  }, {
+    "value": "595",
+    "synonyms": [ "595", "paraguay" ],
+    "languageCode": "en"
+  }, {
+    "value": "51",
+    "synonyms": [ "51", "peru" ],
+    "languageCode": "en"
+  }, {
+    "value": "56",
+    "synonyms": [ "56", "chile" ],
+    "languageCode": "en"
+  }, {
+    "value": "591",
+    "synonyms": [ "591", "bolivia" ],
+    "languageCode": "en"
+  }, {
+    "value": "375",
+    "synonyms": [ "375", "belarus" ],
+    "languageCode": "en"
+  }, {
+    "value": "32",
+    "synonyms": [ "32", "belgium" ],
+    "languageCode": "en"
+  }, {
+    "value": "973",
+    "synonyms": [ "973", "bahrain" ],
+    "languageCode": "en"
+  }, {
+    "value": "880",
+    "synonyms": [ "880", "bangladesh" ],
+    "languageCode": "en"
+  }, {
+    "value": "994",
+    "synonyms": [ "994", "Azerbaijan" ],
+    "languageCode": "en"
+  }, {
+    "value": "43",
+    "synonyms": [ "43", "austria" ],
+    "languageCode": "en"
+  }, {
+    "value": "54",
+    "synonyms": [ "54", "argentina" ],
+    "languageCode": "en"
+  }, {
+    "value": "244",
+    "synonyms": [ "244", "angola" ],
+    "languageCode": "en"
+  }, {
+    "value": "376",
+    "synonyms": [ "376", "andorra" ],
+    "languageCode": "en"
+  }, {
+    "value": "213",
+    "synonyms": [ "213", "algeria" ],
+    "languageCode": "en"
+  }, {
+    "value": "355",
+    "synonyms": [ "355", "albania" ],
+    "languageCode": "en"
+  }, {
+    "value": "93",
+    "synonyms": [ "93", "afghanistan" ],
+    "languageCode": "en"
+  }, {
+    "value": "63",
+    "synonyms": [ "63", "Philippines" ],
+    "languageCode": "en"
+  }, {
+    "value": "974",
+    "synonyms": [ "974", "Qatar" ],
+    "languageCode": "en"
+  }, {
+    "value": "40",
+    "synonyms": [ "40", "romania" ],
+    "languageCode": "en"
+  }, {
+    "value": "250",
+    "synonyms": [ "250", "rwanda" ],
+    "languageCode": "en"
+  }, {
+    "value": "590",
+    "synonyms": [ "590", "Saint Barthelemy", "Saint Martin" ],
+    "languageCode": "en"
+  }, {
+    "value": "290",
+    "synonyms": [ "290", "Saint Helena" ],
+    "languageCode": "en"
+  }, {
+    "value": "508",
+    "synonyms": [ "508", "Saint Pierre and Miquelon" ],
+    "languageCode": "en"
+  }, {
+    "value": "685",
+    "synonyms": [ "685", "samoa" ],
+    "languageCode": "en"
+  }, {
+    "value": "378",
+    "synonyms": [ "378", "San Marino" ],
+    "languageCode": "en"
+  }, {
+    "value": "239",
+    "synonyms": [ "239", "Sao Tome and Principe" ],
+    "languageCode": "en"
+  }, {
+    "value": "966",
+    "synonyms": [ "966", "arabia", "saudi", "Saudi Arabia" ],
+    "languageCode": "en"
+  }, {
+    "value": "221",
+    "synonyms": [ "221", "senegal" ],
+    "languageCode": "en"
+  }, {
+    "value": "248",
+    "synonyms": [ "248", "Seychelles" ],
+    "languageCode": "en"
+  }, {
+    "value": "232",
+    "synonyms": [ "232", "Sierra Leone" ],
+    "languageCode": "en"
+  }, {
+    "value": "677",
+    "synonyms": [ "677", "Solomon", "Solomon Islands" ],
+    "languageCode": "en"
+  }, {
+    "value": "228",
+    "synonyms": [ "228", "togo" ],
+    "languageCode": "en"
+  }, {
+    "value": "57",
+    "synonyms": [ "57", "colombia" ],
+    "languageCode": "en"
+  }, {
+    "value": "975",
+    "synonyms": [ "975", "bhutan" ],
+    "languageCode": "en"
+  } ]
+}

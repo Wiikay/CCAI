@@ -1,0 +1,76 @@
+{
+  "name": "76b63709-98d5-4bd5-b9bf-23d1c2be32bf",
+  "displayName": "\u003e validate card API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_make_a_payment:verify_credit_card_number",
+    "tag": "verifyCreditCardNumber"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.card_found = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e get due amount API",
+    "name": "b1b9ddb6-5e40-4305-855f-5799781c811c"
+  }, {
+    "condition": "($flow.card_found != true OR $flow.card_found = null OR $flow.card_found = \"\") AND $flow.retry_credit_card_count \u003c $flow.max_retry_credit_card_count",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_credit_card_count",
+        "value": "$sys.func.ADD($flow.retry_credit_card_count,1)"
+      }, {
+        "parameter": "last_four_digit_of_card_number",
+        "value": null
+      }, {
+        "parameter": "$flow.last_four_digit_of_credit_card_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "retry credit card number",
+    "name": "0e951118-5427-4ba1-b6f5-2900ae9e3749"
+  }, {
+    "condition": "$flow.retry_credit_card_count = $flow.max_retry_credit_card_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "c94b9aaa-555f-464b-8937-89ea9f1cd753"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "df19dee0-b23e-4723-97d1-dd4d1bcc38d5"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "3ae73c5b-1a65-49e3-8156-e9c5458de0e3"
+  } ],
+  "description": "Add Counter specified for $flow.retry_credit_card_count at $flow.card_found != true OR $flow.card_found = null OR $flow.card_found = \"\" route."
+}

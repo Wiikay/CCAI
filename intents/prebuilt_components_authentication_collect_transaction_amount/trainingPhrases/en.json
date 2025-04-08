@@ -1,0 +1,313 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "100",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": "dollars ",
+      "auto": true
+    }, {
+      "text": "20",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": "cents",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "200",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": "cents",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "100",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " cents",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "20",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " dollars ",
+      "auto": true
+    }, {
+      "text": "50",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " cents",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "50",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " cents",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "500",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " dollars ",
+      "auto": true
+    }, {
+      "text": "20"
+    }, {
+      "text": " cents",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "50 0",
+      "parameterId": "transaction_amount",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5 0 0",
+      "parameterId": "transaction_amount",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "500",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": ".30"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "11",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " #@ "
+    }, {
+      "text": "00",
+      "parameterId": "transaction_amount"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5 ",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": "@"
+    }, {
+      "text": "00",
+      "parameterId": "transaction_amount"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "78 0",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " dollars"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "500",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " dollars"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "200",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " dollars i spent",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "200",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " dollars",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "500",
+      "parameterId": "transaction_amount"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "its ",
+      "auto": true
+    }, {
+      "text": "500",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " dollars ",
+      "auto": true
+    }, {
+      "text": "30"
+    }, {
+      "text": " cents",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "transaction amount is ",
+      "auto": true
+    }, {
+      "text": "500",
+      "parameterId": "transaction_amount",
+      "auto": true
+    }, {
+      "text": " dollars",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2387",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " dollar"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "209 23",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " "
+    }, {
+      "text": "USD"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "65 87",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": "dollar"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my currency and amount is "
+    }, {
+      "text": "200",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " nepali rupee"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "23",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " dollar 1 cent"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "123",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": ". 12"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " dollar fifty"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "dollar "
+    }, {
+      "text": "500",
+      "parameterId": "transaction_amount"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my amount is "
+    }, {
+      "text": "500",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " and my currency is dollar"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "25",
+      "parameterId": "transaction_amount"
+    }, {
+      "text": " dollar"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

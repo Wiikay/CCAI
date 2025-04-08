@@ -1,0 +1,211 @@
+{
+  "name": "a9e5cc10-1660-46a0-815d-a4c61629a709",
+  "displayName": "\u003e confirm second part after name separator",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003e\u003cprosody rate=\"slow\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.verify_name_part\u003c/say-as\u003e\u003c/prosody\u003e. Tell us if that's wrong, if that's the end, or, what's next: a space, apostrophe, or hyphen.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003e\u003cprosody rate=\"slow\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.verify_name_part\u003c/say-as\u003e\u003c/prosody\u003e. Tell me if that's wrong, if that's the end, or, what's next: a space, apostrophe, or hyphen.\u003c/speak\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_next_part_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_name_part",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_person_name",
+        "value": "$flow.verify_person_name"
+      }, {
+        "parameter": "$flow.incorrect_next_part_counter",
+        "value": "$sys.func.ADD($flow.incorrect_next_part_counter,1)"
+      } ]
+    },
+    "targetPage": "special character initial",
+    "name": "9e9d56ec-d240-48e9-90b0-7658c45716b8"
+  }, {
+    "intent": "prebuilt_components_name_collection_name_spelling_separator",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.name_separator",
+        "value": "$intent.params.spelling_separator.original"
+      }, {
+        "parameter": "$flow.verify_person_name",
+        "value": "$sys.func.CONCATENATE($flow.verify_person_name, $flow.verify_name_part)"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$session.params.spelling_separator"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      }, {
+        "parameter": "$flow.verify_name_part",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm name separator",
+    "name": "32219e5c-28cd-45ee-827a-60ac17c5eb03"
+  }, {
+    "intent": "prebuilt_components_confirmation_done",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": "$sys.func.CONCATENATE($flow.verify_person_name, $flow.verify_name_part)"
+      }, {
+        "parameter": "$flow.verify_name_part",
+        "value": null
+      }, {
+        "parameter": "$flow.is_select_initial_path",
+        "value": false
+      }, {
+        "parameter": "$flow.spelling_person_name",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": null
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "7c67eb03-e82e-425f-92f8-5de4e3ec3e10"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": "$sys.func.CONCATENATE($flow.verify_person_name, $flow.verify_name_part)"
+      }, {
+        "parameter": "$flow.verify_name_part",
+        "value": null
+      }, {
+        "parameter": "$flow.is_select_initial_path",
+        "value": false
+      }, {
+        "parameter": "$flow.spelling_person_name",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_next_part_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "13b57394-72c5-47e5-8cae-1194a750e235"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "85759529-981a-4d29-b895-b7418382e9ce"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_next_part_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "b4930d92-ee5a-4dcd-bdad-c85d86b789e5"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "29431193-192f-41d4-b961-16349da36c43"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "f7255c0a-8e35-4457-998b-58fb16ccd2fa"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren't able to hear you.\u003cprosody rate=\"slow\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.verify_name_part \u003c/say-as\u003e\u003c/prosody\u003e. Tell us if that's wrong, if that's the end, or, what's next: a space, apostrophe, or hyphen.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7b15c52c-226f-4263-8034-fcc92720462f"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "2d4d99a8-ee35-44d4-98fc-7bd4fd7936c9"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "412a3525-f1de-46e7-84af-a0548fd9054a"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that.\u003cprosody rate=\"slow\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e $flow.verify_name_part \u003c/say-as\u003e\u003c/prosody\u003e. Tell us if that's wrong, if that's the end, or, what's next: a space, apostrophe, or hyphen.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "707284a0-b435-4e9b-94e6-8557cc3b4081"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eHmm, we still weren't able to get that.\u003cprosody rate=\"slow\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.verify_name_part \u003c/say-as\u003e\u003c/prosody\u003e. Tell us if that's wrong, if that's the end, or, what's next: a space, apostrophe, or hyphen.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6fcce8d3-63b7-4bd8-bdbb-a909091a868a"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "d2d4d1aa-4da2-42b8-a78a-6b2ca630cd49"
+  } ]
+}

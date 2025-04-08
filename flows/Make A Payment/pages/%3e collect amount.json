@@ -1,0 +1,144 @@
+{
+  "name": "a44b2d3e-2c9a-42dc-863e-6f9db54fe090",
+  "displayName": "\u003e collect amount",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.other_amount",
+      "required": true,
+      "entityType": "@sys.number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we were not able to hear you. Can you please help us with the amount that you want to pay? For example, if you want to pay \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say 100.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ef145c23-c30f-430b-a3c6-abbf27024787"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eHmm, we still cannot hear you. Can you please help us with the amount that you want to pay? For example, if you want to pay \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say 100.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "bfc5e6f6-8e15-4d4d-8468-0cf2227b1db2"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "537fc1fc-09dc-4170-982c-00b65b1ef80a"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we didn’t get that. Can you please help us with the amount that you want to pay? For example, if you want to pay \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say 100.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "9fab1aaf-a683-4407-96a9-b6b9a7fe49bb"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, we're still not getting that. Can you please help us with the amount that you want to pay? For example, if you want to pay \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say 100.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "559b5cb7-d349-4c68-a701-5a414949fefc"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "e4a468c3-cf71-435b-8d46-97d1d302988e"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "0709ee9f-22ca-4ead-a590-403836fe4865"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "cb88c7fe-7f59-469c-ab47-e4f3ae9849a3"
+  }, {
+    "condition": "$flow.other_amount \u003e 0 AND $page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_amount",
+        "value": "$sys.func.ROUND($flow.other_amount, 2)"
+      }, {
+        "parameter": "$flow.other_amount",
+        "value": "$sys.func.ROUND($flow.other_amount, 2)"
+      } ]
+    },
+    "targetPage": "route check payment mode",
+    "name": "066114e8-6cfa-4a33-9acc-f6222571f92b"
+  }, {
+    "condition": "$flow.other_amount \u003c= 0 AND $flow.retry_other_amount \u003c $flow.max_retry_other_amount AND $page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003ePlease confirm the amount you want to pay. For example, if you want to pay \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say 100.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_other_amount",
+        "value": "$sys.func.ADD($flow.retry_other_amount,1)"
+      }, {
+        "parameter": "$flow.other_amount",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect amount",
+    "name": "6195e1c5-730c-4812-a1a9-b576b17ec7b3"
+  }, {
+    "condition": "$flow.retry_other_amount = $flow.max_retry_other_amount AND $page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "a00c3c82-adec-4d43-9b08-b116af4c6668"
+  } ]
+}

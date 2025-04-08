@@ -1,0 +1,35 @@
+{
+  "name": "5ff966f0-5a3d-48a4-bf4c-b6a5e3143490",
+  "displayName": "verify additional question",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.method_of_payment = \"\" OR $flow.method_of_payment = null OR $flow.last_payment_mode = \"\" OR $flow.last_payment_mode = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "6048dd87-c1cc-4d85-b5b5-af1d27031722"
+  }, {
+    "condition": "$flow.method_of_payment = $flow.last_payment_mode",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "auth_level",
+        "value": 1
+      } ]
+    },
+    "targetPage": "check auth level 2",
+    "name": "0fb34bc3-fb25-45e5-8095-3335d04272b5"
+  }, {
+    "condition": "$flow.method_of_payment != $flow.last_payment_mode",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "b662194f-cd72-4a23-a0bd-7cc8661f0b99"
+  } ]
+}

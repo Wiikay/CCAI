@@ -1,0 +1,244 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "take ",
+      "auto": true
+    }, {
+      "text": "month",
+      "auto": true
+    }, {
+      "text": " as ",
+      "auto": true
+    }, {
+      "text": "december",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the ",
+      "auto": true
+    }, {
+      "text": "month",
+      "auto": true
+    }, {
+      "text": " i was born in is ",
+      "auto": true
+    }, {
+      "text": "may",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "november",
+      "parameterId": "month",
+      "auto": true
+    }, {
+      "text": " marks the ",
+      "auto": true
+    }, {
+      "text": "month",
+      "auto": true
+    }, {
+      "text": " of my birth",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my birth ",
+      "auto": true
+    }, {
+      "text": "month",
+      "auto": true
+    }, {
+      "text": " number is ",
+      "auto": true
+    }, {
+      "text": "3",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i celebrate my birthday in ",
+      "auto": true
+    }, {
+      "text": "september",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i came into this world in ",
+      "auto": true
+    }, {
+      "text": "july",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my birthday ",
+      "auto": true
+    }, {
+      "text": "month",
+      "auto": true
+    }, {
+      "text": " is ",
+      "auto": true
+    }, {
+      "text": "august",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "month",
+      "auto": true
+    }, {
+      "text": " of birth is ",
+      "auto": true
+    }, {
+      "text": "april",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my birth month is "
+    }, {
+      "text": "june",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12th",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my birthday is in ",
+      "auto": true
+    }, {
+      "text": "june",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "month is ",
+      "auto": true
+    }, {
+      "text": "April",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "November",
+      "parameterId": "month",
+      "auto": true
+    }, {
+      "text": " is the month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the month I was born is ",
+      "auto": true
+    }, {
+      "text": "August",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i was born in the ",
+      "auto": true
+    }, {
+      "text": "month",
+      "auto": true
+    }, {
+      "text": " of ",
+      "auto": true
+    }, {
+      "text": "september",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is ",
+      "auto": true
+    }, {
+      "text": "April",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i was born in "
+    }, {
+      "text": "july",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "feb",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "08",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "january",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

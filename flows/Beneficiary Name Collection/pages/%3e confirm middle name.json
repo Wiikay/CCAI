@@ -1,0 +1,174 @@
+{
+  "name": "971360c4-e4dc-4aeb-9d48-e8435b40226f",
+  "displayName": "\u003e confirm middle name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003e$flow.user_provided_middle_name_ssml. Did we spell the middle name correctly?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.user_provided_middle_name_ssml",
+      "value": "\u003cprosody rate='slow'\u003e\u003csay-as interpret-as='verbatim'\u003e$sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($flow.user_provided_middle_name, \"([ '-])\", \"\u003c/say-as\u003e\u003csub alias='$1'\u003e$1\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"), \"' '\u003e \u003c\", \"'space'\u003e \u003c\"), \"'''\u003e'\u003c\", \"'apostrophe'\u003e'\u003c\"), \"'-'\u003e-\u003c\", \"'hyphen'\u003e-\u003c\")\u003c/say-as\u003e\u003c/prosody\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "fecea42c-3e81-4413-a283-2a072a30beab"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_middle_name_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "ca68fda3-29c4-4360-9f6e-04019bedefa8"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_middle_name_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.incorrect_middle_name_counter",
+        "value": "$sys.func.ADD($flow.incorrect_middle_name_counter,1)"
+      }, {
+        "parameter": "$flow.user_provided_middle_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect spelling middle name",
+    "name": "748e94dd-a738-4c66-84d5-1c265f34322c"
+  }, {
+    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "condition": "$flow.incorrect_middle_name_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_middle_name",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_middle_name_counter",
+        "value": "$sys.func.ADD($flow.incorrect_middle_name_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect spelling middle name",
+    "name": "532b2715-af35-48d5-a989-91d11185cba9"
+  }, {
+    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "condition": "$flow.incorrect_middle_name_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d0420066-9163-4123-b34a-8bca823decd2"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "4dc449c9-ca97-45af-be55-f1b685170fa2"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003e$flow.user_provided_middle_name_ssml. Did I spell your middle name correctly?\u003c/speak\u003e"
+      } ]
+    },
+    "name": "1c4bcf3e-a323-435c-b8b5-51f71ee6226f"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "ae545e76-d3a4-4039-8fe1-02158f81d60e"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that. $flow.user_provided_middle_name_ssml. Did we spell the middle name correctly?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4bbc4c55-273f-4661-9c0e-89340655f899"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eHmm, we still weren't able to get that. $flow.user_provided_middle_name_ssml. Did we spell the middle name correctly?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ec2d57a4-728d-4df6-8e9d-21d25c81f0ac"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren't able to hear you. $flow.user_provided_middle_name_ssml. Did we spell the middle name correctly?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e76f7838-144d-4e96-a5d3-93a03c0c7ac3"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ca636e86-4dc3-40ff-bbe9-977cc2ba2753"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a0b0e231-7608-43fb-aa7d-e35350a8b132"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "2afac5f3-0f87-43b0-bd9d-03cb76e45c88"
+  } ]
+}

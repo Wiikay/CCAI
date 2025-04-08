@@ -1,0 +1,17 @@
+{
+  "name": "e5140cd3-f78a-4267-8dba-5867dac3fe50",
+  "displayName": "prebuilt_components_make_a_payment:process_mobile_payment",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"payee_number\": \"$flow.payee_number\",\n  \"payment_type\": \"$flow.payment_type\",\n  \"payment_amount\": \"$flow.payment_amount\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"processMobilePayment\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.payment_link_generated",
+      "value": "payment_link_generated"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

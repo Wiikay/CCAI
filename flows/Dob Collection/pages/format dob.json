@@ -1,0 +1,39 @@
+{
+  "name": "1fcbd13d-919b-441d-b75e-4d7829c179b5",
+  "displayName": "format dob",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.conv_month",
+      "value": "$sys.func.GET_FIELD($flow.month_match, $sys.func.TO_TEXT($flow.month))"
+    }, {
+      "parameter": "$flow.invalid_input",
+      "value": 0
+    }, {
+      "parameter": "$flow.intent_triggered",
+      "value": false
+    }, {
+      "parameter": "$flow.month",
+      "value": "$sys.func.GET_FIELD($flow.month_match, $sys.func.TO_TEXT($flow.month))"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, your birthdate is $flow.conv_month $flow.day, \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eOkay, your birthdate is $flow.conv_month $flow.day, \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e"
+      } ]
+    },
+    "targetPage": "\u003e confirmation dob",
+    "name": "5e2dcbf8-9af6-4476-b893-c2e24b3cedf9"
+  } ]
+}

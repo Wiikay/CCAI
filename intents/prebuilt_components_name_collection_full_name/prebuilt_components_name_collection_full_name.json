@@ -1,0 +1,16 @@
+{
+  "name": "8c5023dd-ea12-4681-a914-b1965879cea9",
+  "displayName": "prebuilt_components_name_collection_full_name",
+  "parameters": [ {
+    "id": "user_provided_full_name",
+    "entityType": "@prebuilt_components_name_collection_full_name"
+  }, {
+    "id": "first-name",
+    "entityType": "@sys.person"
+  }, {
+    "id": "last-name",
+    "entityType": "@sys.person"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}

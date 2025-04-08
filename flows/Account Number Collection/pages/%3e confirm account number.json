@@ -1,0 +1,125 @@
+{
+  "name": "78d7fdd4-76b6-4710-880a-2e460c8d888e",
+  "displayName": "\u003e confirm account number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "effdd232-6d0b-42d4-899f-c651d8f89231"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_no_counter \u003c $flow.max_retry_no_counter",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_no_counter",
+        "value": "$sys.func.ADD($flow.retry_no_counter,1)"
+      }, {
+        "parameter": "last_four_digit_of_account_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect last 4 digit of account number",
+    "name": "38d5c09a-e9b1-4964-a2c0-b27244c18e16"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_no_counter = $flow.max_retry_no_counter",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "e6035cd9-c995-434b-be7d-8664521cd9db"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "01627a25-2663-4173-8ce5-3deba1a21c54"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "efff52fd-576b-4648-887c-ebe739331759"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we were not able to hear you. Are you looking for an account number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1378c3c3-97b9-46e5-8a37-239194ef959b"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eHmm, we still cannot hear you. Are you looking for an account number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "04e13c3c-80d8-4cfb-8e5c-81dd29731bc3"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "6ab4fc8e-1fa6-42ea-a51c-8afb7a510c88"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn’t get that. Are you looking for an account number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "edacc85e-2de6-44e3-a581-4da97a953c27"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we're still not getting that. Are you looking for an account number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "357968e3-93f7-4608-90a1-de3ebb1ba545"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "00588ad0-84e3-438c-aa6d-a99906950dd6"
+  } ]
+}

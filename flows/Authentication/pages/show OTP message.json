@@ -1,0 +1,47 @@
+{
+  "name": "69ca778d-d5fb-4cc7-a062-cd84cd55adf8",
+  "displayName": "show OTP message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.channel = \"mobile\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eWe have sent a code to your registered phone number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_4_digits\u003c/say-as\u003e. This may take a few seconds. Can you please confirm the code?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "last_4_digits",
+        "value": "$sys.func.MID($session.params.phone_number,$sys.func.MINUS($sys.func.LEN($session.params.phone_number),3),4)"
+      } ]
+    },
+    "targetPage": "\u003e collect OTP",
+    "name": "c69c7fd8-9abc-4242-bb63-caaa14c2bd36"
+  }, {
+    "condition": "$flow.channel = \"email\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We have sent a code to your registered email $session.params.email. This may take a few seconds. Can you please confirm the code?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect OTP",
+    "name": "6f5cd12c-c525-4208-9392-ae12dad50844"
+  }, {
+    "condition": "$flow.channel = null OR $flow.channel = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "baf1ca26-76f6-4c77-9cf8-6bbeba06a055"
+  } ],
+  "description": "3rd Route created for edge cases if any case $flow.channel = null or $flow.channel = \"\"  even though we are collecting the $flow.channel at the page '\n\u003e collect email or mobile OTP'"
+}

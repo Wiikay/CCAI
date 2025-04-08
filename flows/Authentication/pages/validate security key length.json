@@ -1,0 +1,31 @@
+{
+  "name": "b9e96d80-8a33-45ac-9e71-75d79ff85b61",
+  "displayName": "validate security key length",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.LEN($flow.security_key) = $flow.security_key_length",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e verify security key API",
+    "name": "5b8daab9-f409-4cea-8008-e79eddd295da"
+  }, {
+    "condition": "$sys.func.LEN($flow.security_key) != $flow.security_key_length",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.key_retry_counter",
+        "value": "$sys.func.ADD($flow.key_retry_counter,1)"
+      }, {
+        "parameter": "$flow.security_key",
+        "value": null
+      } ]
+    },
+    "targetPage": "retry security key",
+    "name": "19b3e621-fb42-4003-ba05-c545987cd26a"
+  } ]
+}

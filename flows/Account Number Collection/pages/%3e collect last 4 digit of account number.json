@@ -1,0 +1,120 @@
+{
+  "name": "e3325216-627c-48bd-adc2-7f1880ec9cb9",
+  "displayName": "\u003e collect last 4 digit of account number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$flow.retry_no_counter \u003c $flow.max_retry_no_counter OR $flow.invalid_4digit_code_counter \u003c $flow.max_retry_no_counter",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "Can you please help us with the last 4 digits of the account you are referring to?" ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_account_number_collection_four_digit_account_number",
+    "condition": "$session.params.last_four_digit_of_account_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "last_four_digit_of_account_number",
+        "value": "$sys.func.JOIN(\"\", $session.params.last_four_digit_of_account_number)"
+      } ]
+    },
+    "targetPage": "validate account number",
+    "name": "a31f3ec0-2eea-4adb-bd13-d1ca140d42ed"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "3ff2f1cd-a781-4c03-a0b9-cc44fb9f7791"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5d5a7f26-8c12-4931-8f96-29f08e93c955"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Can you please help us with the last 4 digits of the account you are referring to?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1a1b0e1d-ff4c-4832-b504-0887b47c3e9a"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Can you please help us with the last 4 digits of the account you are referring to?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4a2670ab-89fb-4797-ad60-58c999ffc49f"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Can you please help us with the last 4 digits of the account you are referring to?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "827384de-0791-43a3-ac40-f95d3bcf6a13"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Can you help us by entering the last 4 digits of your account number?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9285ebe4-d42a-4a63-a778-b0d43b320a64"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "9da4e94b-46d9-4287-8ca8-8ad454751d81"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "543c64fb-3730-4a59-a93c-937ea22d8b31"
+  } ],
+  "description": "Conditional Response defined"
+}

@@ -1,0 +1,116 @@
+{
+  "name": "838f65b9-5d4c-4845-9b58-5dc9cc156ef9",
+  "displayName": "\u003e confirm beneficiary account",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_type",
+        "value": "beneficiary_pay"
+      }, {
+        "parameter": "$flow.payee_number",
+        "value": "$flow.beneficiary_account_number"
+      } ]
+    },
+    "targetPage": "\u003e collect beneficiary name",
+    "name": "4bb329f0-a519-4d7b-9c07-981e27196067"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "e6655874-98a1-46af-ab54-eac26c40fc47"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "d840dbed-7ee4-4a9f-b615-1da014f0b950"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "69d4753a-c357-4af2-8d85-c72afbc733f2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Would you like to make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9c7232c5-4a25-4dd1-9774-2d5f5e291b9d"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Would you like to make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d66f8b86-75ff-418e-a8f0-a3b1101301b3"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "1303b79c-f9fe-4d77-ba5c-ef1473fe9731"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Would you like to make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fc8a52c7-bb80-49a6-8436-11afd9b8a4fd"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Would you like to make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e04b3bef-e13f-48bb-90bc-233b19ca65c0"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "174b3514-10a1-4c3a-965d-04759c02c6f4"
+  } ]
+}

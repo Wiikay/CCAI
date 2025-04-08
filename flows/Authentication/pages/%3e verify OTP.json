@@ -1,0 +1,40 @@
+{
+  "name": "7674da17-13ed-4838-b596-4b22628027a4",
+  "displayName": "\u003e verify OTP",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.collect_otp = $flow.generated_otp",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.otp_verified_status",
+        "value": "true"
+      }, {
+        "parameter": "$flow.collect_otp",
+        "value": null
+      } ]
+    },
+    "targetPage": "check auth level 2",
+    "name": "a073b0a4-c81f-49b5-a872-1210934cbdfb"
+  }, {
+    "condition": "$flow.collect_otp != $flow.generated_otp",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_otp",
+        "value": null
+      }, {
+        "parameter": "$flow.otp_retry_count",
+        "value": "$sys.func.ADD($flow.otp_retry_count,1)"
+      }, {
+        "parameter": "$flow.otp_verified_status",
+        "value": "false"
+      } ]
+    },
+    "targetPage": "retry OTP",
+    "name": "ce0cc802-6ecd-4f39-b6ef-f5939c9558cd"
+  } ]
+}

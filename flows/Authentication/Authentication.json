@@ -1,0 +1,94 @@
+{
+  "name": "b92fcd68-06db-4e56-a231-ebddd8832ed7",
+  "displayName": "Authentication",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.otp_retry_count",
+        "value": 0
+      }, {
+        "parameter": "$flow.retry_otp_not_received",
+        "value": 0
+      }, {
+        "parameter": "$flow.key_retry_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.secure_ans_count",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_security_ans_count",
+        "value": 3
+      }, {
+        "parameter": "$flow.max_retry_security_key",
+        "value": 3
+      }, {
+        "parameter": "$flow.max_retry_otp_not_received",
+        "value": 1
+      }, {
+        "parameter": "$flow.max_retry_otp_count",
+        "value": 3
+      }, {
+        "parameter": "$flow.security_ans_denial_count",
+        "value": 1
+      }, {
+        "parameter": "$flow.security_ans_mid_count",
+        "value": 2
+      }, {
+        "parameter": "$flow.invalid_card_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_card_counter",
+        "value": 2
+      }, {
+        "parameter": "$flow.security_key_length",
+        "value": 6
+      }, {
+        "parameter": "$flow.otp_length",
+        "value": 6
+      }, {
+        "parameter": "$flow.retry_telephone_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_telephone_counter",
+        "value": 1
+      } ]
+    },
+    "targetPage": "check auth level",
+    "name": "3fe1bd16-286e-4775-8a72-5422e5e272a1"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fb736cc6-ea2f-45be-a4c3-0c57203f21f9"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7b0d50cc-5046-496d-9a5b-4706d5706f39"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

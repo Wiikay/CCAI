@@ -1,0 +1,70 @@
+{
+  "name": "9481b5b3-a16b-4591-9118-d0fdb216b6b4",
+  "displayName": "select mobile payment",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Okay, we are sending the payment link to your registered mobile number. This action can take a few seconds." ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "prebuilt_components_make_a_payment:process_mobile_payment",
+    "tag": "processMobilePayment"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.payment_link_generated = \"true\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Please confirm by saying yes if you have received it." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e confirm mobile payment",
+    "name": "df16c2f6-5598-45fd-ac7d-7af93c8bc7f4"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "595a76c9-90d0-4df5-a71b-b67644ae3cdc"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "4797ee4e-2780-4fdf-a6a7-fa245f39f7be"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "c7f4c11b-09eb-4954-bc3a-8d6d7cc2452e"
+  } ]
+}

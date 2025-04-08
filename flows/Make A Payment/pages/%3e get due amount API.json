@@ -1,0 +1,74 @@
+{
+  "name": "166675a9-b466-4742-b554-b3dbfe7da193",
+  "displayName": "\u003e get due amount API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_make_a_payment:get_due_amount",
+    "tag": "getDueAmount"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.total_amount \u003c= 0 OR $flow.total_amount = null OR $flow.total_amount = \"\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "You don't have any dues to be paid. Do you still wish to pay any other amount in advance?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.amount_type",
+        "value": "other_amount"
+      } ]
+    },
+    "targetPage": "\u003e confirm amount type",
+    "name": "a02950bc-d9b3-4b99-8ce8-2e6d48e0d879"
+  }, {
+    "condition": "$flow.total_amount \u003e 0",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eYour total due amount is \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.total_amount\u003c/say-as\u003e and your minimum payment is \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.minimum_amount\u003c/say-as\u003e. Do you wish to pay the total amount, the minimum amount, or any other amount?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect amount type",
+    "name": "78eabac5-d372-4f77-9004-b8e01c1949f5"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "0b956ce9-89e3-40ea-9a6b-ad5d9cbfeb71"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "ff6fdc42-4753-4200-b354-433acb918c6a"
+  } ],
+  "description": "Route specific fulfillment defined."
+}

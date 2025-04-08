@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "power_of_attorney",
+    "synonyms": [ "approval", "autherisation", "authority", "authorization", "delegation", "license", "mandate", "permission", "permit", "power", "power of attorney", "sanction", "warrant" ],
+    "languageCode": "en"
+  }, {
+    "value": "bank_account",
+    "synonyms": [ "bank account", "bank customer", "customer", "exist", "existing customer" ],
+    "languageCode": "en"
+  } ]
+}

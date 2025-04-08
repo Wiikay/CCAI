@@ -1,0 +1,71 @@
+{
+  "entities": [ {
+    "value": "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_day:day of @prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_day:day of @prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_month:month",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_month:month" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.date",
+    "synonyms": [ "@sys.date" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.date-period",
+    "synonyms": [ "@sys.date-period" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_day:day",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_day:day" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_year_short:year_short",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_year_short:year_short" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_year_short:year_short",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_day:day @prebuilt_components_dob_collection_dob_month:month @prebuilt_components_dob_collection_year_short:year_short" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_dob_day:day/@prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_dob_day:day/@prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_month:month-@prebuilt_components_dob_collection_dob_day:day-@prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_month:month-@prebuilt_components_dob_collection_dob_day:day-@prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_day:day/@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_day:day/@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_day:day-@prebuilt_components_dob_collection_dob_month:month-@prebuilt_components_dob_collection_dob_year:year",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_day:day-@prebuilt_components_dob_collection_dob_month:month-@prebuilt_components_dob_collection_dob_year:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_year:year/@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_dob_day:day",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_year:year/@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_dob_day:day" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_year:year-@prebuilt_components_dob_collection_dob_month:month-@prebuilt_components_dob_collection_dob_day:day",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_year:year-@prebuilt_components_dob_collection_dob_month:month-@prebuilt_components_dob_collection_dob_day:day" ],
+    "languageCode": "en"
+  }, {
+    "value": "@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_year_short:year_short",
+    "synonyms": [ "@prebuilt_components_dob_collection_dob_month:month/@prebuilt_components_dob_collection_year_short:year_short" ],
+    "languageCode": "en"
+  } ]
+}

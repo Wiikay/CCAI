@@ -1,0 +1,248 @@
+{
+  "name": "536666ef-673d-4cf0-b674-08dcbf8db4c8",
+  "displayName": "\u003e collect telephone number",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.telephone_number",
+      "required": true,
+      "entityType": "@sys.number-sequence",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. Can you please say or enter the telephone number again?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "5baeeda4-52f0-4ad7-a087-6f6fd647479b"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still weren’t able to get that. Please make sure you're saying the telephone number. If we are having trouble hearing you, you can also use the keypad to enter the telephone number." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "a9afe3b2-6e8b-4413-8b3e-542dc46ad4d7"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we weren’t able to hear you. Can you please say or enter the telephone number again?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "7870b50a-d1a3-4eb7-bfd1-780915298642"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area, or use the keypad to enter the telephone number." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ed6e3da8-d72f-4096-8ee7-d529d65e8bc9"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "9d248fa7-d570-4a73-8150-11e2f9ec2701"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "591d25b6-62f3-4a8b-9289-6a3941f81367"
+        } ]
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "maxDigits": 10,
+          "useSystemEntityRule": false,
+          "endpointingTimeoutDuration": {
+            "seconds": 5
+          }
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_telephone_number_collection_incorrect_country_code",
+    "condition": "$flow.invalid_cc_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Ok, what is your country name or code?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.country_code",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_cc_counter",
+        "value": "$sys.func.ADD($flow.invalid_cc_counter, 1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "What is your country name or code?"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect country code",
+    "name": "bea32878-ee8e-40c7-bc07-950d8dd916a5"
+  }, {
+    "intent": "prebuilt_components_telephone_number_collection_incorrect_country_code",
+    "condition": "$flow.invalid_cc_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "875d51bf-3190-435c-957b-212905f96e44"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.invalid_cc_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Ok, what is your country name or code?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.country_code",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_cc_counter",
+        "value": "$sys.func.ADD($flow.invalid_cc_counter, 1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "What is your country name or code?"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect country code",
+    "name": "c4379f0c-eeed-44ec-83bc-02f8b3bc4abe"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.invalid_cc_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "b714632c-6f4c-4199-8162-7760e694e095"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "9f4bc3b0-ff0c-460a-83fd-9d3a9db2cb44"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "9ff17fc1-d3c5-4410-9188-02bb8562ef90"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Please say your telephone number." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please say your telephone number."
+      } ]
+    },
+    "name": "c707c3c3-fbf1-469f-8cf4-71a936ad7559"
+  }, {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.complete_phonenumber",
+        "value": "$sys.func.CONCATENATE(\"+\", $flow.country_code, $flow.telephone_number)"
+      }, {
+        "parameter": "$flow.is_valid",
+        "value": "$sys.func.IS_PHONE_NUMBER($sys.func.CONCATENATE(\"+\", $flow.country_code, $flow.telephone_number))"
+      }, {
+        "parameter": "$flow.to_phone_number",
+        "value": "$sys.func.TO_PHONE_NUMBER($sys.func.CONCATENATE(\"+\", $flow.country_code, $flow.telephone_number))"
+      } ]
+    },
+    "targetPage": "telephone number validation",
+    "name": "5b796f88-2bca-4f38-bbfa-1d1be80450c5"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "bbcf7bf9-48fa-46ee-bfd8-8533ed61277a"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "cfb90fe8-0d72-43f7-ad79-ebe673a502a6"
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "44f0edec-d48b-43a3-8c8a-4796c8bfb8c7",
+  "displayName": "end failure",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$flow.failure_message" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "22ad2d72-dc71-43f9-a2d3-97df32a065b5"
+  } ]
+}

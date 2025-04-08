@@ -1,0 +1,122 @@
+{
+  "name": "1b2a8862-ec76-48c8-9ca8-faa3ba852017",
+  "displayName": "\u003e collect email or mobile OTP",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.channel",
+      "required": true,
+      "entityType": "@prebuilt_components_channel_email_mobile",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Do you prefer to receive the code by phone or by email?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "1db7577e-5ca2-4c8d-8b7c-7b32157a7361"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Do you prefer to receive the code by phone or by email?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "9c27b556-6950-443d-9c2e-8b38b35d44f0"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn’t get that. Do you prefer to receive the code by phone or by email?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ec839eb9-07a3-40c5-a9f8-4db0b439c974"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we're still not getting that. Do you prefer to receive the code by phone or by email?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "edbc76c2-be0b-403c-913f-35397b6421d9"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "3f850f20-128c-4404-bb9d-073b3f06c1a5"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "63d55936-4d1f-4081-9f58-0322b031cb41"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "8d727ef8-b492-4661-87a6-acef614a370d"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "807d382d-e3f6-48b3-bbd2-ead78753eef7"
+  }, {
+    "intent": "prebuilt_components_authentication_denial",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "320baa69-f337-41a8-b411-a9890045cad8"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "verify channel route",
+    "name": "5b498ba8-d171-4f98-b287-49df2bc8bf73"
+  } ]
+}

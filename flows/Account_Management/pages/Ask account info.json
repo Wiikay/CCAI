@@ -1,0 +1,67 @@
+{
+  "name": "7aee8764-5fc0-4712-b4c5-7a9abfcab6a4",
+  "displayName": "Ask account info",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "i can help you with account details  and check balance." ]
+      },
+      "languageCode": "en"
+    } ],
+    "advancedSettings": {
+      "playbackInterruptionSettings": {
+      
+      },
+      "dtmfSettings": {
+        "useSystemEntityRule": false
+      }
+    }
+  },
+  "transitionRoutes": [ {
+    "intent": "account.check_balance Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Your current balance is $session.params.balance Is there anything else you would like to know about your account?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "balance",
+        "value": "$sys.func.RAND()"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "name": "57fc18c4-ea6d-4e30-8c98-a7826bc35002"
+  }, {
+    "intent": "my profile",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "your asccount information is \nName : user1\nprimary email : asd@gmail.com\nbalance : 65$" ]
+        },
+        "languageCode": "en"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        },
+        "dtmfSettings": {
+          "useSystemEntityRule": false
+        }
+      }
+    },
+    "targetPage": "End Flow",
+    "name": "a3f1be03-743c-42bd-ac2b-9870754add47"
+  } ]
+}

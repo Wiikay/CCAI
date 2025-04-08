@@ -1,0 +1,316 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "would like ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " receive via ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "send via "
+    }, {
+      "text": "mobile"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "share it via ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please share via ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i would like ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " receive via ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Please share ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "mobile",
+      "auto": true
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "could you please send it ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "could you please send it to my "
+    }, {
+      "text": "mobile"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "could you please share it to my "
+    }, {
+      "text": "mobile"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "could you please share it ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can you please share it ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can you share it to my "
+    }, {
+      "text": "mobile"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please share ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "kindly share ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "share it to my "
+    }, {
+      "text": "mobile"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "need in my ",
+      "auto": true
+    }, {
+      "text": "mobile",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "want in my "
+    }, {
+      "text": "mobile"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "share it ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " share",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "mobile"
+    }, {
+      "text": " share"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please do share to my "
+    }, {
+      "text": "mobile"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please do share ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "share ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "mobile",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "send it ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " my ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "phone",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

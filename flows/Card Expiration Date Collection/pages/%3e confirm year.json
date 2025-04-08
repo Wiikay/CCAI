@@ -1,0 +1,218 @@
+{
+  "name": "5cec6db0-98ea-4d06-b020-b907247ad402",
+  "displayName": "\u003e confirm year",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eWe have received the $session.params.card_type card's expiration year as \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback",
+      "value": true
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003eWe have received the $session.params.card_type card's expiration year as \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$flow.playback = false",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "d5292755-a3d1-427f-9b08-e71659134e33"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eSure. As of now, we have collected the $session.params.card_type card's expiration date as \u003csay-as interpret-as=\"date\" format=\"mmyyyy\"\u003e$flow.expiration_month_spoken  $flow.card_expiration_year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": "$sys.func.ADD($flow.playback_counter,1)"
+      } ]
+    },
+    "targetPage": "end playback",
+    "name": "43385f69-be99-46ab-9ebf-1de311d788fc"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.playback = false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right. Please let us know if you want to change the entire date or if you would like to change the month or year instead?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect date separately",
+    "name": "77ea39e5-cea3-4818-8f65-1ebf72ae6121"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "validate date",
+    "name": "c73ca6c0-e44a-424d-b8cf-24eb9b458f2a"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_year_counter",
+        "value": "$sys.func.ADD($flow.invalid_year_counter, 1)"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.invalid_year_counter \u003c 2",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Lets try this one more time." ]
+              },
+              "languageCode": "en"
+            }
+          }, {
+            "message": {
+              "text": {
+                "text": [ "Please say or enter your $session.params.card_type card's expiration year again." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "0e6e6561-b019-4b51-bd61-b687302b3d5f"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "4600af3c-0555-4da1-ac06-c095f0c6e0e5"
+  }, {
+    "intent": "prebuilt_components_card_expiration_date_collection_change_month",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Please say or enter your $session.params.card_type card's expiration month." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect only month",
+    "name": "524bff71-8062-43b7-9549-b88a48505c89"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eWe have received the $session.params.card_type card's expiration year as \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e"
+      } ]
+    },
+    "name": "8c121ee5-e708-46f6-b498-9495ab8756df"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "b61f293d-aabb-4bb0-b779-2d1e6894ac71"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren't able to hear you. You mentioned the $session.params.card_type card's expiration year is \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f3f0edb6-a8ed-47a6-8e54-742ddce42ce4"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "39e878a9-95e5-488f-b982-a0cc3da31643"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that. You mentioned the $session.params.card_type card's expiration year is \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a7ee7ba2-584b-49aa-bce3-e1267f0eacbb"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eHmm, we still weren't able to get that. You mentioned the $session.params.card_type card's expiration year is \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "66e24694-8d36-458c-8e4d-869e617430f7"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "c2ae5bd0-f7ba-46dd-8786-0b13996518d7"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "aa8f4fa0-639b-480a-8e0f-392fc3e99014"
+  } ]
+}

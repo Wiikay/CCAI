@@ -1,0 +1,145 @@
+{
+  "name": "b6ffed8b-3b0f-43e9-a9a8-e7dd098962bb",
+  "displayName": "check power of attorney",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Are you a customer of our bank, or do you have power of attorney? Please confirm by saying yes or no." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_authentication_power_of_attorney",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Okay, we need to collect your phone number to fetch your account details." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "identified_user",
+        "value": "false"
+      } ]
+    },
+    "targetPage": "check telephone number",
+    "name": "c5d054d4-ef53-4e72-a221-a0522e16d779"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Okay, we need to collect your phone number to fetch your account details." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "identified_user",
+        "value": "false"
+      } ]
+    },
+    "targetPage": "check telephone number",
+    "name": "92933e64-58f3-498b-9b8a-4ab3162b2209"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for calling. We are sorry this option is only available to our registered banking customers. Please visit one of our branches for easy enrolment." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "8f90faaf-e51d-4941-983d-acf266c110da"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "cd86e193-bd0a-4e6d-bc4a-e860177eb27a"
+  }, {
+    "intent": "prebuilt_components_authentication_denial",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "bfe4bfba-2d54-42a0-8c8c-78302a118ce0"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Please confirm whether you are an existing customer or have power of attorney by saying yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f06f65c0-198b-45ea-9ab7-e3ab39c948c0"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Please confirm whether you are an existing customer or have power of attorney by saying yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a4eeddae-5391-4fba-889b-437f58909baf"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "beae9b49-800e-4735-b339-4e4eaa3d060a"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please confirm whether you are an existing customer or have power of attorney by saying yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4435cd79-3f05-4867-9d52-931915f69871"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Please confirm whether you are an existing customer or have power of attorney by saying yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f04044d9-cc21-45f9-86f4-db241d931d55"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "d8b91d49-efb4-4e98-97eb-d28839b8c93d"
+  } ]
+}

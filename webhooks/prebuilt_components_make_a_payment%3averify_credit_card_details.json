@@ -1,0 +1,17 @@
+{
+  "name": "fcd5c12c-be52-4d40-891e-14d1e58edfa2",
+  "displayName": "prebuilt_components_make_a_payment:verify_credit_card_details",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"credit_card_number\": \"$flow.last_four_digit_of_credit_card_number\",\n  \"credit_card_cvv_code\": \"$flow.credit_card_cvv_code\",\n  \"credit_card_exp_date\": \"$flow.credit_card_exp_date\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"verifyCreditCardDetails\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.creditcard_verification_status",
+      "value": "creditcard_verification_status"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "name": "78d7fdd4-76b6-4710-880a-2e460c8d888e",
+  "displayName": "\u003e confirm cvv",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eYou mentioned the CVV is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e. Is that correct?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003eYou mentioned the CVV is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e.Is that correct?\u003c/speak\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_cvv_collection_recollect_cvv",
+    "condition": "$flow.retry_no_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.cvv_code",
+        "value": "$sys.func.JOIN(\"\", $session.params.cvv_code)"
+      }, {
+        "parameter": "cvv_code",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_no_counter",
+        "value": "$sys.func.ADD($flow.retry_no_counter,1)"
+      } ]
+    },
+    "targetPage": "validate cvv",
+    "name": "be3d9cb7-6537-4327-ad45-30038d82f71d"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_no_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get it right." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_no_counter",
+        "value": "$sys.func.ADD($flow.retry_no_counter,1)"
+      }, {
+        "parameter": "$flow.cvv_code",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_cvv_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please say or enter the 3 or 4 digit CVV present on your card."
+      } ]
+    },
+    "targetPage": "\u003e collect cvv",
+    "name": "38d5c09a-e9b1-4964-a2c0-b27244c18e16"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "effdd232-6d0b-42d4-899f-c651d8f89231"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_no_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we have tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "e6035cd9-c995-434b-be7d-8664521cd9db"
+  }, {
+    "intent": "prebuilt_components_cvv_collection_invalid_cvv",
+    "condition": "$flow.retry_no_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get it right." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.cvv_code",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_cvv_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.retry_no_counter",
+        "value": "$sys.func.ADD($flow.retry_no_counter,1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please say or enter the 3 or 4 digit CVV present on your card."
+      } ]
+    },
+    "targetPage": "\u003e collect cvv",
+    "name": "877035b4-233c-4108-ac8a-bcddec490e0e"
+  }, {
+    "intent": "prebuilt_components_cvv_collection_valid_cvv",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "2b1585ed-0916-4f63-a53e-24ee461047d1"
+  }, {
+    "intent": "prebuilt_components_cvv_collection_invalid_cvv",
+    "condition": "$flow.retry_no_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we have tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "ae4cdd70-a980-4e88-9256-dcb820285381"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "01627a25-2663-4173-8ce5-3deba1a21c54"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "1b44eab9-8cc0-4a64-a35f-a3387cbfc9b9"
+  }, {
+    "intent": "prebuilt_components_cvv_collection_recollect_cvv",
+    "condition": "$flow.retry_no_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "cvv_code",
+        "value": null
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we have tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "a3029cf5-a197-470d-88b2-ef4aaeccc6f6"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "f1e879c7-89c1-4e74-b59f-65199a580a25"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "f19cd5ec-463d-45ae-90f2-c431480e3418"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren't able to hear you. You mentioned the CVV is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e. Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1378c3c3-97b9-46e5-8a37-239194ef959b"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "04e13c3c-80d8-4cfb-8e5c-81dd29731bc3"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "6ab4fc8e-1fa6-42ea-a51c-8afb7a510c88"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that. You mentioned the CVV is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "edacc85e-2de6-44e3-a581-4da97a953c27"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eHmm, we still weren't able to get that. You mentioned the CVV is \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e. Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "357968e3-93f7-4608-90a1-de3ebb1ba545"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "00588ad0-84e3-438c-aa6d-a99906950dd6"
+  } ]
+}

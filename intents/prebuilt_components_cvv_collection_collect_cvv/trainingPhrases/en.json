@@ -1,0 +1,536 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "It's a CVV of ",
+      "auto": true
+    }, {
+      "text": "678",
+      "parameterId": "cvv_code"
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The CVV reads ",
+      "auto": true
+    }, {
+      "text": "1234",
+      "parameterId": "cvv_code"
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "cvv code is ",
+      "auto": true
+    }, {
+      "text": "3823",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Sure, that's "
+    }, {
+      "text": "123",
+      "parameterId": "cvv_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The ",
+      "auto": true
+    }, {
+      "text": "4"
+    }, {
+      "text": " digit cvv code is ",
+      "auto": true
+    }, {
+      "text": "1234",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 3 digit cvv code is "
+    }, {
+      "text": "123",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1.2344",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12.345",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1 2 4",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": "   "
+    }, {
+      "text": "4",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": "   "
+    }, {
+      "text": "5 6",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1245",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "cvv is ",
+      "auto": true
+    }, {
+      "text": "123",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": "##@",
+      "auto": true
+    }, {
+      "text": "2",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ". ",
+      "auto": true
+    }, {
+      "text": "3",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2334",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3566",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2983",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2345",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "37443",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12345",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1234",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "123",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3478",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "345",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "72,82",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": " this is my cvv",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "666",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": " here is the CVV code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "555.5",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": " is the cvv code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code is ",
+      "auto": true
+    }, {
+      "text": "12 3",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code is ",
+      "auto": true
+    }, {
+      "text": "12",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ". ",
+      "auto": true
+    }, {
+      "text": "45",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "92 93",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "cvv code is ",
+      "auto": true
+    }, {
+      "text": "2345",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "45 6",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "123",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12,34",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "334,6",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here is my CVV code: ",
+      "auto": true
+    }, {
+      "text": "12 3",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you confirm the CVV code on my card? It's ",
+      "auto": true
+    }, {
+      "text": "44 5 9",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Just to confirm, the CVV on my card is ",
+      "auto": true
+    }, {
+      "text": "872",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The ",
+      "auto": true
+    }, {
+      "text": "three",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": "-digit code on the back of my card is ",
+      "auto": true
+    }, {
+      "text": "469",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The ",
+      "auto": true
+    }, {
+      "text": "4",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": " digit code is ",
+      "auto": true
+    }, {
+      "text": "7777",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my CVV code is ",
+      "auto": true
+    }, {
+      "text": "86 2",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "cvv present on my credit card is ",
+      "auto": true
+    }, {
+      "text": "3002",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "cvv code is ",
+      "auto": true
+    }, {
+      "text": "290",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3291",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": " is the cvv code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": "@#",
+      "auto": true
+    }, {
+      "text": "11",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "7   4",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": "@@",
+      "auto": true
+    }, {
+      "text": "67",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": "%.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i think it's ",
+      "auto": true
+    }, {
+      "text": "1.3",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    }, {
+      "text": "44",
+      "parameterId": "cvv_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

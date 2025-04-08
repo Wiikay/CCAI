@@ -1,0 +1,56 @@
+{
+  "name": "37b3df36-da44-4d91-b7cf-b4fc24f45526",
+  "displayName": "end playback",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": "$sys.func.ADD($flow.playback_counter,1)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.playback_counter = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "5664d27d-a4d9-47ef-9f1b-134aff9d98d5"
+  }, {
+    "condition": "$flow.cvv_code = NULL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Currently we have not collected anything. Please start by saying the 3-4 digit cvv code." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "Currently we have not collected anything. Please start by saying the 3-4 digit cvv code."
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "edc0d4cc-307f-412c-96ed-6a64117ffe46"
+  }, {
+    "condition": "$flow.cvv_code != NULL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAs of right now, we have got the CVV as \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e.Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eAs of right now, we have got the CVV as \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e \u003csay-as interpret-as=\"verbatim\"\u003e$flow.cvv_code\u003c/say-as\u003e\u003c/prosody\u003e.Is that correct?\u003c/speak\u003e"
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "7b5f4073-f4d6-4ae3-9241-97cb208e57cf"
+  } ]
+}

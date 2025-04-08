@@ -1,0 +1,46 @@
+{
+  "name": "f3d430b6-b901-4212-becc-f068733aba8a",
+  "displayName": "\u003e collect credit card cvv",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.cvv_collection_cvv = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Cvv Collection",
+    "name": "5e09983a-af35-4b54-8952-1d7ce8bdb9f1"
+  }, {
+    "condition": "$session.params.cvv_collection_cvv != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.credit_card_cvv_code",
+        "value": "$session.params.cvv_collection_cvv"
+      }, {
+        "parameter": "cvv_collection_cvv",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e verify credit card API",
+    "name": "c946ee39-4ea4-4858-ac1a-bd80f69e2795"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "5c5beb49-b8d4-415e-92ca-2cd5eb30c9d9"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "5a886489-f7e3-41f3-9fbe-8aafc887b0a5"
+  } ]
+}

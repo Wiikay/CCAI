@@ -1,0 +1,10 @@
+{
+  "name": "3e295a05-4d9a-47eb-be0b-0bf0297360ae",
+  "displayName": "prebuilt_components_name_collection_next_part_name",
+  "parameters": [ {
+    "id": "verify_name_part",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 30
+}

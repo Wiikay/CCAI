@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "@prebuilt_components_card_expiration_month:month @sys.number-sequence:year",
+    "synonyms": [ "@prebuilt_components_card_expiration_month:month @sys.number-sequence:year" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.number-sequence:month_year",
+    "synonyms": [ "@sys.number-sequence:month_year" ],
+    "languageCode": "en"
+  } ]
+}

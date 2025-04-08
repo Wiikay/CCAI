@@ -1,0 +1,289 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "My code is "
+    }, {
+      "text": "123457",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "123 456",
+      "parameterId": "collect_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1234 56",
+      "parameterId": "collect_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It's of "
+    }, {
+      "text": "678212",
+      "parameterId": "collect_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The code reads "
+    }, {
+      "text": "123412",
+      "parameterId": "collect_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code is "
+    }, {
+      "text": "382334",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Sure, that's "
+    }, {
+      "text": "123412",
+      "parameterId": "collect_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 6 digit code is "
+    }, {
+      "text": "112234",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 6 digit number is "
+    }, {
+      "text": "123456",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5 1 2 4 5 6",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2   4   5 6 12",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "124545",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "number is "
+    }, {
+      "text": "123467",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "233412",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "356612",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "298312",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "234523",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "121234",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "374445",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "123456",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 5,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "347856",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "345856",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "667645",
+      "parameterId": "collect_code"
+    }, {
+      "text": " here is the code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "555 544",
+      "parameterId": "collect_code"
+    }, {
+      "text": ". is my code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code number is "
+    }, {
+      "text": "12 34 56",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code is "
+    }, {
+      "text": "12 45 45",
+      "parameterId": "collect_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "92 93 45",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "here is my code "
+    }, {
+      "text": "234523",
+      "parameterId": "collect_code"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "45 66 34",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "4123 56.",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the code is: "
+    }, {
+      "text": "12 34 4 5",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my code is "
+    }, {
+      "text": "100123",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The code  is "
+    }, {
+      "text": "469323",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 6 digit code is "
+    }, {
+      "text": "777777",
+      "parameterId": "collect_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

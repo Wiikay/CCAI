@@ -1,0 +1,97 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Unfortunately, I am not able "
+    }, {
+      "text": "to"
+    }, {
+      "text": " receive the "
+    }, {
+      "text": "email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unfortunately, I don't have the "
+    }, {
+      "text": "email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unfortunately, I am not able "
+    }, {
+      "text": "to"
+    }, {
+      "text": " receive the "
+    }, {
+      "text": "text"
+    }, {
+      "text": " "
+    }, {
+      "text": "messages"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unfortunately, I am not able "
+    }, {
+      "text": "to"
+    }, {
+      "text": " receive the "
+    }, {
+      "text": "email"
+    }, {
+      "text": " now"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unfortunately, I am not able "
+    }, {
+      "text": "to"
+    }, {
+      "text": " receive the "
+    }, {
+      "text": "text"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unfortunately, I am not able "
+    }, {
+      "text": "to"
+    }, {
+      "text": " receive the "
+    }, {
+      "text": "message"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unfortunately, I am not able "
+    }, {
+      "text": "to"
+    }, {
+      "text": " receive now"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unfortunately, I am not able "
+    }, {
+      "text": "to"
+    }, {
+      "text": " receive it now"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

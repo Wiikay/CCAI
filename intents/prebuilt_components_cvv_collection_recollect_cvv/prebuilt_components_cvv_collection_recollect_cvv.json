@@ -1,0 +1,11 @@
+{
+  "name": "5d929adb-3bd2-466d-bd85-e0258a7882a8",
+  "displayName": "prebuilt_components_cvv_collection_recollect_cvv",
+  "parameters": [ {
+    "id": "cvv_code",
+    "entityType": "@sys.number-sequence",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}

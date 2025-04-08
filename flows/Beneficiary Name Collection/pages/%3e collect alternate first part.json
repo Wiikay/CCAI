@@ -1,0 +1,118 @@
+{
+  "name": "b8220516-9909-4b45-8727-675f3b8f076b",
+  "displayName": "\u003e collect alternate first part",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "cdbca7fb-ac5d-4604-9a3b-0485e0f3d534"
+  }, {
+    "intent": "prebuilt_components_name_collection_alternative_name",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": "$sys.func.SUBSTITUTE($session.params.alternative_name, \"[^a-zA-Z0-9]\", \"\")"
+      }, {
+        "parameter": "alternative_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm first part of name",
+    "name": "67c77bf1-b839-469c-bcff-8452e793dbf0"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "062195a6-026e-4527-ba70-86e23cec17fc"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "809311cb-bf00-475f-9194-b952f8850c61"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please tell us the first part of the $flow.collect_part before any special characters." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a966e215-9b18-4394-9260-37a2f93bc484"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "974448d4-00b4-4149-bbb3-1b86f2cfd8cb"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "9e95fce9-245b-425f-9a25-549f0cab0867"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please tell us the first part of the $flow.collect_part before any special characters." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "677606c2-ba0d-4a70-9a09-a5b645372baa"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please tell us the first part of the $flow.collect_part before any special characters." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8602b402-5be6-44b3-a07e-02f9d1253491"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "53fdbc0b-1472-4d7f-9636-a904fa80471d"
+  } ]
+}

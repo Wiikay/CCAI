@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "beneficiary_pay",
+    "synonyms": [ " beneficiary transfer", "beneficiary", "beneficiary account", "beneficiary due", "pay to beneficiary" ],
+    "languageCode": "en"
+  }, {
+    "value": "credit_card_pay",
+    "synonyms": [ "cc bill", "credit", "credit card", "credit card bill", "credit card due", "credit due" ],
+    "languageCode": "en"
+  } ]
+}

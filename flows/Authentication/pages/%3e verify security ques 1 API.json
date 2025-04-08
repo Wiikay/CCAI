@@ -1,0 +1,63 @@
+{
+  "name": "6673e138-f9af-4f27-bdea-6cad34fcb75e",
+  "displayName": "\u003e verify security ques 1 API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_authentication:security_answers",
+    "tag": "securityAns"
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.TO_TEXT($session.params.dob_collection_dob) = $sys.func.TO_TEXT($session.params.user_dob)",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.secure_ans_count",
+        "value": "$sys.func.ADD($flow.secure_ans_count, 1)"
+      } ]
+    },
+    "targetPage": "security question 2 check",
+    "name": "1a7b79a8-88ba-4515-8512-d9430a10874d"
+  }, {
+    "condition": "$sys.func.TO_TEXT($session.params.dob_collection_dob) != $sys.func.TO_TEXT($session.params.user_dob)",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "security question 2 check",
+    "name": "b833c18f-46ec-4255-9162-44388a82e0c8"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "41830e19-f5b8-4f5b-85d8-2bb20fcbe72a"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "9e8923f8-7c2c-4aa1-9d98-786a8555909c"
+  } ],
+  "description": "1. user_dob is getting returned as a response parameter from webhook 'prebuilt_components_authentication:security_answers'\n2. If Ans is correct, we are using \"$sys.func.ADD($flow.secure_ans_count, 1)\""
+}

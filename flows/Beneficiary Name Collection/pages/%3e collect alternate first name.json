@@ -1,0 +1,118 @@
+{
+  "name": "62d552a8-7b89-4202-b6db-ade5ba1836ea",
+  "displayName": "\u003e collect alternate first name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_alternative_name",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_first_name",
+        "value": "$sys.func.SUBSTITUTE($session.params.alternative_name, \"[^a-zA-Z0-9]\", \"\")"
+      }, {
+        "parameter": "alternative_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm first name",
+    "name": "1fdf1c45-4db3-4139-9863-235fbb505428"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "12d9b376-95e4-4ee7-bccb-43efbb0e1bed"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "99fa9a92-0a00-47fc-8863-524b0e26254f"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "c44dc1d1-35b1-4a15-9095-c1c206f2eb13"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Please tell us the first name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "0fd782b6-3661-441c-a34f-58377b2f756a"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cc353087-4d4b-4d45-9c9e-b49e67fb2f78"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "f737a555-24d4-4cd9-b6ac-0dc53811e7e7"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please tell us the first name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4d4f3d04-eda1-48d6-92e3-930fe3f7f7c0"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please make sure you're saying the first name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8453386f-005b-4654-a854-9aabe2ae35fe"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "9b111a3d-d579-4866-9861-ed90e35e9f68"
+  } ]
+}

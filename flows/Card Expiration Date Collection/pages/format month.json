@@ -1,0 +1,180 @@
+{
+  "name": "83eaabf1-90c1-4f7c-b9d6-246e1bfb62bb",
+  "displayName": "format month",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.card_expiration_month = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": "$sys.func.IDENTITY($flow.expiration_date.month)"
+      } ]
+    },
+    "name": "ae7b06d0-afe4-4456-a765-6d5ff2aa7e5a"
+  }, {
+    "condition": "$flow.card_expiration_month = null AND $sys.func.LEN($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \\\"\\\\s+\\\", \\\"\\\")) \u003e= 4",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": "$sys.func.MID($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \"\\s+\", \"\"), 1, 2)"
+      } ]
+    },
+    "name": "b7ab09f0-6041-487b-b1ab-f4ee37f15e70"
+  }, {
+    "condition": "$sys.func.LEN($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \\\"\\\\s+\\\", \\\"\\\")) = 5",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": "$sys.func.MID($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \"\\s+\", \"\"), 1, 1)"
+      } ]
+    },
+    "name": "c17ed47c-d41e-40db-807c-3e13944bb8d1"
+  }, {
+    "condition": "$flow.card_expiration_month = null AND $sys.func.LEN($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \\\"\\\\s+\\\", \\\"\\\")) = 3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": "$sys.func.MID($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \"\\s+\", \"\"), 1, 1)"
+      } ]
+    },
+    "name": "2bfdd073-6904-49fd-8954-3c8a8ad0738d"
+  }, {
+    "condition": "$flow.card_expiration_month = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": ""
+      } ]
+    },
+    "name": "df668fe6-29d5-4041-b441-a2abbbcf1b48"
+  }, {
+    "condition": "$sys.func.LEN($flow.card_expiration_month) = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": "$sys.func.CONCATENATE(\"0\", $flow.card_expiration_month)"
+      } ]
+    },
+    "name": "6ef5edd4-d749-487d-bf0d-3fba39e7acee"
+  }, {
+    "condition": "$flow.card_expiration_month = 01",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "January"
+      } ]
+    },
+    "name": "ef6775f1-f9c5-4e02-a13b-90b44a1a7864"
+  }, {
+    "condition": "$flow.card_expiration_month = 02",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "February"
+      } ]
+    },
+    "name": "9940916d-86b3-4ae6-8e6e-e557dcc65be1"
+  }, {
+    "condition": "$flow.card_expiration_month = 03",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "March"
+      } ]
+    },
+    "name": "416409cf-af1b-4b56-a03d-7ed24f17cbe9"
+  }, {
+    "condition": "$flow.card_expiration_month = 04",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "April"
+      } ]
+    },
+    "name": "b835f6a2-4226-46da-85a0-cbfb9744f58b"
+  }, {
+    "condition": "$flow.card_expiration_month = 05",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "May"
+      } ]
+    },
+    "name": "3c6cbebd-a4fc-4d59-8a6a-2c0aacd88e07"
+  }, {
+    "condition": "$flow.card_expiration_month = 06",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "June"
+      } ]
+    },
+    "name": "6a8e09a6-3358-4a75-a5e2-ce670e45171d"
+  }, {
+    "condition": "$flow.card_expiration_month = 07",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "July"
+      } ]
+    },
+    "name": "dfeac00d-febd-4301-886a-b21a0acfe555"
+  }, {
+    "condition": "$flow.card_expiration_month = 08",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "August"
+      } ]
+    },
+    "name": "fb6823d9-0183-4b4b-81cb-f585ace38368"
+  }, {
+    "condition": "$flow.card_expiration_month = 09",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "September"
+      } ]
+    },
+    "name": "e725167c-cd85-4079-ac15-a1acfb09ae45"
+  }, {
+    "condition": "$flow.card_expiration_month = 10",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "October"
+      } ]
+    },
+    "name": "a1cb4322-4a94-4463-a430-c8eecf3085c1"
+  }, {
+    "condition": "$flow.card_expiration_month = 11",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "November"
+      } ]
+    },
+    "name": "522f178b-0906-4876-a25b-5d4ddb992dde"
+  }, {
+    "condition": "$flow.card_expiration_month = 12",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.expiration_month_spoken",
+        "value": "December"
+      } ]
+    },
+    "name": "ba185b30-de91-4491-b4f3-3de96198c671"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "format year",
+    "name": "ded0f03f-35e6-4f12-87eb-12658481ef46"
+  } ]
+}

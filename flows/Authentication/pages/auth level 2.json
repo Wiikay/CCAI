@@ -1,0 +1,19 @@
+{
+  "name": "a9a4b699-acee-4120-b763-4b4b8fe7c3c2",
+  "displayName": "auth level 2",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect 2FA security key",
+    "name": "7bdcb232-ee06-48e8-b5eb-3b07013309ee"
+  } ],
+  "description": "Page indicates the beginning of Authentication Level 2 Check\n1. $flow.key_retry_counter = 0 set under fulfillment"
+}

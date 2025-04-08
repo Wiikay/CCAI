@@ -1,0 +1,222 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "My card expires in "
+    }, {
+      "text": "2025",
+      "parameterId": "card_expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "202 five",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "202 5",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Please note the year as ",
+      "auto": true
+    }, {
+      "text": "202 9",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "202 8",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    }, {
+      "text": " is the card's expiration year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2030",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    }, {
+      "text": " is my card's expiration year",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2023",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    }, {
+      "text": " is the card's expiration year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "20 27",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    }, {
+      "text": " "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card expires in year "
+    }, {
+      "text": "44",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiration year is "
+    }, {
+      "text": "twentyone",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my year is ",
+      "auto": true
+    }, {
+      "text": "2030",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "take the year as ",
+      "auto": true
+    }, {
+      "text": "2026",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card will expire in the year ",
+      "auto": true
+    }, {
+      "text": "twenty-two",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "year: ",
+      "auto": true
+    }, {
+      "text": "2028",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiry year is "
+    }, {
+      "text": "22",
+      "parameterId": "card_expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is "
+    }, {
+      "text": "2027",
+      "parameterId": "card_expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "twenty seven",
+      "parameterId": "card_expiration_date"
+    }, {
+      "text": " is the card's expiration year"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2021",
+      "parameterId": "card_expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my card expiration year is ",
+      "auto": true
+    }, {
+      "text": "30",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "year are ",
+      "auto": true
+    }, {
+      "text": "2026",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my card expires in year ",
+      "auto": true
+    }, {
+      "text": "24",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The year is ",
+      "auto": true
+    }, {
+      "text": "22",
+      "parameterId": "card_expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

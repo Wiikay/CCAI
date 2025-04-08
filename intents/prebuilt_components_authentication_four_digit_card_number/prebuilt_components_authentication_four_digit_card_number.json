@@ -1,0 +1,11 @@
+{
+  "name": "dedb82a6-7087-4732-8774-a145dc3bf186",
+  "displayName": "prebuilt_components_authentication_four_digit_card_number",
+  "parameters": [ {
+    "id": "last_four_digit_of_card_number",
+    "entityType": "@sys.number-sequence",
+    "isList": true
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 36
+}

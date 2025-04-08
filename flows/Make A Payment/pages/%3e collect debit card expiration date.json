@@ -1,0 +1,52 @@
+{
+  "name": "87b277e0-890d-471b-b28a-e7ced563772c",
+  "displayName": "\u003e collect debit card expiration date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "card_type",
+      "value": "debit"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.card_expiration_date_collection_card_expiration_date = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Card Expiration Date Collection",
+    "name": "1efb3b26-a5e5-425f-bfd0-6024c27fb0c9"
+  }, {
+    "condition": "$session.params.card_expiration_date_collection_card_expiration_date != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_expiration_date_collection_card_expiration",
+        "value": "$session.params.card_expiration_date_collection_card_expiration_date"
+      }, {
+        "parameter": "card_expiration_date_collection_card_expiration_date",
+        "value": null
+      }, {
+        "parameter": "$flow.debit_card_exp_date",
+        "value": "$sys.func.TO_OBJECT($session.params.card_expiration_date_collection_card_expiration)"
+      } ]
+    },
+    "targetPage": "\u003e collect debit card cvv",
+    "name": "ee474983-3e9d-4c12-81a7-a0f21d5ebe90"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "33dcbbf4-0fa2-479e-8437-b0b731556cfe"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "266ddd3d-4f85-4c93-92b3-20b696b15236"
+  } ]
+}

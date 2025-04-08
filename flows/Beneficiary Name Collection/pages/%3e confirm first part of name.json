@@ -1,0 +1,214 @@
+{
+  "name": "4ed41229-ebcf-4f3f-bbdc-801a876d2ef0",
+  "displayName": "\u003e confirm first part of name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003e$flow.verify_person_name_ssml. Did we spell the first part correctly?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.verify_person_name_ssml",
+      "value": "\u003cprosody rate='slow'\u003e\u003csay-as interpret-as='verbatim'\u003e$sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($flow.verify_person_name, \"([ '-])\", \"\u003c/say-as\u003e\u003csub alias='$1'\u003e$1\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"), \"' '\u003e \u003c\", \"'space'\u003e \u003c\"), \"'''\u003e'\u003c\", \"'apostrophe'\u003e'\u003c\"), \"'-'\u003e-\u003c\", \"'hyphen'\u003e-\u003c\")\u003c/say-as\u003e\u003c/prosody\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verified_person_name",
+        "value": "$flow.verify_person_name"
+      }, {
+        "parameter": "$flow.spelling_person_name",
+        "value": ""
+      }, {
+        "parameter": "$flow.verify_name_part",
+        "value": ""
+      } ]
+    },
+    "targetPage": "\u003e confirm if name separator",
+    "name": "f6e8b3d1-f526-4805-a7fe-933fe16cf724"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_last_name_part_counter \u003c 1 AND $flow.collect_part = \"last name\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.incorrect_last_name_part_counter",
+        "value": "$sys.func.ADD($flow.incorrect_last_name_part_counter,1)"
+      }, {
+        "parameter": "$flow.verify_person_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect spelling name",
+    "name": "7e048036-d4a5-4217-b30d-dd44631a8af8"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.collect_part = \"first name\" AND $flow.incorrect_first_name_part_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_person_name",
+        "value": ""
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "a310234d-c5f8-4936-8d7b-cad5bed59282"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_first_name_part_counter \u003c 1 AND $flow.collect_part = \"first name\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.incorrect_first_name_part_counter",
+        "value": "$sys.func.ADD($flow.incorrect_first_name_part_counter,1)"
+      }, {
+        "parameter": "$flow.verify_person_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect spelling name",
+    "name": "eb323deb-55ce-44ac-9f55-7fdbe16e5263"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.collect_part = \"last name\" AND $flow.incorrect_last_name_part_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "fc061cb2-f263-4f00-9d81-2659c2f77dbc"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_middle_name_part_counter \u003c 1 AND $flow.collect_part = \"middle name\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.incorrect_middle_name_part_counter",
+        "value": "$sys.func.ADD($flow.incorrect_middle_name_part_counter,1)"
+      }, {
+        "parameter": "$flow.verify_person_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect spelling name",
+    "name": "b2e08ed3-6e41-4048-bdb3-36e92ab46629"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.collect_part = \"middle name\" AND $flow.incorrect_middle_name_part_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "0ccb239d-f65c-4d0c-a34a-81fb641a2f44"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "ab736b1a-1472-4594-941a-cdd2cc141b43"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003e$flow.verify_person_name_ssml. Did I spell the first part correctly?\u003c/speak\u003e"
+      } ]
+    },
+    "name": "c102598e-fff1-451a-af0f-656295c4b436"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "95697087-53ce-41cf-baeb-b21b5dbdae27"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that. $flow.verify_person_name_ssml. Did we spell the first part correctly?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fc344bb8-304a-40f1-acc0-6e84f12f26a8"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eHmm, we still weren't able to get that $flow.verify_person_name_ssml. Did we spell the first part correctly?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "32372dfe-f766-4633-894b-b8566caf2602"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "29a751f1-95a0-4e2c-919a-c84700705340"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren't able to hear you. $flow.verify_person_name_ssml. Did we spell the first part correctly?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9935e49e-8be2-4612-a21e-fe07b0541f37"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a1dbf378-e399-47eb-b909-d19e7b89eab3"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "281953a5-91b6-4442-893c-f3a5137215a1"
+  } ]
+}

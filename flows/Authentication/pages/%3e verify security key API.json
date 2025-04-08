@@ -1,0 +1,68 @@
+{
+  "name": "74e7b181-4dc7-4d4c-9ba8-ab821c507c33",
+  "displayName": "\u003e verify security key API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_authentication:2fa_validation",
+    "tag": "verifyKey"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.security_key_verified != \"true\" OR $flow.security_key_verified = null OR $flow.security_key_verified = \"\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_security_key",
+        "value": null
+      }, {
+        "parameter": "$flow.key_retry_counter",
+        "value": "$sys.func.ADD($flow.key_retry_counter, 1)"
+      } ]
+    },
+    "targetPage": "retry security key",
+    "name": "21f08c32-1f07-44fe-af5d-c80411f51aca"
+  }, {
+    "condition": "$flow.security_key_verified = \"true\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "auth_level",
+        "value": 2
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "5f7f198e-d0f9-42b4-9653-84ed9b8d6dca"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "d70e93d6-8ca3-4044-81de-dbccdb54d62e"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "ee14b670-9f06-4112-a2a1-221c6d7d1bc6"
+  } ]
+}

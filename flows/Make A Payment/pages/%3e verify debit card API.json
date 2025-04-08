@@ -1,0 +1,78 @@
+{
+  "name": "3563b5d3-a908-469c-ae9c-5b162003c1c0",
+  "displayName": "\u003e verify debit card API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_make_a_payment:verify_debit_card_details",
+    "tag": "verifyDebitCardDetails"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.debitcard_verification_status = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "route payment confirmation",
+    "name": "b8e33d2a-feac-4ff7-a18e-e88a8f60340b"
+  }, {
+    "condition": "($flow.debitcard_verification_status != true OR $flow.debitcard_verification_status = null OR $flow.debitcard_verification_status = \"\") AND $flow.retry_debit_card_details \u003c $flow.max_retry_debit_card_details",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_debit_card_details",
+        "value": "$sys.func.ADD($flow.retry_debit_card_details,1)"
+      }, {
+        "parameter": "$flow.last_four_digit_of_debit_card_number",
+        "value": null
+      }, {
+        "parameter": "$flow.debit_card_exp_date",
+        "value": null
+      }, {
+        "parameter": "$flow.debit_card_cvv_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "retry debit card details",
+    "name": "dcdda449-7cae-41c4-9471-caa3bc8f2fd3"
+  }, {
+    "condition": "$flow.retry_debit_card_details = $flow.max_retry_debit_card_details",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "a907b248-888c-43d9-a1e6-2294bae076f5"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "05c4e5f0-423b-471d-9a1c-8e52bc33e913"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "6843eff1-9a69-4409-854e-6357e887b206"
+  } ]
+}

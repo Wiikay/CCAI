@@ -1,0 +1,98 @@
+{
+  "name": "0723321a-88e0-494a-a417-22ff3d2d209d",
+  "displayName": "\u003e collect card number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.last_four_digit_of_card_number = null AND $flow.payment_mode = \"debit_card\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_type",
+        "value": "debit"
+      } ]
+    },
+    "targetFlow": "Last 4 Digit Card Number Collection",
+    "name": "1211f3c8-f658-4630-b16c-aab00bf2197c"
+  }, {
+    "condition": "$session.params.last_four_digit_of_card_number != null AND $flow.payment_mode = \"debit_card\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.last_four_digit_of_debit_card_number",
+        "value": "$session.params.last_four_digit_of_card_number"
+      }, {
+        "parameter": "last_four_digit_of_card_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect debit card expiration date",
+    "name": "ef6b7420-96a3-444e-b35b-30396b8d4dbd"
+  }, {
+    "condition": "$session.params.last_four_digit_of_card_number = null AND $flow.payment_type = \"credit_card_pay\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_type",
+        "value": "credit"
+      } ]
+    },
+    "targetFlow": "Last 4 Digit Card Number Collection",
+    "name": "a8c950b2-e096-4731-b17f-0b1607846e83"
+  }, {
+    "condition": "$session.params.last_four_digit_of_card_number != null AND $flow.payment_type = \"credit_card_pay\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.payee_last_four_digit_of_credit_card_number",
+        "value": "$session.params.last_four_digit_of_card_number"
+      }, {
+        "parameter": "last_four_digit_of_card_number",
+        "value": null
+      }, {
+        "parameter": "$flow.payee_number",
+        "value": "$flow.payee_last_four_digit_of_credit_card_number"
+      } ]
+    },
+    "targetPage": "\u003e validate card API",
+    "name": "fa1db55b-23fb-4116-8a6e-4aea2eda4ce7"
+  }, {
+    "condition": "$session.params.last_four_digit_of_card_number = null AND $flow.payment_mode = \"credit_card\" AND $flow.payment_type = \"beneficiary_pay\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_type",
+        "value": "credit"
+      } ]
+    },
+    "targetFlow": "Last 4 Digit Card Number Collection",
+    "name": "3d0dd961-2d3a-4aa1-93bf-558f3d11b6c5"
+  }, {
+    "condition": "$session.params.last_four_digit_of_card_number != null AND $flow.payment_mode = \"credit_card\" AND $flow.payment_type = \"beneficiary_pay\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.last_four_digit_of_credit_card_number",
+        "value": "$session.params.last_four_digit_of_card_number"
+      }, {
+        "parameter": "last_four_digit_of_card_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect credit card expiration date",
+    "name": "a874ffd8-1f8c-4553-b0dd-058242fcdc44"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "5b4bcb0f-958c-4b5e-bb27-55974595d824"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a7057a94-1955-4ec7-933c-5081b18b10f1"
+  } ]
+}

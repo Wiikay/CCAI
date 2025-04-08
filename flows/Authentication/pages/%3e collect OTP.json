@@ -1,0 +1,186 @@
+{
+  "name": "34171eca-54ac-46a8-aca7-08fb28388013",
+  "displayName": "\u003e collect OTP",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_authentication_collect_code",
+    "condition": "$session.params.collect_code != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_otp",
+        "value": "$sys.func.JOIN(\"\", $session.params.collect_code)"
+      }, {
+        "parameter": "collect_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "validate OTP length",
+    "name": "4a64ab3c-59c0-4b0d-988f-0bb102f6ecd3"
+  }, {
+    "intent": "prebuilt_components_authentication_otp_not_received",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "OTP not received",
+    "name": "13be7e05-92a5-4006-beee-ba93c0e5bccb"
+  }, {
+    "intent": "prebuilt_components_authentication_phone_number_incorrect",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "e762a0d3-5ab4-4300-af53-9c9c43830233"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "2518839a-2bbb-4200-8174-5f8eb4cac744"
+  }, {
+    "intent": "prebuilt_components_authentication_denial",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "c1ac8ca2-ea5c-4756-9875-64bf25291c89"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "eea984b7-7cf6-4cc4-9664-83bc41cb0648"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Can you please enter your six digit OTP." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "21c4c0c4-9562-42ee-ab28-1cf9fa07c738"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Can you please enter your six digit OTP." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8d858929-91ca-486a-9d14-4f657ebf4e28"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "1d10becd-c06d-4eca-8215-ecd183ac4877"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, you have entered an invalid code. Please try again." ]
+        },
+        "languageCode": "en"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.channel = mobile",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eWe have sent a code to your registered phone number ending with \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_4_digits\u003c/say-as\u003e\u003c/prosody\u003e. This may take a few seconds. Can you please confirm the code? \u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.channel = email",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "We have sent a code to your registered email address $session.params.email. This may take a few seconds can you please confirm the code?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "name": "2751a0e5-4f35-452c-ab56-c8c8d3caa796"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, you have entered an invalid code. Please try again." ]
+        },
+        "languageCode": "en"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.channel = mobile",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eWe have sent a code to your registered phone number ending with \u003cprosody rate=\"slow\" pitch=\"-2st\"\u003e\u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_4_digits\u003c/say-as\u003e\u003c/prosody\u003e. This may take a few seconds can you please confirm the code? \u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.channel = email",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "We have sent a code to your registered email address $session.params.email. This may take a few seconds can you please confirm the code?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "name": "b8a509b2-3d59-45cf-8086-36e79c1ae37d"
+  }, {
+    "targetPage": "security question message",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We're sorry, but the maximum number of retries has been exceeded.\n\nWe will need some more information to validate your identity.  " ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "cc2b8806-8b20-4a2d-b82a-721801abd06f"
+  } ]
+}

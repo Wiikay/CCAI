@@ -1,0 +1,156 @@
+{
+  "name": "7c30d78d-2fa5-4017-b41b-d3e5f529cada",
+  "displayName": "\u003e collect spelling name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please spell out the first part of your $flow.collect_part." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please spell out the first part of your $flow.collect_part."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_spell_out_name",
+    "condition": "$session.params.spell_out_name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": "$sys.func.SUBSTITUTE($session.params.spell_out_name, \"[^a-zA-Z]\", \"\")"
+      }, {
+        "parameter": "spell_out_name",
+        "value": null
+      } ]
+    },
+    "name": "246ae7e6-64ae-4b73-8df5-7774e80807ca"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "ebac1788-812b-4df1-b38c-6756239c9150"
+  }, {
+    "condition": "$flow.first_name_part_spell_out_counter = 2 AND $flow.verify_person_name = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "92495ab9-3b42-452e-984e-0e45c9f01a0d"
+  }, {
+    "condition": "$flow.verify_person_name = \"\" AND $flow.first_name_part_spell_out_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell out the first part of your $flow.collect_part." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.first_name_part_spell_out_counter",
+        "value": "$sys.func.ADD($flow.first_name_part_spell_out_counter,1)"
+      } ]
+    },
+    "name": "2827a8b5-d68e-4c99-8f55-5aa050cc6cdb"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "94968b35-e262-4bb4-966f-5b848f2a21b1"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d205bbe3-791f-450d-80d9-aed2bdedaf9c"
+  }, {
+    "condition": "$flow.verify_person_name != null AND $flow.verify_person_name != \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm first part of name",
+    "name": "d125ad23-7379-43d5-9317-d38e8e926493"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell out the first part of your $flow.collect_part." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "71632c6c-39bb-45d4-8682-de7d2ea0efc4"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please spell out the first part of your $flow.collect_part." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7d11ddb5-c77c-42c4-8f54-b51df07b2d64"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "22a6ac1d-30a4-42de-bbd6-b12b197aeead"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please spell out the first part of your $flow.collect_part." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "010e92a4-6543-4b3c-945a-c29b9e484661"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c85e11bd-e744-4fe6-9b43-2515b18c34fe"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "1520dcf3-c7f5-4fcb-b6dc-469549843f3d"
+  } ]
+}

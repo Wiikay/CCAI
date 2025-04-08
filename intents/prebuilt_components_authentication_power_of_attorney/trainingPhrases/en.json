@@ -1,0 +1,281 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "i have the "
+    }, {
+      "text": "bank account",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "yes ",
+      "auto": true
+    }, {
+      "text": "bank customer",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i am the client for this "
+    }, {
+      "text": "bank",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i am the "
+    }, {
+      "text": "bank client",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i am the ",
+      "auto": true
+    }, {
+      "text": "customer",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    }, {
+      "text": " of ",
+      "auto": true
+    }, {
+      "text": "bank",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i have ",
+      "auto": true
+    }, {
+      "text": "bank account",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i do have the "
+    }, {
+      "text": "account",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "yes i do",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i hold ",
+      "auto": true
+    }, {
+      "text": "power of attorney",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "account",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i hold "
+    }, {
+      "text": "joint account"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i have joint ",
+      "auto": true
+    }, {
+      "text": "account",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Power of attorney",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am having "
+    }, {
+      "text": "power of attorney",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "authorisation",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "mandate",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "sanction",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "permission",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "license",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "empowerment",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "delegation",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "authority",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "approval",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "permit",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "warrent",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am having "
+    }, {
+      "text": "approval",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "check my "
+    }, {
+      "text": "autherization",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "check my "
+    }, {
+      "text": "authentication",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am a "
+    }, {
+      "text": "customer",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am "
+    }, {
+      "text": "customer",
+      "parameterId": "prebuilt_components_authentication_non_user",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am an "
+    }, {
+      "text": "exisiting customer",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have an "
+    }, {
+      "text": "account",
+      "parameterId": "prebuilt_components_authentication_non_user"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

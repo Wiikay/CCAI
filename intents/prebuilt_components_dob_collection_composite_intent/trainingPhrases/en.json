@@ -1,0 +1,220 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "july 5th 1999",
+      "parameterId": "dob",
+      "auto": true
+    }, {
+      "text": " marks the ",
+      "auto": true
+    }, {
+      "text": "day",
+      "auto": true
+    }, {
+      "text": " I was born",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my birthday falls on ",
+      "auto": true
+    }, {
+      "text": "june 3rd 1998",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i celebrate my birthday on ",
+      "auto": true
+    }, {
+      "text": "4th may 2001",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my birth ",
+      "auto": true
+    }, {
+      "text": "date",
+      "auto": true
+    }, {
+      "text": " is ",
+      "auto": true
+    }, {
+      "text": "october 4 of 1987",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I think it is ",
+      "auto": true
+    }, {
+      "text": "july 14th 1981",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "june of last year",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my dob is ",
+      "auto": true
+    }, {
+      "text": "august 13 1978",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "born ",
+      "auto": true
+    }, {
+      "text": "last month",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i was born ",
+      "auto": true
+    }, {
+      "text": "last year",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "today",
+      "parameterId": "dob",
+      "auto": true
+    }, {
+      "text": " is my birthday",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it's ",
+      "auto": true
+    }, {
+      "text": "today",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "today",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "november 5",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "13th june",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "current month",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "last year",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my ",
+      "auto": true
+    }, {
+      "text": "date",
+      "auto": true
+    }, {
+      "text": " of birth is ",
+      "auto": true
+    }, {
+      "text": "september 7th 1993",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my dob is ",
+      "auto": true
+    }, {
+      "text": "1 june 1987",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "august 13 1998",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i was born on ",
+      "auto": true
+    }, {
+      "text": "13th august 1998",
+      "parameterId": "dob",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

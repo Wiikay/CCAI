@@ -1,0 +1,62 @@
+{
+  "name": "f7b758b0-b159-4b5f-830d-4618a2420ab5",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$flow.payment_type = \"credit_card_pay\" AND $flow.payment_mode != \"mobile_payment\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "Your credit card payment was successful." ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "condition": "$flow.payment_type = \"beneficiary_pay\" AND $flow.payment_mode != \"mobile_payment\"",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "Your beneficiary account payment was successful." ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "last_four_digit_of_account_number",
+        "value": null
+      }, {
+        "parameter": "$flow.last_four_digit_of_debit_card_number",
+        "value": null
+      }, {
+        "parameter": "$flow.debit_card_exp_date",
+        "value": null
+      }, {
+        "parameter": "$flow.debit_card_cvv_code",
+        "value": null
+      }, {
+        "parameter": "$flow.last_four_digit_of_credit_card_number",
+        "value": null
+      }, {
+        "parameter": "$flow.credit_card_exp_date",
+        "value": null
+      }, {
+        "parameter": "$flow.credit_card_cvv_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "433be35b-1199-4e24-a614-86b9e6e6f151"
+  } ],
+  "description": "Conditional response defined at Entry fulfillment."
+}

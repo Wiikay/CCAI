@@ -1,0 +1,110 @@
+{
+  "name": "575b7125-8012-4bb3-ab17-390d1f34139a",
+  "displayName": "validate year",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.card_expiration_year \u003c= $sys.func.MINUS($flow.current_year, 1)",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.validate_previous_year_counter",
+        "value": "$sys.func.ADD($flow.validate_previous_year_counter, 1)"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.validate_previous_year_counter \u003c 2",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, the expiration year \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e is invalid as it is an expired year. Please say or enter a valid expiration year.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "a409d958-3dca-4279-919d-93eb83596a40"
+  }, {
+    "condition": "$flow.card_expiration_year \u003c= $flow.current_year AND $sys.func.MINUS($flow.current_month, 1) \u003e= $flow.card_expiration_month",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.validate_previous_year_counter",
+        "value": "$sys.func.ADD($flow.validate_previous_year_counter, 1)"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.validate_previous_year_counter \u003c 2",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, the expiration date \u003csay-as interpret-as=\"date\" format=\"mmyyyy\"\u003e$flow.expiration_month_spoken $flow.card_expiration_year\u003c/say-as\u003e is an expired date. Let's try again by capturing the month first.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect month",
+    "name": "fdf5e0e4-9fe9-46e0-97e4-a5079df8a968"
+  }, {
+    "condition": "$sys.func.LEN($flow.card_expiration_year) != 4",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.validate_len_year_counter",
+        "value": "$sys.func.ADD($flow.validate_len_year_counter, 1)"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.validate_len_year_counter \u003c 2",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, the expiration year \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e does not look quite right. Please say or enter a valid expiration year.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "781d03cc-fab0-4955-8e54-dddb041e1ede"
+  }, {
+    "condition": "$flow.card_expiration_year \u003e= $sys.func.ADD($flow.current_year, 10)",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.validate_future_year_counter",
+        "value": "$sys.func.ADD($flow.validate_future_year_counter, 1)"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.validate_future_year_counter \u003c 2",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eSorry, the expiration year \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e is invalid as it is more than 10 years from now. Please say or enter a valid expiration year.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "8c7aae57-30e3-41d7-bd97-49b62c4f06af"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm year",
+    "name": "894a6281-25e6-4b1a-9b5e-678b336ae831"
+  } ]
+}

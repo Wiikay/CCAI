@@ -1,0 +1,40 @@
+{
+  "name": "7fb80240-f515-4cd5-b1e5-4ab43269d6c9",
+  "displayName": "\u003e collect security ques 1",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.dob_collection_dob = null OR $session.params.dob_collection_dob = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Dob Collection",
+    "name": "2831c1c2-5ca5-40f0-a69c-e44efe4de2e1"
+  }, {
+    "condition": "$session.params.dob_collection_dob != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e verify security ques 1 API",
+    "name": "9ea54bb8-63c6-437c-aac1-a30b5710d0a5"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "2e79d9d0-4f68-4a56-8168-024a3ffe3084"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "defb2a44-e9d4-4fa7-8a01-9be8d3af5649"
+  } ]
+}

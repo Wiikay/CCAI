@@ -1,0 +1,28 @@
+{
+  "name": "8acf44a9-2801-4a31-a44b-f94ebb2dd15e",
+  "displayName": "validate phone number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "phone_number",
+      "value": "$sys.func.CONCATENATE($sys.func.GET_FIELD($sys.func.TO_PHONE_NUMBER($session.params.phone_number), \"area-code\"), $sys.func.GET_FIELD($sys.func.TO_PHONE_NUMBER($session.params.phone_number), \"number\"))"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.phone_number = $sys.func.TO_TEXT($sys.func.TO_NUMBER($session.params.phone_number))",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check authentication type",
+    "name": "0bb1e144-1ad5-426e-aac8-ec83929bd81d"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "verify unidentified user auth level",
+    "name": "af1b39e1-bce3-42f5-9ee5-652f174c4df3"
+  } ]
+}

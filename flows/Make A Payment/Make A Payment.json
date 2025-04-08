@@ -1,0 +1,131 @@
+{
+  "name": "53c2a81b-674c-4338-ba66-57e461322131",
+  "displayName": "Make A Payment",
+  "description": "Allows authenticated users to make payments.",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_credit_card_payment",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_credit_card_payment",
+        "value": 2
+      }, {
+        "parameter": "$flow.retry_credit_card_count",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_credit_card_count",
+        "value": 2
+      }, {
+        "parameter": "$flow.retry_acc_number",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_acc_number",
+        "value": 2
+      }, {
+        "parameter": "$flow.retry_debit_card_details",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_debit_card_details",
+        "value": 2
+      }, {
+        "parameter": "$flow.retry_credit_card_details",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_credit_card_details",
+        "value": 2
+      }, {
+        "parameter": "$flow.max_retry_otp_count",
+        "value": 3
+      }, {
+        "parameter": "$flow.retry_otp_count",
+        "value": 0
+      }, {
+        "parameter": "$flow.retry_mop_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_mop_counter",
+        "value": 2
+      }, {
+        "parameter": "$flow.otp_length",
+        "value": 6
+      }, {
+        "parameter": "$flow.limit_exceed_code",
+        "value": "401"
+      }, {
+        "parameter": "$flow.insufficient_fund_code",
+        "value": "400"
+      }, {
+        "parameter": "$flow.retry_mobile_payment_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_mobile_payment_counter",
+        "value": 2
+      }, {
+        "parameter": "$flow.payment_success_code",
+        "value": "200"
+      }, {
+        "parameter": "$flow.waiting_room_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_waiting_room_counter",
+        "value": 2
+      }, {
+        "parameter": "$flow.retry_other_amount",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_other_amount",
+        "value": 2
+      }, {
+        "parameter": "account_auth_enabled",
+        "value": "true"
+      }, {
+        "parameter": "card_auth_enabled",
+        "value": "true"
+      }, {
+        "parameter": "$flow.retry_account_check_count",
+        "value": 1
+      }, {
+        "parameter": "$flow.max_retry_account_check_count",
+        "value": 3
+      } ]
+    },
+    "targetPage": "check auth level",
+    "name": "84934541-1dfe-44cf-90bc-e14b6f741318"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "0698801c-9a9b-496e-a30a-58f0264a4419"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b7d57fbe-5a31-4a35-ad94-dd7c4f61e898"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

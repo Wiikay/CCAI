@@ -1,0 +1,31 @@
+{
+  "name": "28133186-a6bc-456a-899f-97d0aa04c04f",
+  "displayName": "check auth level 2",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.auth_level_req \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "auth_level",
+        "value": 1
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "1d2923c8-d4bd-4886-acc5-6d82ad91576f"
+  }, {
+    "condition": "$session.params.auth_level_req = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "auth_level",
+        "value": 1
+      } ]
+    },
+    "targetPage": "auth level 2",
+    "name": "ea089900-1a9c-46bd-9b4c-d834131ce504"
+  } ]
+}

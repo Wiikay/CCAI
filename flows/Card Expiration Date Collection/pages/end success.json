@@ -1,0 +1,33 @@
+{
+  "name": "99adec81-0ddb-4d99-b0fa-07f0fdf5f4e0",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Great, we're done with collecting the $session.params.card_type card's expiration date." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.card_expiration_month",
+      "value": "$sys.func.TO_NUMBER($flow.card_expiration_month)"
+    }, {
+      "parameter": "$flow.card_expiration_year",
+      "value": "$sys.func.TO_NUMBER($flow.card_expiration_year)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_expiration_date_collection_card_expiration_date",
+        "value": "$sys.func.TO_OBJECT(\"{'month':'$flow.card_expiration_month','year':'$flow.card_expiration_year'}\")"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "33b8219a-fd48-432f-8748-5053459ea5c0"
+  } ]
+}

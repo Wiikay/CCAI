@@ -1,0 +1,120 @@
+{
+  "name": "04e46453-dc34-4ab7-be9c-f78bd3bf702a",
+  "displayName": "\u003e confirm beneficiary account number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003ePlease confirm the amount you want to pay. For example, if you want to pay \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say 100.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.payee_number",
+        "value": "$flow.beneficiary_account_number"
+      } ]
+    },
+    "targetPage": "\u003e collect amount",
+    "name": "5b4c873f-45a3-4e84-bd17-8b07ed3e8784"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "d35728a5-09d7-42ed-8c92-457859a85e0c"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "fc0fd44c-97d1-47a6-8887-ef5bc05ff51a"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "e741ad49-9166-45e7-b284-7e328a8cf024"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Based on our records, we have the account number ending in $flow.beneficiary_account_number, please say yes to confirm it." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1281a80c-aba8-444e-ba68-f2f681d3a138"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Based on our records, we have the account number ending in $flow.beneficiary_account_number, please say yes to confirm it." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "df74bcaa-d747-40f5-9c6f-414013aa5a64"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "5365155e-7e24-4259-be7c-1ebd75d58a75"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Based on our records, we have the account number ending in $flow.beneficiary_account_number, please say yes to confirm it." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5264516f-517c-43b1-95b4-6b491950593a"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Based on our records, we have the account number ending in $flow.beneficiary_account_number, please say yes to confirm it." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c6c89bd0-d75f-4948-8d80-4b58a9339f2d"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "54501548-a613-4bf8-bf00-9a8ff779a304"
+  } ],
+  "description": "Fulfillment defined at 'yes' intent."
+}

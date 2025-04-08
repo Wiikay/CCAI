@@ -1,0 +1,115 @@
+{
+  "name": "007518ae-39ae-4060-97f2-f617c258bbdb",
+  "displayName": "retry credit card payment",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "You cannot pay the credit card bill using the credit card. Please say yes if you want to try other payment options." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "route check payment mode",
+    "name": "ff45ad3d-be0d-4f38-90a0-cf780f2eac32"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "68b10828-787e-4554-863c-a00ef49925bc"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "cbc86dc1-deb7-4d6d-9a0f-21fad8dc0a87"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "4dd611ad-6029-4453-afff-eaefe8304e8e"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Please say yes if you want to try other payment options." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3c9d1a96-4631-4241-9644-75d12bee8675"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Please say yes if you want to try other payment options." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a244c068-160d-4f82-a8a9-2896ec5e96a4"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "de201df4-ce43-42e5-92de-00d32acdab0f"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Please say yes if you want to try other payment options." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a743dec6-6421-4cf0-9357-e00e8b23a6de"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Please say yes if you want to try other payment options." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e229b99f-2c66-4073-9c62-cc90607ab0c2"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "baa52b96-f221-48c1-bb7f-8c25996e3f5b"
+  } ]
+}

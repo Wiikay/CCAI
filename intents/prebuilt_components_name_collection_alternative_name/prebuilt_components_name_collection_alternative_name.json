@@ -1,0 +1,10 @@
+{
+  "name": "1dd03b2a-c2da-4c73-b7f9-472b3be17c7a",
+  "displayName": "prebuilt_components_name_collection_alternative_name",
+  "parameters": [ {
+    "id": "alternative_name",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 20
+}

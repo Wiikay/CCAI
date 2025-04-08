@@ -1,0 +1,25 @@
+{
+  "name": "d71a913f-504f-43ea-a1d0-537ab057e941",
+  "displayName": "verify channel route",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.channel = \"mobile\" OR $flow.channel = \"email\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e send OTP API",
+    "name": "f4d4c8c4-e65d-40f8-9b14-9e50dbe99b53"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "479fb0b4-c6a0-4874-a5e9-46a935487d6c"
+  } ]
+}

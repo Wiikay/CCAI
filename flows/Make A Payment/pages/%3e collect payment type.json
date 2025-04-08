@@ -1,0 +1,112 @@
+{
+  "name": "d8849462-d19f-4871-a578-5145a8e256f3",
+  "displayName": "\u003e collect payment type",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Would you like to pay your registered credit card bill or make a payment to an existing beneficiary account?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_make_a_payment_payment_type",
+    "condition": "$session.params.payment_type != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_type",
+        "value": "$session.params.payment_type"
+      } ]
+    },
+    "targetPage": "route check payment type",
+    "name": "994d3247-869a-4e03-ab5f-742049842189"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "bbc21802-f33d-4539-8bc0-16a7b96ef056"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "902ed00b-fbeb-4c42-8514-134c858ea554"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Would you like to pay your registered credit card bill or make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "23ed17ea-ce87-4856-8b05-3a5ffe0d96d6"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Would you like to pay your registered credit card bill or make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "47b77041-3b31-4f4f-9a69-5c707e184f69"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "838bad1e-7557-4978-a414-572ccf11b85b"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Would you like to pay your registered credit card bill or make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "468e81fc-2d1c-4207-bded-b0ce10222fd6"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Would you like to pay your registered credit card bill or make a payment to an existing beneficiary account?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "30d34349-f45b-4473-9628-d568dfeec3db"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "f4da1553-3a72-4f2d-b262-164b1aa92cb5"
+  } ]
+}

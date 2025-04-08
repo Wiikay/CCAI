@@ -1,6 +1,14 @@
 {
   "name": "9046ebe3-1f1a-4b37-ab98-c1e3636d3142",
   "displayName": "Account_Management",
+  "transitionRoutes": [ {
+    "condition": "True",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Ask account info",
+    "name": "2ddb431d-0504-4273-8bd3-5aec9289e091"
+  } ],
   "eventHandlers": [ {
     "event": "sys.no-match-default",
     "triggerFulfillment": {
@@ -31,6 +39,7 @@
   "nluSettingsList": [ {
     "modelType": "MODEL_TYPE_ADVANCED",
     "classificationThreshold": 0.30000001,
+    "customConfigKey": "7864741b-0f4b-4dc1-8c98-21c0b9caa473",
     "languageCode": "en"
   } ]
 }

@@ -1,0 +1,49 @@
+{
+  "name": "64d5ac26-4c0b-4c31-866f-f9933bcec956",
+  "displayName": "validate account number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.LEN($session.params.last_four_digit_of_account_number) = 4",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eThe last four digits of the account number that we got are \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e, is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e confirm account number",
+    "name": "07ac9172-ccb0-4900-bbc6-fb9df3a7a626"
+  }, {
+    "condition": "$sys.func.LEN($session.params.last_four_digit_of_account_number) != 4 AND $flow.invalid_4digit_code_counter \u003c $flow.max_retry_no_counter",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry we didn’t get that." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_4digit_code_counter",
+        "value": "$sys.func.ADD($flow.invalid_4digit_code_counter,1)"
+      }, {
+        "parameter": "last_four_digit_account_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect last 4 digit of account number",
+    "name": "57cf4c6d-dea2-4201-bf6e-3e9f171c18f8"
+  }, {
+    "condition": "$sys.func.LEN($session.params.last_four_digit_of_account_number) != 4 AND $flow.invalid_4digit_code_counter = $flow.max_retry_no_counter",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "91d59eaa-9c82-496a-8fe1-db3e31f8ead8"
+  } ]
+}

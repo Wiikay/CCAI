@@ -1,0 +1,47 @@
+{
+  "name": "2a3c66ad-b461-4ffc-9f30-2eb5e4c736ac",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ " Thank you, $flow.user_provided_first_name." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.user_provided_middle_name = NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "name_collection_middle_name",
+        "value": ""
+      } ]
+    },
+    "name": "2988872c-fe7f-41ec-aeda-b13a31ce486b"
+  }, {
+    "condition": "$flow.user_provided_middle_name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "name_collection_middle_name",
+        "value": "$flow.user_provided_middle_name"
+      } ]
+    },
+    "name": "7245d014-f1e7-4b6e-948e-17727d9a17d1"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "name_collection_first_name",
+        "value": "$flow.user_provided_first_name"
+      }, {
+        "parameter": "name_collection_last_name",
+        "value": "$flow.user_provided_last_name"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "0b4c9963-53c9-4764-b9a6-637e321e4c9f"
+  } ]
+}

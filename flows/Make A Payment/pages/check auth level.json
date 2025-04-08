@@ -1,0 +1,44 @@
+{
+  "name": "359a4a56-4591-473e-b2aa-a452bc0b9871",
+  "displayName": "check auth level",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "auth_level_req",
+      "value": 2
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.auth_level \u003c $session.params.auth_level_req OR $session.params.auth_level = null OR $session.params.auth_level = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Authentication",
+    "name": "e82562ac-e675-48f5-b0bd-2e92768c4113"
+  }, {
+    "condition": "$session.params.auth_level \u003e= $session.params.auth_level_req",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e get card details API",
+    "name": "0384afa5-a896-4264-98d2-4c75a8568a53"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "cbe846e8-49f5-4779-87a0-29b87772397d"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "a1af1af8-9dcc-40f1-8d21-0ee486e14106"
+  } ],
+  "description": "Route specific fulfillment defined."
+}

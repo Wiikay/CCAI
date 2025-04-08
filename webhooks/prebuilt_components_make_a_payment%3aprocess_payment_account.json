@@ -1,0 +1,17 @@
+{
+  "name": "f8cb3de7-d38a-4d9a-97f0-e72f2d4a6001",
+  "displayName": "prebuilt_components_make_a_payment:process_payment_account",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"payee_number\": \"$flow.payee_number\",\n  \"payment_type\": \"$flow.payment_type\",\n  \"masked_account_number\": \"$session.params.last_four_digit_of_account_number\",\n  \"payment_amount\": \"$flow.payment_amount\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"processPaymentAccountTransfer\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.payment_status_code",
+      "value": "payment_status_code"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

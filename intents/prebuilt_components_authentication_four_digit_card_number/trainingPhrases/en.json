@@ -1,0 +1,333 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "so the number is ",
+      "auto": true
+    }, {
+      "text": "1 2 3 4",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "its ",
+      "auto": true
+    }, {
+      "text": "12 34",
+      "parameterId": "last_four_digit_of_card_number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the card number is ",
+      "auto": true
+    }, {
+      "text": "12 34",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1 2 3 4",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It's of "
+    }, {
+      "text": "6782",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The card number reads "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card number is "
+    }, {
+      "text": "3823",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Sure, that's "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The four digit card number is "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 4 digit card is "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5 1 2 4",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": " "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2 4 5 6",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1245",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "number is "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "41",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": " "
+    }, {
+      "text": "2",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": ". "
+    }, {
+      "text": "3 ",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2334",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3566",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2983",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2345",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3744",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 5,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3478",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3458",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": " here is the last 4 digit of card number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card number is "
+    }, {
+      "text": "12 34",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card number is "
+    }, {
+      "text": "12",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": ". "
+    }, {
+      "text": "45",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "92 93",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card number is "
+    }, {
+      "text": "2345",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "45 66",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "4123",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the card number is: "
+    }, {
+      "text": "12 34",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my card number is "
+    }, {
+      "text": "1001",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The four-digit number  is "
+    }, {
+      "text": "4693",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The "
+    }, {
+      "text": "4"
+    }, {
+      "text": " digit code is "
+    }, {
+      "text": "7777",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card number  is "
+    }, {
+      "text": "3002",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "7",
+      "parameterId": "last_four_digit_of_card_number"
+    }, {
+      "text": "  "
+    }, {
+      "text": "467",
+      "parameterId": "last_four_digit_of_card_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "8ebb9cb3-e002-4cf8-8b78-ecef5870d2de",
+  "displayName": "check auth level",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.auth_level \u003c 0 OR $session.params.auth_level = null OR $session.params.auth_level = \"\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "phone_number",
+        "value": "$request.payload.telephony.caller_id"
+      } ]
+    },
+    "targetPage": "validate phone number",
+    "name": "6a3a4657-21e2-4a46-913d-b4adea3df0de"
+  }, {
+    "condition": "$session.params.auth_level \u003e= 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check auth level required",
+    "name": "bda2e27f-96d8-41b4-9159-e7a12496ac4f"
+  } ],
+  "description": "Parameter Presets contain the phone_number from payload in 1st route"
+}

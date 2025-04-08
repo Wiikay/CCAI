@@ -1,0 +1,148 @@
+{
+  "name": "64f4d29c-1229-4989-b978-891b3c931d8a",
+  "displayName": "\u003e collect last name",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.user_provided_last_name",
+      "required": true,
+      "entityType": "@prebuilt_components_name_collection_last_name",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is the last name?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "\u003e collect alternate last name",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. What is the last name?" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "$flow.last_prompt",
+              "value": "Sorry, we didn't get that. What is your last name?"
+            } ]
+          },
+          "name": "bc2e994f-65c0-4118-8f93-45c6477a8eff"
+        }, {
+          "targetPage": "\u003e collect spelling last name",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+          
+          },
+          "name": "dfba6065-983f-4d9d-b1f1-e577059ccc70"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we weren't able to hear you. What is the last name?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "fb5d2aac-3289-46d4-add5-28b80df9faae"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "4fd05a06-3980-41cf-a6fd-88a7812bc2af"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "retry",
+              "value": "2"
+            } ]
+          },
+          "name": "17cf68ce-7bdc-4616-97eb-6312c17c0eab"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "3a494c50-bf0c-4954-98e8-30965a58b0fa"
+  }, {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_last_name",
+        "value": "$flow.user_provided_last_name"
+      }, {
+        "parameter": "$flow.collect_first_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm last name",
+    "name": "07c20680-0182-4d11-9335-f209a0efdf3a"
+  }, {
+    "condition": "$flow.collect_last_name = \"last name\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.spelling_seperator",
+        "value": null
+      }, {
+        "parameter": "$flow.verified_person_name",
+        "value": null
+      }, {
+        "parameter": "$flow.verified_person_name_ssml",
+        "value": null
+      }, {
+        "parameter": "$flow.verify_person_name",
+        "value": null
+      }, {
+        "parameter": "$flow.collect_first_name",
+        "value": null
+      }, {
+        "parameter": "$flow.select-_first_name_path",
+        "value": null
+      } ]
+    },
+    "targetPage": "special character initial",
+    "name": "32f6a038-da84-4e3b-863f-1560bb1f2503"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "485dbec8-4a6e-493f-8693-0e9d86ba6b83"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d312d122-867f-4538-9fe5-7d26c54faa21"
+  } ]
+}

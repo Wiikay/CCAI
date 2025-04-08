@@ -1,0 +1,134 @@
+{
+  "name": "87b2302d-ceb8-4ca8-9d2c-cf1bc99498eb",
+  "displayName": "\u003e confirm OTP on phone",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.channel",
+        "value": "mobile"
+      } ]
+    },
+    "targetPage": "\u003e send OTP API",
+    "name": "edd1d9dd-dd50-4c4c-b8b7-ecc86f1c7cf8"
+  }, {
+    "intent": "prebuilt_components_authentication_phone_otp",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.channel",
+        "value": "mobile"
+      } ]
+    },
+    "targetPage": "\u003e send OTP API",
+    "name": "eb6ace88-b20c-45e4-b4fa-e74f7b424539"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "security question message",
+    "name": "36ca1128-1026-48dc-a13a-4ef14fccd9ea"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "5a177836-b106-49d1-b748-734ed75a4d5e"
+  }, {
+    "intent": "prebuilt_components_authentication_denial",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "d5132b68-20ed-4102-bc05-7f96dcfb0979"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "security question message",
+    "name": "2fbaf2bd-70cf-4c58-973c-49c4332b5da3"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. if you want to retry please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c960e8c2-218d-4974-84d8-028d73560faa"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. if you want to retry please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "abadde85-65a3-4b18-813f-c1194f6aa7e2"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "2063c767-2c88-4573-8403-f790a7711f27"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. if you want to try again please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "29a91e5f-efdc-4712-80d0-3e51aa73f6da"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. If you want to try again please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6c9584b4-1c77-4cb7-bdd0-b7b5e84bc1b7"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "ce8ba1a8-455a-4544-ad62-a9d7c130adc8"
+  } ],
+  "description": "Confirmation from customer Yes or Phone Intent"
+}

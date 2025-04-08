@@ -1,0 +1,39 @@
+{
+  "name": "b7144d89-6ed7-4a4a-9f48-0965fcec3ed3",
+  "displayName": "check auth level required",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.auth_level_req \u003c 1 OR $session.params.auth_level = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "283661d2-fd84-40c5-b38e-b70f45ac6835"
+  }, {
+    "condition": "$session.params.auth_level_req \u003c= 2 AND $session.params.auth_level \u003c 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "auth level 1",
+    "name": "a4972cb6-a7c5-4e5c-83c0-b7dde78bf545"
+  }, {
+    "condition": "$session.params.auth_level_req = 2 AND $session.params.auth_level \u003c 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "auth level 2",
+    "name": "dd104fcb-b205-49ac-abfa-30e478df26ae"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "84e58d31-aa90-4054-b6ab-5bf114dd50b5"
+  } ]
+}

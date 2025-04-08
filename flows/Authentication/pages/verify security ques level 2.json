@@ -1,0 +1,32 @@
+{
+  "name": "d5753864-96d4-4fe0-aade-6a64eaa7e891",
+  "displayName": "verify security ques level 2",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.secure_ans_count \u003c $flow.security_ans_mid_count OR $flow.secure_ans_count = null OR $flow.secure_ans_count = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "7d43fa8d-d3ad-4d42-856e-9ef82f616e19"
+  }, {
+    "condition": "$flow.secure_ans_count = $flow.security_ans_mid_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect additional question",
+    "name": "2d625390-881d-4763-8e47-3e2a3023f432"
+  }, {
+    "condition": "$flow.secure_ans_count = $flow.max_retry_security_ans_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check auth level 2",
+    "name": "44be27b5-dd69-4406-bbeb-8efabc2b8f8e"
+  } ]
+}

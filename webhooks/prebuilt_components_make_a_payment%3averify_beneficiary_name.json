@@ -1,0 +1,17 @@
+{
+  "name": "7f0a717e-8b8c-4191-83d3-5f4518954f56",
+  "displayName": "prebuilt_components_make_a_payment:verify_beneficiary_name",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"beneficiary_first_name\": \"$session.params.name_collection_first_name\",\n  \"beneficiary_last_name\": \"$session.params.name_collection_last_name\",\n  \"beneficiary_middle_name\": \"$session.params.name_collection_middle_name\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"verifyBeneficiaryName\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.beneficiary_account_number",
+      "value": "beneficiary_account_number"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

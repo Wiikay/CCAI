@@ -1,0 +1,27 @@
+{
+  "entities": [ {
+    "value": "mobile",
+    "synonyms": [ "mobile", "mobile payment", "mobile transfer", "phone transfer" ],
+    "languageCode": "en"
+  }, {
+    "value": "online",
+    "synonyms": [ "net banking", "netbanking", "online", "online banking", "online payment" ],
+    "languageCode": "en"
+  }, {
+    "value": "debit",
+    "synonyms": [ "dc", "dc card", "debit", "debit card" ],
+    "languageCode": "en"
+  }, {
+    "value": "upi",
+    "synonyms": [ "digital", "digital payment", "upi" ],
+    "languageCode": "en"
+  }, {
+    "value": "account",
+    "synonyms": [ "account ", "account transfer", "bank", "bank transfer", "transfer" ],
+    "languageCode": "en"
+  }, {
+    "value": "credit",
+    "synonyms": [ "cc", "cc card ", "credit", "credit card" ],
+    "languageCode": "en"
+  } ]
+}

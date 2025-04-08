@@ -1,0 +1,171 @@
+{
+  "name": "2d3916e0-1045-4f89-9f52-ad6810f1344a",
+  "displayName": "Card Expiration Date Collection",
+  "description": "This flow allows you to collect a credit card expiration date.",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "targetFlow": "Waiting Room",
+    "name": "1acf6476-14fb-4d78-bdeb-1d3fa6782726"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "24704981-22c6-48bc-946a-3a59a904926c"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, let us repeat it." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": "$sys.func.ADD($flow.replay_counter,1)"
+      } ]
+    },
+    "name": "aacde211-a5f9-4fcc-8e72-eac163c09ab6"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "14bf8cf2-bcb9-4a5a-b2f3-2010a46fd366"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": null
+      }, {
+        "parameter": "$flow.card_expiration_year",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_year_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.validate_len_year_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.invalid_month_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.current_year",
+        "value": "$sys.func.GET_FIELD($sys.func.NOW(), year)"
+      }, {
+        "parameter": "$flow.current_month",
+        "value": "$sys.func.GET_FIELD($sys.func.NOW(), month)"
+      }, {
+        "parameter": "$flow.validate_future_year_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.validate_previous_year_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.month",
+        "value": null
+      }, {
+        "parameter": "$flow.only_month",
+        "value": null
+      }, {
+        "parameter": "$flow.replay_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.playback",
+        "value": true
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we're having difficulty understanding your response."
+      }, {
+        "parameter": "$flow.intent_trigger_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.month_match",
+        "value": {
+          "1": "January",
+          "10": "October",
+          "11": "November",
+          "12": "December",
+          "2": "February",
+          "3": "March",
+          "4": "April",
+          "5": "May",
+          "6": "June",
+          "7": "July",
+          "8": "August",
+          "9": "September",
+          "April": "April",
+          "August": "August",
+          "December": "December",
+          "February": "February",
+          "January": "January",
+          "July": "July",
+          "June": "June",
+          "March": "March",
+          "May": "May",
+          "November": "November",
+          "October": "October",
+          "September": "September"
+        }
+      } ]
+    },
+    "targetPage": "\u003e collect date",
+    "name": "363a1b9a-be43-4049-a6b2-ab1c7a6fc98f"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "72497811-e87a-4a1e-9122-689d2e74c96d"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4d66a103-f43d-45b2-9774-144fb859c512"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

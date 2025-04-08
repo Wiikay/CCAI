@@ -1,0 +1,46 @@
+{
+  "name": "30bb0e88-23e3-4da1-aeb1-4e491a16e798",
+  "displayName": "\u003e collect security ques 2 credit exp date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "card_type",
+      "value": "credit"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.card_expiration_date_collection_card_expiration_date = null OR $session.params.card_expiration_date_collection_card_expiration_date = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Card Expiration Date Collection",
+    "name": "dd441a1b-2cf4-45c4-a552-85eef91ea65d"
+  }, {
+    "condition": "$session.params.card_expiration_date_collection_card_expiration_date != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_expiration_date_collection",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e verify security ques 2 credit exp date",
+    "name": "68309e0c-454d-4512-a790-1bfc16bb9967"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "99ccba22-cbd8-4f16-bf93-409fb92dded0"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "5d4543d7-2aa3-4372-af53-d2342e74bff9"
+  } ]
+}

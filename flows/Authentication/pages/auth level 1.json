@@ -1,0 +1,19 @@
+{
+  "name": "dfa62343-9660-409e-99b1-25d06adf2b56",
+  "displayName": "auth level 1",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check user email",
+    "name": "722ed049-0129-4013-a072-5ad917a51861"
+  } ],
+  "description": "Page indicates the beginning of Authentication Level 1 Check"
+}

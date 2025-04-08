@@ -1,0 +1,98 @@
+{
+  "name": "9dbd5a66-26c1-47af-9074-90d4d8554c9e",
+  "displayName": "route check account count",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "($session.params.account_count \u003c 1 OR $session.params.account_count = \"\" OR $session.params.account_count = null) AND $flow.retry_account_check_count \u003c $flow.max_retry_account_check_count",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we don't have any accounts associated with your registered mobile number. Please try another mode of payment." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_mode",
+        "value": null
+      }, {
+        "parameter": "$flow.user_mop",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_account_check_count",
+        "value": "$sys.func.ADD($flow.retry_account_check_count,1)"
+      } ]
+    },
+    "targetPage": "route check payment mode",
+    "name": "7b5cb4b6-475f-4164-8da5-61b9d4e7e4e4"
+  }, {
+    "condition": "$session.params.account_count \u003e 1",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.retry_acc_number = 0",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "We have found that there are $session.params.account_count accounts associated with your number." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetFlow": "Account Number Collection",
+    "name": "0e555bc5-defd-493d-8be4-683e708163f4"
+  }, {
+    "condition": "$session.params.account_count \u003e= 1 AND $session.params.last_four_digit_of_account_number != null",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$session.params.account_count = 1",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eWe have found a account number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e associated with your number.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e validate account API",
+    "name": "4547a251-6ee1-4c47-9a7f-b407af217293"
+  }, {
+    "condition": "$flow.retry_account_check_count = $flow.max_retry_account_check_count",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we don't have any accounts associated with your registered mobile number." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "1e74c1e7-a31a-4bfd-a478-f64f84fb1d91"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "c5de8e25-76d5-4335-9f0c-aa1f8a412911"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "9a9d6e65-769c-44fa-a313-5b7a7ac15a45"
+  } ]
+}

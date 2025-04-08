@@ -1,0 +1,176 @@
+{
+  "name": "a46ba335-5ebc-4823-825d-67d34ea5165c",
+  "displayName": "\u003e collect specific path",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.collect_name",
+      "required": true,
+      "entityType": "@prebuilt_components_name_collection_collect_name",
+      "isList": true,
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Got it. Are these special characters in the first name, middle name, or last name?" ]
+            },
+            "languageCode": "en"
+          } ],
+          "setParameterActions": [ {
+            "parameter": "$flow.last_prompt",
+            "value": "Got it. Are these special characters in the first name, middle name, or last name?"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. Are these special characters in the first name, middle name, or last name?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "4d06082c-fc97-4d5c-b105-bcc0bd859edd"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still weren't able to get that. Please make sure you're confirming whether are these special characters in the first name, middle name, or last name." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "a412b39e-06be-495a-ace2-751131767830"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-3",
+          "triggerFulfillment": {
+          
+          },
+          "name": "6e839021-0d73-4608-adc1-76b00a2e021e"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we weren't able to hear you. Are these special characters in the first name, middle name, or last name?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "715cd935-af33-4614-828d-c5600bd1159b"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "97685c2b-9f63-4af9-a872-fc4d85cc6c2a"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+          
+          },
+          "name": "0aa9e31f-26df-4f53-8541-303902ee6c05"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "9f89e24a-3497-4212-88cd-66855d3d4e71"
+  }, {
+    "condition": "$flow.spelling_separator = \"\\:-\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.name_separator",
+        "value": "hyphen"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "name": "97e1c72c-bd5d-4bef-9e32-b21dde4a17ef"
+  }, {
+    "condition": "$flow.spelling_separator = \"\\:\\'\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.name_separator",
+        "value": "apostrophe"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "name": "13b16864-1746-4bfb-b1ea-bb55c535b258"
+  }, {
+    "condition": "$flow.spelling_separator = \"\\: \"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.name_separator",
+        "value": "space"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "name": "881df4ab-0ee3-45f2-be60-586404887b8c"
+  }, {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.is_special_character_contain_in_first_name",
+        "value": "$sys.func.CONTAIN($flow.collect_name, \"first name\")"
+      }, {
+        "parameter": "$flow.is_special_character_contain_in_last_name",
+        "value": "$sys.func.CONTAIN($flow.collect_name,\"last name\")"
+      }, {
+        "parameter": "$flow.is_special_character_contain_in_middle_name",
+        "value": "$sys.func.CONTAIN($flow.collect_name, \"middle name\")"
+      }, {
+        "parameter": "$flow.is_special_character_contain_in_all_name",
+        "value": "$sys.func.CONTAIN($flow.collect_name, \"all of them\")"
+      }, {
+        "parameter": "collect_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "refining special characters parameters",
+    "name": "d01a2a3c-8a2e-45b0-acd8-7e25c2c63950"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "c811099b-d552-402d-9d53-3b072bb61249"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "7ebfab97-8864-4aa8-802f-5130dabacb40"
+  } ]
+}

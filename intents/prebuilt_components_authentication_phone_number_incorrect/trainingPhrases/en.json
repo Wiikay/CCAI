@@ -1,0 +1,271 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "invalid ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "not a valid ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no the ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number is not valid",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number is not correct",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "mobile",
+      "auto": true
+    }, {
+      "text": " number is not correct",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "incorrect ",
+      "auto": true
+    }, {
+      "text": "mobile",
+      "auto": true
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the ",
+      "auto": true
+    }, {
+      "text": "mobile",
+      "auto": true
+    }, {
+      "text": " number is not correct",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "wrong ",
+      "auto": true
+    }, {
+      "text": "mobile",
+      "auto": true
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no wrong",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "incorrect number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number is incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "number is not mine",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number is not mine",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number is not correct",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "not my number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no this is not the ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "wrong number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "wrong ",
+      "auto": true
+    }, {
+      "text": "phone",
+      "auto": true
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "this is not the number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "this is not my number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "this number is incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "phone"
+    }, {
+      "text": " number wrong",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the provided number is incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "this is not my ",
+      "auto": true
+    }, {
+      "text": "phone"
+    }, {
+      "text": " number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the ",
+      "auto": true
+    }, {
+      "text": "phone"
+    }, {
+      "text": " number is wrong",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "phone"
+    }, {
+      "text": " number is incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

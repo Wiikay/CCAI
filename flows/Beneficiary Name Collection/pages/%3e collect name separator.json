@@ -1,0 +1,130 @@
+{
+  "name": "e5db0644-6c8a-4875-88da-d2ef2fb718c8",
+  "displayName": "\u003e collect name separator",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please tell us what's next: a space, apostrophe, or hyphen." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please tell us what's next: A space, apostrophe, or hyphen."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_name_spelling_separator",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.name_separator",
+        "value": "$intent.params.spelling_separator.original"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$session.params.spelling_separator"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm name separator",
+    "name": "9e64cc73-5121-4529-b769-89cd458252c2"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "009432e5-6be7-4928-a854-51331212d292"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "3bdb5227-cf80-424c-8bf3-73f3a1384719"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "203b1cdd-ebf0-4e42-8b28-681991eed3b9"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please tell us what's next: a space, apostrophe, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "78eb43c2-fb3c-4df5-abf1-717724885441"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9a3a368c-8354-460b-bb9b-4eb99e598758"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "96e4d8ab-4f47-4b0c-9334-2028e150bc11"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please tell us what's next: a space, apostrophe, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7fcfbaa9-583b-4986-84f8-1307f16717f8"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please tell us what's next: a space, apostrophe, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "22d3f5c3-12bc-44e8-b384-c9f7bcdb2586"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "adfa5d5e-8e4b-4d09-9fab-bb802b464c86"
+  } ]
+}

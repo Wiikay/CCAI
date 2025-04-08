@@ -1,0 +1,171 @@
+{
+  "name": "e3325216-627c-48bd-adc2-7f1880ec9cb9",
+  "displayName": "\u003e collect cvv",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please say or enter the 3 or 4 digit CVV present on your card." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.playback_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_cvv_collection_collect_cvv",
+    "condition": "$session.params.cvv_code != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.cvv_code",
+        "value": "$sys.func.JOIN(\"\", $session.params.cvv_code)"
+      }, {
+        "parameter": "cvv_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "validate cvv",
+    "name": "a31f3ec0-2eea-4adb-bd13-d1ca140d42ed"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "3ff2f1cd-a781-4c03-a0b9-cc44fb9f7791"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end playback",
+    "name": "20dadde2-77a6-4f52-828b-20391e7ad104"
+  }, {
+    "intent": "prebuilt_components_cvv_collection_collect_cvv",
+    "condition": "$flow.intent_trigger \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Can you please say or enter the 3 or 4 digit CVV present on your card again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.intent_trigger",
+        "value": "$sys.func.ADD($flow.intent_trigger,1)"
+      } ]
+    },
+    "name": "f4f8018b-10dd-46c8-b49d-ac718548a8db"
+  }, {
+    "intent": "prebuilt_components_cvv_collection_collect_cvv",
+    "condition": "$flow.intent_trigger = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "0c527ce5-ac57-44ad-b9f9-b33711665929"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "770aa6bd-2bbb-452e-a30e-42a11a5d100b"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "95eadc45-4a89-4b3c-9677-df0c65067f53"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Can you please say or enter the 3 or 4 digit CVV present on your card again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1a1b0e1d-ff4c-4832-b504-0887b47c3e9a"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Can you please say or enter the 3 or 4 digit CVV present on your card again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4a2670ab-89fb-4797-ad60-58c999ffc49f"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder, moving to a quieter area, or use the keypad to enter the 3 or 4 digit CVV present on your card?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "827384de-0791-43a3-ac40-f95d3bcf6a13"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please make sure you're saying or using your keypad to enter the 3 or 4 digit CVV present on your card." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9285ebe4-d42a-4a63-a778-b0d43b320a64"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "9da4e94b-46d9-4287-8ca8-8ad454751d81"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "543c64fb-3730-4a59-a93c-937ea22d8b31"
+  } ]
+}

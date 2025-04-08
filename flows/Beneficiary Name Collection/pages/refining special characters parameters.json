@@ -1,0 +1,60 @@
+{
+  "name": "bca8f306-1854-4161-961f-ac2a60084555",
+  "displayName": "refining special characters parameters",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.is_special_character_contain_in_first_name = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_first_name",
+        "value": "first name"
+      } ]
+    },
+    "name": "ccbf0d7a-6553-4665-ae31-86c5c4718674"
+  }, {
+    "condition": "$flow.is_special_character_contain_in_last_name = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_last_name",
+        "value": "last name"
+      } ]
+    },
+    "name": "b972f50f-c71b-49b8-8960-c5527fad86e1"
+  }, {
+    "condition": "$flow.is_special_character_contain_in_middle_name = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_middle_name",
+        "value": "middle name"
+      } ]
+    },
+    "name": "6b88cdfa-4323-4a98-b629-3582ae00eec7"
+  }, {
+    "condition": "$flow.is_special_character_contain_in_all_name = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_first_name",
+        "value": "first name"
+      }, {
+        "parameter": "$flow.collect_last_name",
+        "value": "last name"
+      }, {
+        "parameter": "$flow.collect_middle_name",
+        "value": "middle name"
+      } ]
+    },
+    "name": "784fb2b6-5068-44cc-8ddc-a3fa452260a4"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect first name",
+    "name": "c0e6ab71-740a-4a79-b9ae-22ee735ca62a"
+  } ]
+}

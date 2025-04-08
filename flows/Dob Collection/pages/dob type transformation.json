@@ -1,0 +1,27 @@
+{
+  "name": "a2dfbccc-9ddc-4a04-a76e-8305225a20c3",
+  "displayName": "dob type transformation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.month",
+      "value": "$sys.func.IF(\"$sys.func.LEN($sys.func.TO_TEXT($flow.month)) = 1 \", $sys.func.CONCATENATE($sys.func.TO_TEXT(0) , $sys.func.TO_TEXT($flow.month)),$flow.month)"
+    }, {
+      "parameter": "$flow.day",
+      "value": "$sys.func.IF(\"$sys.func.LEN($sys.func.TO_TEXT($flow.day)) = 1 \", $sys.func.CONCATENATE($sys.func.TO_TEXT(0) , $sys.func.TO_TEXT($flow.day)),$flow.day)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.format_date = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.format_date",
+        "value": "$sys.func.CONCATENATE($sys.func.TO_TEXT($flow.year),\"-\",$sys.func.TO_TEXT($flow.month),\"-\",$sys.func.TO_TEXT($flow.day))"
+      } ]
+    },
+    "targetPage": "is valid date",
+    "name": "92f10c4e-50b4-4e29-9f5f-8689325f36b0"
+  } ]
+}

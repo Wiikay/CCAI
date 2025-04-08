@@ -1,0 +1,35 @@
+{
+  "entities": [ {
+    "value": "@sys.person:first-name @sys.person:last-name @sys.person:middle-name",
+    "synonyms": [ "@sys.person:first-name @sys.person:last-name @sys.person:middle-name" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.person:first-name @sys.person:last-name",
+    "synonyms": [ "@sys.person:first-name @sys.person:last-name" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.person:first-name",
+    "synonyms": [ "@sys.person:first-name" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.person:middle-name",
+    "synonyms": [ "@sys.person:middle-name" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.person:last-name @sys.person:first-name",
+    "synonyms": [ "@sys.person:last-name @sys.person:first-name" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.person:name @sys.person:middle-name",
+    "synonyms": [ "@sys.person:name @sys.person:middle-name" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.person:name",
+    "synonyms": [ "@sys.person:name" ],
+    "languageCode": "en"
+  }, {
+    "value": "@sys.person:name @sys.person:first-name",
+    "synonyms": [ "@sys.person:name @sys.person:first-name" ],
+    "languageCode": "en"
+  } ]
+}

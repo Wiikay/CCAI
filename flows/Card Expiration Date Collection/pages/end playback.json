@@ -1,0 +1,36 @@
+{
+  "name": "1f15e31f-2fde-413b-aa4b-3fcfc7f611d9",
+  "displayName": "end playback",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.playback",
+      "value": false
+    }, {
+      "parameter": "$flow.replay_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.playback_counter \u003c 3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Previous Page",
+    "name": "7fcad694-6d7a-4682-8c3b-797a5b0aed6e"
+  }, {
+    "condition": "$flow.playback_counter = 3",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "71bb32e8-d947-4d63-9dd2-7b5fdca00406"
+  } ]
+}

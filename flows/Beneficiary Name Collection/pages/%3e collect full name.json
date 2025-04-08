@@ -1,0 +1,184 @@
+{
+  "name": "d382b7fa-c2a7-47d9-9706-18bda9d6449d",
+  "displayName": "\u003e collect full name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please provide the beneficiary’s full name. Please tell us the first, last, and middle name, if they have one." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please provide the beneficiary’s full name. Please tell us the first, last, and middle name, if they have one."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_full_name",
+    "condition": "$session.params.first-name != null AND $session.params.last-name != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_full_name.first-name",
+        "value": "$session.params.first-name"
+      }, {
+        "parameter": "$flow.user_provided_full_name.last-name",
+        "value": "$session.params.last-name"
+      }, {
+        "parameter": "first-name",
+        "value": null
+      }, {
+        "parameter": "last-name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm full name",
+    "name": "32b42462-8420-4a6f-a6df-a74b96841036"
+  }, {
+    "intent": "prebuilt_components_name_collection_full_name",
+    "condition": "$session.params.user_provided_full_name.name.name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_full_name.name.name",
+        "value": "$sys.func.IDENTITY($session.params.user_provided_full_name.name.name)"
+      }, {
+        "parameter": "$flow.user_provided_full_name.middle-name",
+        "value": "$sys.func.IF(\"$session.params.user_provided_full_name.middle-name != null\", $session.params.user_provided_full_name.middle-name, null)"
+      }, {
+        "parameter": "user_provided_full_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "split full name",
+    "name": "6c303088-7875-4718-b3ea-980128d16b7b"
+  }, {
+    "intent": "prebuilt_components_name_collection_full_name",
+    "condition": "$session.params.user_provided_full_name.first-name != NULL AND $session.params.user_provided_full_name.last-name != NULL AND $session.params.user_provided_full_name.middle-name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_full_name.first-name",
+        "value": "$session.params.user_provided_full_name.first-name"
+      }, {
+        "parameter": "$flow.user_provided_full_name.last-name",
+        "value": "$session.params.user_provided_full_name.last-name"
+      }, {
+        "parameter": "$flow.user_provided_full_name.middle-name",
+        "value": "$session.params.user_provided_full_name.middle-name"
+      }, {
+        "parameter": "user_provided_full_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "split full name",
+    "name": "b7582a48-d005-419b-9d80-0c95e3bdf444"
+  }, {
+    "intent": "prebuilt_components_name_collection_full_name",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right. Let's start capturing the name again." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "d69a912a-4dc0-4ef1-aa49-97e454436e50"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "7a10e966-5317-4f79-8963-969bf839ba57"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "7e21be90-cfc8-4a8f-971e-48108f8fc31f"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5deb90cf-96da-4207-9335-baf387423a7b"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. What is the full name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3f10a1b5-7e9e-447b-a0d1-23007fade0c4"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "21e8c7c4-e716-4ccf-99b4-8dd7a354cb81"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "f0033f9b-67b2-4baf-b0ff-fa925d79dc92"
+  }, {
+    "targetPage": "initial start page",
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right. Let's start capturing the name again." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6aac5f5a-06bf-4e18-a108-86259b27ea34"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please make sure you're saying full name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "0a0772c3-9735-42af-9d5e-450083dbae94"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "68eb42cf-51be-436a-ae8a-fc866073418e"
+  } ]
+}

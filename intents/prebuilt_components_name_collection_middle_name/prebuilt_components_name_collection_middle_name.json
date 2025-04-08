@@ -1,0 +1,10 @@
+{
+  "name": "d9f9b1c7-4482-4b47-803d-fe0ad20d0c8c",
+  "displayName": "prebuilt_components_name_collection_middle_name",
+  "parameters": [ {
+    "id": "user_provided_middle_name",
+    "entityType": "@sys.person"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}

@@ -1,0 +1,127 @@
+{
+  "name": "6b736aa5-f2a8-4112-a068-45ea030bd63a",
+  "displayName": "\u003e collect first name",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.user_provided_first_name",
+      "required": true,
+      "entityType": "@prebuilt_components_name_collection_first_name",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is your first name?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "\u003e collect alternate first name",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. What is the first name?" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "$flow.last_prompt",
+              "value": "Sorry, we didn't get that. What is your first name?"
+            } ]
+          },
+          "name": "7d7251a3-2252-4a12-9f63-8d43877b7cf1"
+        }, {
+          "targetPage": "\u003e collect spelling first name",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+          
+          },
+          "name": "02ac0778-13ea-4ac5-bc03-2dbb55aa6310"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we weren't able to hear you. What is the first name?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "3787b515-d328-45c9-b6e3-9f3493e6bd12"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "0815d333-9618-477f-a7cb-cf51543b1702"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "retry",
+              "value": "2"
+            } ]
+          },
+          "name": "2a46ac75-dcf9-46f8-ac98-a71ad50b3521"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "43e4cddd-6748-432d-8f6c-df5e1e1702af"
+  }, {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_first_name",
+        "value": "$flow.user_provided_first_name"
+      } ]
+    },
+    "targetPage": "\u003e confirm first name",
+    "name": "cbd58570-c848-4ffb-86d4-77b68300c52f"
+  }, {
+    "condition": "$flow.collect_first_name = \"first name\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "special character initial",
+    "name": "5655408d-0e1f-4708-982c-b21735794339"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "15c75e13-a178-4301-8190-5f05b5657bf8"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "c11ed5c2-e6ee-4a6b-bec3-2464ed6fcd84"
+  } ]
+}

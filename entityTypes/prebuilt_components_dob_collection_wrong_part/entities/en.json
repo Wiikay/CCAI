@@ -1,0 +1,19 @@
+{
+  "entities": [ {
+    "value": "day",
+    "synonyms": [ "date", "day", "dd" ],
+    "languageCode": "en"
+  }, {
+    "value": "month",
+    "synonyms": [ "mm", "month" ],
+    "languageCode": "en"
+  }, {
+    "value": "year",
+    "synonyms": [ "ear", "yard", "year", "your", "yyyy", "yet" ],
+    "languageCode": "en"
+  }, {
+    "value": "entire",
+    "synonyms": [ "all", "all 3", "all of them", "all three", "entire", "entire date", "everything" ],
+    "languageCode": "en"
+  } ]
+}

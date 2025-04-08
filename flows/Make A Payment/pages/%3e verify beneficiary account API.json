@@ -1,0 +1,69 @@
+{
+  "name": "e9c1d0f0-dacc-46f4-bbbe-65c7d114da09",
+  "displayName": "\u003e verify beneficiary account API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_make_a_payment:verify_beneficiary_name",
+    "tag": "verifyBeneficiaryName"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.beneficiary_account_number = null OR $flow.beneficiary_account_number = \"\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to find the beneficiary account associated with your number." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "c48674fc-ef46-4f17-bf72-0cb88b130c41"
+  }, {
+    "condition": "$flow.beneficiary_account_number != null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, based on our records, we have the account number ending in \u003csay-as interpret-as=\"verbatim\"\u003e$flow.beneficiary_account_number\u003c/say-as\u003e. Please say yes, to confirm the account number.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e confirm beneficiary account number",
+    "name": "8a7373bf-c460-4777-a9f5-271039a2113f"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "0410546f-9a40-45ed-85be-f91d4f8c88b1"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "07e7d5c9-7368-476c-abc6-f3fab1607cf8"
+  } ]
+}

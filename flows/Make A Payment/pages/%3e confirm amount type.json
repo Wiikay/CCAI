@@ -1,0 +1,125 @@
+{
+  "name": "d21d5e13-6062-4ef6-974e-0e8d8eeccfb4",
+  "displayName": "\u003e confirm amount type",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$flow.amount_type = \"minimum_amount\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "route check payment mode",
+    "name": "1676a693-4522-4e23-aa5c-aa17c2da404c"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$flow.amount_type = \"other_amount\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003ePlease confirm the amount you want to pay. For example, if you want to pay \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say 100.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect amount",
+    "name": "61b09bfb-df0f-4dec-9af8-5370e7225bec"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "a5a45a5c-519e-4236-9570-d956497410bb"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "c283f9e5-bf61-468b-8139-96a4884aa2fa"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "fd50595c-9e8f-4265-b09f-2880d429170c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Please say yes to confirm the amount type you want to pay." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d6f28046-7ff8-4be7-a6eb-b43ed5fb5279"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Please say yes to confirm the amount type you want to pay." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5a47f4d7-5398-4aa2-8777-24d7f0f4f43e"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "cb8f06f7-6a7f-49fb-83cb-b67ed7a4c10d"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Please say yes to confirm the amount type you want to pay." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b35eeb5b-1695-4aa8-9c23-8b3d3fa04ae0"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Please say yes to confirm the amount type you want to pay." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "510372bf-17e3-493f-b237-413dcd38d992"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "a37b0c7d-b31a-4cad-8ad8-19ecef99a2d9"
+  } ],
+  "description": "Fulfillment defined at Routes"
+}

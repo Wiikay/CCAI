@@ -1,0 +1,10 @@
+{
+  "name": "96347f90-ea5c-4fa4-9709-df60e2bdc7ac",
+  "displayName": "prebuilt_components_make_a_payment_payment_type",
+  "parameters": [ {
+    "id": "payment_type",
+    "entityType": "@prebuilt_components_make_a_payment_payment_type"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}

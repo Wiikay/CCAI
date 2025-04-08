@@ -1,0 +1,70 @@
+{
+  "name": "7fb335cd-ac76-49a6-9e34-0e671af81345",
+  "displayName": "Last 4 Digit Card Number Collection",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_no_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.invalid_4digit_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.max_retry_no_counter",
+        "value": 2
+      }, {
+        "parameter": "$flow.max_retry_invalid_4digit_code_counter",
+        "value": 2
+      } ]
+    },
+    "targetPage": "\u003e collect last 4 digit of card number",
+    "name": "b30cc3e1-d6a7-474d-aa89-29a606455cf2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cec689ae-8044-4c8a-8eeb-4b490515317a"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9ca2c819-73ef-48b9-8fd4-c268a3956252"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true,
+    "dtmfSettings": {
+      "enabled": true,
+      "customRule": {
+      
+      },
+      "interdigitTimeoutDuration": {
+        "seconds": 5
+      },
+      "endpointingTimeoutDuration": {
+        "seconds": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "c9dd88a7-2e9b-4eb2-846e-633bf7497747",
+  "displayName": "retry credit card number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The card number you provided is not found. If you want to try again, please say yes." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "route check credit card count",
+    "name": "64a2dc9a-9994-4f9d-97cc-5cf339554a34"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "837a0634-005d-4ff8-aa2d-6169fdae3efe"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "a036bc87-6ccc-406a-a31d-824137598875"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "f796bcbb-9871-4d74-9a6d-40ae686f3bb2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. The card number you provided is not found. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4b5c1b30-4e13-4f8c-b44d-d49c108f713e"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. The card number you provided is not found. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f5e7de38-0275-42ba-be6f-3e8e140d4b9c"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "7ccee244-2df0-49d1-b1bc-696c05217c20"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. The card number you have provided is not found. If you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7ac0defc-6c75-4079-88ed-89670f39a005"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. The card number you have provided is not found, if you want to try again, please say yes." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9dc972aa-95d7-42eb-b13d-52005a461fba"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "b634e756-b46e-4e0e-b75c-550690fd0e3c"
+  } ]
+}

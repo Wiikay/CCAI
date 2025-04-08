@@ -1,0 +1,121 @@
+{
+  "name": "bce2ac8f-b862-4c08-add4-837581d17050",
+  "displayName": "\u003e collect security ques 2 debit card",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please tell us the last four digits of your debit card number." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_authentication_four_digit_card_number",
+    "condition": "$session.params.last_four_digit_of_card_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.debit_card_number",
+        "value": "$sys.func.JOIN(\"\", $session.params.last_four_digit_of_card_number)"
+      }, {
+        "parameter": "last_four_digit_of_card_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "validate security ques 2",
+    "name": "9394a3ca-231e-442a-9f0c-1d055f299ad4"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "verify security ques level 1",
+    "name": "8131f453-05f1-4c42-a840-94c51d9fd3fb"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "b0683eb0-c086-42a1-afcd-dbdd1e4ff62e"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Please enter the last four digits of your debit card number." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1a9957a4-4d86-4aca-bc0b-ffde16a1051c"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Please say or enter the last four digits of your debit card number." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "304d1b63-a5d4-43a1-9080-2e5bbe60ef69"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "1f87833f-c33c-4b08-bf2b-68d6c4a2d024"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please say or enter the last four digits of your debit card number." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "dab7ce03-52ae-4a85-95a2-d87e7dec01e4"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Please say or enter the last four digits of your debit card number." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "50969e85-b4d1-4256-b197-7a4d06702cf3"
+  }, {
+    "targetPage": "verify security ques level 1",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We're sorry, but the maximum number of retries has been exceeded.\n\nWe will need some more information to validate your identity.  " ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "66be1a4c-ccc2-4e3d-bb04-1bd7bbbcb5f9"
+  } ]
+}

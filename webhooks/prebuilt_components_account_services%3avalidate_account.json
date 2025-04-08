@@ -1,0 +1,20 @@
+{
+  "name": "bc6e428a-7eab-4a01-9dce-4202cf03f7c5",
+  "displayName": "prebuilt_components_account_services:validate_account",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"masked_account_number\": \"$session.params.last_four_digit_of_account_number\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"validateAccount\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.account_found",
+      "value": "account_found"
+    }, {
+      "key": "$flow.balance",
+      "value": "balance"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

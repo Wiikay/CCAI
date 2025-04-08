@@ -1,0 +1,144 @@
+{
+  "name": "3eb56b51-052f-42af-859b-3868bea6eb7a",
+  "displayName": "\u003e collect amount type",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.amount_type",
+      "required": true,
+      "entityType": "@prebuilt_components_make_a_payment_amount_type",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Do you wish to pay the total amount, the minimum amount, or any other amount?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "ece7986f-4fb0-43e0-8b12-af1fca11345e"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Do you wish to pay the total amount, the minimum amount, or any other amount?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f1f646c8-3e7d-4877-88f2-6efc36d1e385"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "05942073-3f49-479d-9723-c15a3ce5f3a7"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn’t get that. Do you wish to pay the total amount, the minimum amount, or any other amount?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "438850e8-c499-4abf-9f97-372a02e1ee79"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we're still not getting that. Do you wish to pay the total amount, the minimum amount, or any other amount?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "f726a8f1-ed4d-4335-a0ae-463c61bc76b9"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "1a4517f1-e19a-4e6a-b411-8c9a40c0f45d"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "3ff0ebf4-8f86-40ca-854a-21a96de2df05"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "69d89023-697b-412b-835a-d78b2b652cd8"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.amount_type = \"total_amount\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_amount",
+        "value": "$flow.total_amount"
+      } ]
+    },
+    "targetPage": "route check payment mode",
+    "name": "6de619b7-e267-4ecd-bde9-f2bde27ed39f"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.amount_type = \"minimum_amount\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eOkay, your minimum payment is \u003csay-as interpret-as='currency' language='en-US'\u003e$$flow.minimum_amount\u003c/say-as\u003e. Remember that when you choose the minimum amount to pay, you will be charged interest costs next month. Please say yes if you want to pay the minimum amount.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_amount",
+        "value": "$flow.minimum_amount"
+      } ]
+    },
+    "targetPage": "\u003e confirm amount type",
+    "name": "9c90a95c-1a38-4160-996c-eb7e082edec1"
+  }, {
+    "condition": "$page.params.status = \"FINAL\" AND $flow.amount_type = \"other_amount\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Remember that when you choose to pay less than the due amount, interest costs will be charged next month. Please say yes if you want to pay the other amount." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e confirm amount type",
+    "name": "8141a7fd-13cc-463e-bc7f-ce61e314f0d9"
+  } ],
+  "description": "1) $flow.amount_type - \"total_amount\", \"minimum_amount\" or \"other_amount\"\n2) Fulfillment defined at Routes"
+}

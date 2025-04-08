@@ -1,0 +1,23 @@
+{
+  "name": "8ca9d3af-a1a4-4195-8f09-3de8e3362871",
+  "displayName": "security question message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Okay, for security purposes we will need some more information to validate your identity." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect security ques 1",
+    "name": "f952e02a-c86a-4cf9-96c6-e3747f9a54db"
+  } ]
+}

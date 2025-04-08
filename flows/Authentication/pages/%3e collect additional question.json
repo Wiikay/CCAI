@@ -1,0 +1,117 @@
+{
+  "name": "a8dd1316-08cb-4704-bd87-0cfaf42791c9",
+  "displayName": "\u003e collect additional question",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.method_of_payment",
+      "required": true,
+      "entityType": "@prebuilt_components_authentication_payment_mode",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we were not able to hear you. Please tell us the method you used to pay your last credit card bill. You can say \"mobile\", \"online\", \"debit\", \"digital\", \"account transfer\", or \"credit card\"." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "a2958d3f-7b5b-475e-ba5c-f943b2a7e91b"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Please tell us the method you used to pay your last credit card bill. You can say \"mobile\", \"online\", \"debit\", \"digital\", \"account transfer\", or \"credit card\"." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "fb414a03-5f84-4649-91ea-23ab2d0d31d3"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_input"
+            } ]
+          },
+          "name": "f81e5597-bad9-409d-9019-b7ed8946b268"
+        }, {
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. Please tell us the method you used to pay your last credit card bill. You can say \"mobile\", \"online\", \"debit\", \"digital\", \"account transfer\", or \"credit card\"." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "eeb4d585-c142-490f-ba13-1aac74b36b80"
+        }, {
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we're still not getting that. Please tell us the method you used to pay your last credit card bill. You can say \"mobile\", \"online\", \"debit\", \"digital\", \"account transfer\", or \"credit card\"." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "b160d8ba-80bb-47a4-af21-a5a877e4d5bf"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-match-default",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "transfer_reason",
+              "value": "max_no_match"
+            } ]
+          },
+          "name": "19888f58-37ee-4cab-9edf-59aa7c08f802"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please tell us the method you used to pay your last bill. For example, you can say \"mobile payment\" or \"account transfer\"." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "44dc9219-7194-4030-b545-4ba2a160072e"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "4389e894-8511-4f62-932e-98cb7cf09ecb"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "verify additional question",
+    "name": "9c5937e2-7904-4d2c-b595-ba3de82b7364"
+  } ]
+}

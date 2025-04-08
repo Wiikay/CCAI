@@ -1,0 +1,135 @@
+{
+  "name": "d1355745-eb90-4743-b755-a382b85713ef",
+  "displayName": "route check payment mode",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.payment_type = \"credit_card_pay\" AND $session.params.account_count = null AND $flow.debit_card_count = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "select mobile payment",
+    "name": "4aa8d69b-472f-4264-bc85-d7793f5177ae"
+  }, {
+    "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count = null AND $flow.debit_card_count = null AND $flow.credit_card_count = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "select mobile payment",
+    "name": "ced45e5f-2532-4db2-b79a-4e5c68301e08"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.payment_type = \"credit_card_pay\" AND $session.params.account_count != null AND $flow.debit_card_count != null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your bank account, debit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"credit_card_pay\" AND $session.params.account_count != null AND $flow.debit_card_count = null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your bank account or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"credit_card_pay\" AND $session.params.account_count = null AND $flow.debit_card_count != null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your debit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count != null AND $flow.debit_card_count != null AND $flow.credit_card_count != null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your bank account, debit card, credit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count = null AND $flow.debit_card_count != null AND $flow.credit_card_count != null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your debit card, credit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count = null AND $flow.debit_card_count = null AND $flow.credit_card_count != null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your credit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count != null AND $flow.debit_card_count != null AND $flow.credit_card_count = null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your bank account, debit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count = null AND $flow.debit_card_count != null AND $flow.credit_card_count = null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your debit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count != null AND $flow.debit_card_count = null AND $flow.credit_card_count != null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your bank account, credit card or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.payment_type = \"beneficiary_pay\" AND $session.params.account_count != null AND $flow.debit_card_count = null AND $flow.credit_card_count = null",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "Do you want to pay by your bank account or mobile payment?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect payment mode",
+    "name": "e017fb0f-8dd9-43a3-a7e7-d3226afd0810"
+  } ],
+  "description": "Route specific fulfillment defined for 'true' route using conditional response."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "d35115c5-2374-4fdd-a5d3-3cbcb90c567f",
+  "displayName": "split full name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.full_name_separate",
+      "value": "$sys.func.SUBSTITUTE($flow.user_provided_full_name.name.name, \" \", \"/\")"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.user_provided_full_name.name.name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.split_full_name",
+        "value": "$sys.func.SPLIT($sys.func.TO_TEXT($flow.full_name_separate), \"/\")"
+      } ]
+    },
+    "targetPage": "format full name",
+    "name": "3f1092f6-8f4b-4ca5-b7aa-e6b28e48ede1"
+  }, {
+    "condition": "$flow.user_provided_full_name.first-name != NULL AND $flow.user_provided_full_name.last-name != NULL AND $flow.user_provided_full_name.middle-name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.format_first_name",
+        "value": "$flow.user_provided_full_name.first-name"
+      }, {
+        "parameter": "$flow.format_last_name",
+        "value": "$flow.user_provided_full_name.last-name"
+      }, {
+        "parameter": "$flow.format_middle_name",
+        "value": "$flow.user_provided_full_name.middle-name"
+      } ]
+    },
+    "targetPage": "\u003e confirm full name",
+    "name": "3870d2c4-f801-43fd-b277-54640866646f"
+  } ]
+}

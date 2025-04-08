@@ -1,0 +1,177 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "my first name is "
+    }, {
+      "text": "john"
+    }, {
+      "text": " and my last name is "
+    }, {
+      "text": "smith"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my name is M I K E",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "mike",
+      "parameterId": "user_provided_full_name"
+    }, {
+      "text": " M I K E"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Jennifer Aniston",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Neil Armstrong",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Alice Mary Higgins Clark",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My name is "
+    }, {
+      "text": "John Doe",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Emily smith",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "James brown",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my first name is "
+    }, {
+      "text": "Olivia",
+      "parameterId": "first-name"
+    }, {
+      "text": " and last name is "
+    }, {
+      "text": "davis",
+      "parameterId": "last-name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Michael",
+      "parameterId": "first-name"
+    }, {
+      "text": " is my first name and "
+    }, {
+      "text": "Taylor",
+      "parameterId": "last-name"
+    }, {
+      "text": " is my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my full name is "
+    }, {
+      "text": "john Miller",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "anna Wilson",
+      "parameterId": "user_provided_full_name"
+    }, {
+      "text": " is my full name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Noah Johnson",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "James Carollo",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Mikhaila\tGoldman",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "sara keller",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Danniel Yoon",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Anna Mart",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "patrick marlow smith",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "john doe smith",
+      "parameterId": "user_provided_full_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

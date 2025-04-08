@@ -1,0 +1,388 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "5 5 5 5",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "55 55",
+      "parameterId": "last_four_digit_of_account_number",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It's of "
+    }, {
+      "text": "6782",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The account number reads "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "account number is "
+    }, {
+      "text": "3823",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Sure, that's 1234"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 4 digit account number is "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The 4 digit number is "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1.234",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12.34",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5 1 2 4",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": " "
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2   4   5 6",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1245",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "number is "
+    }, {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "41",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": " ##@"
+    }, {
+      "text": "2",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": ". "
+    }, {
+      "text": "3 ",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2334",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3566",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2983",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2345",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3744",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1234",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 5,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3478",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3458",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "72,82",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": " this is my account number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "6676",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": " here is the last 4 digit of account number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "555.5",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": " is the last 4 digit of account number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "account number is "
+    }, {
+      "text": "12 34",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "account number is "
+    }, {
+      "text": "12",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": ". "
+    }, {
+      "text": "45",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "92 93",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "account number is "
+    }, {
+      "text": "2345",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "45 66",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "4123",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12,34",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "334,6",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the account number is: "
+    }, {
+      "text": "12 34",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my account number is "
+    }, {
+      "text": "1001",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The four-digit number  is "
+    }, {
+      "text": "4693",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The "
+    }, {
+      "text": "4"
+    }, {
+      "text": " digit code is "
+    }, {
+      "text": "7777",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "account number  is "
+    }, {
+      "text": "3002",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "@#"
+    }, {
+      "text": "112",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "7   4",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "@@"
+    }, {
+      "text": "67",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "%."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i think it's "
+    }, {
+      "text": "1.3",
+      "parameterId": "last_four_digit_of_account_number"
+    }, {
+      "text": "."
+    }, {
+      "text": "44",
+      "parameterId": "last_four_digit_of_account_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

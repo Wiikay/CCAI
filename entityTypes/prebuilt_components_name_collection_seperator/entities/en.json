@@ -1,0 +1,15 @@
+{
+  "entities": [ {
+    "value": ":-",
+    "synonyms": [ "dash", "hi phen", "hyphen", "hyphenated" ],
+    "languageCode": "en"
+  }, {
+    "value": ": ",
+    "synonyms": [ "extra space", "space", "gap" ],
+    "languageCode": "en"
+  }, {
+    "value": ":'",
+    "synonyms": [ "apostrophe" ],
+    "languageCode": "en"
+  } ]
+}

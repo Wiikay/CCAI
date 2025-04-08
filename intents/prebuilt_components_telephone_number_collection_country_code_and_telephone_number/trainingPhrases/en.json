@@ -1,0 +1,338 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "country name is ",
+      "auto": true
+    }, {
+      "text": "Russia",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My phone number is "
+    }, {
+      "text": "(833) 215-6026",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "919901624880",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I live in ",
+      "auto": true
+    }, {
+      "text": "Germany",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "code is "
+    }, {
+      "text": "1",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and telephone number is "
+    }, {
+      "text": "2245678908",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "91",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and "
+    }, {
+      "text": "9901624880",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am from "
+    }, {
+      "text": "India",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and it's country code is "
+    }, {
+      "text": "91",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I believe I am from the ",
+      "auto": true
+    }, {
+      "text": "UK",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is "
+    }, {
+      "text": "1",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and my telephone number is "
+    }, {
+      "text": "8876543210",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "country ",
+      "auto": true
+    }, {
+      "text": "US",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and telephone number ",
+      "auto": true
+    }, {
+      "text": "4457893242",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "grew up in ",
+      "auto": true
+    }, {
+      "text": "India",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and my telephone number is ",
+      "auto": true
+    }, {
+      "text": "9902624880",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I hail from the ",
+      "auto": true
+    }, {
+      "text": "USA",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I was born in the ",
+      "auto": true
+    }, {
+      "text": "United Kingdom",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am based in the "
+    }, {
+      "text": "US",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am a native of the ",
+      "auto": true
+    }, {
+      "text": "UK",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am from the ",
+      "auto": true
+    }, {
+      "text": "USA",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it must be ",
+      "auto": true
+    }, {
+      "text": "1",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i think it is ",
+      "auto": true
+    }, {
+      "text": "91",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Country is ",
+      "auto": true
+    }, {
+      "text": "India",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and telephone number is ",
+      "auto": true
+    }, {
+      "text": "123456789",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My country is ",
+      "auto": true
+    }, {
+      "text": "Canada",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and phone number is ",
+      "auto": true
+    }, {
+      "text": "9901624880",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "India",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " is my country",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am a ",
+      "auto": true
+    }, {
+      "text": "US",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " citizen",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "canada",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I am from ",
+      "auto": true
+    }, {
+      "text": "US",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and phone number is ",
+      "auto": true
+    }, {
+      "text": "8765234897",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "91",
+      "parameterId": "country_code",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is ",
+      "auto": true
+    }, {
+      "text": "1",
+      "parameterId": "country_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "country code is "
+    }, {
+      "text": "91",
+      "parameterId": "country_code",
+      "auto": true
+    }, {
+      "text": " and phone number is "
+    }, {
+      "text": "9876543219",
+      "parameterId": "telephone_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

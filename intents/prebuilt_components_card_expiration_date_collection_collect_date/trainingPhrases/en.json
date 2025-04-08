@@ -1,0 +1,198 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "My card expires on "
+    }, {
+      "text": "8/2027",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "06 28",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "11 2028",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card's expiration date is "
+    }, {
+      "text": "012025",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card will expire on ",
+      "auto": true
+    }, {
+      "text": "august 2029",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "11 32",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card's expiration date is ",
+      "auto": true
+    }, {
+      "text": "423",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card's expiration date is "
+    }, {
+      "text": "dec 2024",
+      "parameterId": "expiration_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2 / 29",
+      "parameterId": "expiration_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2/29",
+      "parameterId": "expiration_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card expires in "
+    }, {
+      "text": "May",
+      "parameterId": "expiration_date"
+    }, {
+      "text": "23",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiration date is "
+    }, {
+      "text": "May 23",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is "
+    }, {
+      "text": "May 23",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It is "
+    }, {
+      "text": "january 2024",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiration date is "
+    }, {
+      "text": "feb 2023",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jan 2025",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "march 2023",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1-25",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2/29",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3\\34",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "8\\45",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "12 - 27",
+      "parameterId": "expiration_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

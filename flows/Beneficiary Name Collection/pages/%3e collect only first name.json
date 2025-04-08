@@ -1,0 +1,129 @@
+{
+  "name": "e1be1cdb-4860-407a-8945-be7da38c3830",
+  "displayName": "\u003e collect only first name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eTo confirm, the first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as='verbatim'\u003e $flow.format_first_name \u003c/say-as\u003e\u003c/prosody\u003e. Did we spell the first name correctly? \u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003eTo confirm, the first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as='verbatim'\u003e $flow.format_first_name \u003c/say-as\u003e\u003c/prosody\u003e. Did we spell the first name correctly? \u003c/speak\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_first_name",
+        "value": "$flow.format_first_name"
+      } ]
+    },
+    "targetPage": "\u003e collect last name",
+    "name": "027dcc1c-62e1-4554-81b3-95e7d20dbcba"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right. Lets start capturing the name again" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "9016bc49-12f5-4a15-9f3d-7698f76b3f02"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "cc65ba7e-e8f2-4762-80bc-da0c6f40aad6"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "a9dcd0ab-cc75-428b-a424-9c41f17245b8"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e Sorry, we weren't able to hear you. To confirm, the first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as='verbatim'\u003e $flow.format_first_name \u003c/say-as\u003e\u003c/prosody\u003e. Did we spell the first name correctly? \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3a606e95-64eb-44be-aba8-a5cfa9e15a29"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d79acb13-912a-4246-a611-e68344fd7f18"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "403b75b7-a6b0-4d93-8459-428e429888c9"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e Sorry, we didn't get that. To confirm, the first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as='verbatim'\u003e $flow.format_first_name \u003c/say-as\u003e\u003c/prosody\u003e. Did we spell your first name correctly? \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "43a15f35-5c0d-4961-83e8-962f5b850656"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e Hmm, we still weren't able to get that. To confirm, the first name is \u003cprosody rate='slow'\u003e\u003csay-as interpret-as='verbatim'\u003e $flow.format_first_name \u003c/say-as\u003e\u003c/prosody\u003e. Did we spell the first name correctly? \u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1de42704-550c-4358-bceb-b619bfffb1a5"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "94d69f1f-ce30-4f68-b937-09f4935d9f51"
+  } ]
+}

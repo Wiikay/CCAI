@@ -1,0 +1,127 @@
+{
+  "entities": [ {
+    "value": "1",
+    "synonyms": [ "01", "1", "1st", "first", "one" ],
+    "languageCode": "en"
+  }, {
+    "value": "2",
+    "synonyms": [ "02", "2", "2nd", "second", "seconds", "to", "too", "two" ],
+    "languageCode": "en"
+  }, {
+    "value": "3",
+    "synonyms": [ "03", "3", "3rd", "third", "three" ],
+    "languageCode": "en"
+  }, {
+    "value": "4",
+    "synonyms": [ "04", "4", "4th", "for", "four", "fourth" ],
+    "languageCode": "en"
+  }, {
+    "value": "5",
+    "synonyms": [ "05", "5", "5th", "fifth", "five" ],
+    "languageCode": "en"
+  }, {
+    "value": "6",
+    "synonyms": [ "06", "6", "6th", "six", "sixth", "the 6th" ],
+    "languageCode": "en"
+  }, {
+    "value": "7",
+    "synonyms": [ "07", "7", "7th", "seven", "seventh", "the 7th" ],
+    "languageCode": "en"
+  }, {
+    "value": "8",
+    "synonyms": [ "08", "8", "8th", "eight", "eighth", "the 8th" ],
+    "languageCode": "en"
+  }, {
+    "value": "9",
+    "synonyms": [ "09", "9", "9th", "nine", "ninth" ],
+    "languageCode": "en"
+  }, {
+    "value": "10",
+    "synonyms": [ "10", "10th", "ten", "tenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "11",
+    "synonyms": [ "11", "11th", "eleven", "eleventh" ],
+    "languageCode": "en"
+  }, {
+    "value": "12",
+    "synonyms": [ "12", "12th", "twelfth", "twelve" ],
+    "languageCode": "en"
+  }, {
+    "value": "13",
+    "synonyms": [ "13", "13th", "thirteen", "thirteenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "14",
+    "synonyms": [ "14", "14th", "fourteen", "fourteenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "15",
+    "synonyms": [ "15", "15th", "fifteen", "fifteenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "16",
+    "synonyms": [ "16", "16th", "sixteen", "sixteenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "17",
+    "synonyms": [ "17", "17th", "seventeen", "seventeenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "18",
+    "synonyms": [ "18", "18th", "eighteen", "eighteenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "19",
+    "synonyms": [ "19", "19th", "nineteen", "nineteenth" ],
+    "languageCode": "en"
+  }, {
+    "value": "20",
+    "synonyms": [ "20", "20th", "twentieth", "twenty" ],
+    "languageCode": "en"
+  }, {
+    "value": "21",
+    "synonyms": [ "21", "21st", "twenty first", "twenty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "22",
+    "synonyms": [ "22", "22nd", "twenty second", "twenty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "23",
+    "synonyms": [ "23", "23rd", "twenty third", "twenty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "24",
+    "synonyms": [ "24", "24th", "twenty four", "twenty fourth" ],
+    "languageCode": "en"
+  }, {
+    "value": "25",
+    "synonyms": [ "25", "25th", "twenty fifth", "twenty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "26",
+    "synonyms": [ "26", "26th", "twenty six", "twenty sixth" ],
+    "languageCode": "en"
+  }, {
+    "value": "27",
+    "synonyms": [ "27", "27th", "twenty seven", "twenty seventh" ],
+    "languageCode": "en"
+  }, {
+    "value": "28",
+    "synonyms": [ "28", "28th", "twenty eight", "twenty eighth" ],
+    "languageCode": "en"
+  }, {
+    "value": "29",
+    "synonyms": [ "29", "29th", "twenty nine", "twenty ninth" ],
+    "languageCode": "en"
+  }, {
+    "value": "30",
+    "synonyms": [ "30", "30th", "thirtieth", "thirty" ],
+    "languageCode": "en"
+  }, {
+    "value": "31",
+    "synonyms": [ "31", "31st", "thirty first", "thirty one" ],
+    "languageCode": "en"
+  } ]
+}

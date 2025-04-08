@@ -1,0 +1,115 @@
+{
+  "name": "266f12c1-5093-48e7-8c7d-73ead7521b8d",
+  "displayName": "validate date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.card_expiration_month = NULL OR $flow.card_expiration_month = \"\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, the expiration date does not look quite right. Let's try again by capturing the month first." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "Please say or enter your $session.params.card_type card's expiration month." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect month",
+    "name": "20da54f9-1427-434c-9124-8ccb3b973777"
+  }, {
+    "condition": "$sys.func.LEN($flow.card_expiration_year) != 4",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, the expiration year \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e does not look quite right. Please say or enter a valid $session.params.card_type card's expiration year.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "0ccfb193-1e36-4362-91e7-3bdafe238715"
+  }, {
+    "condition": "$flow.card_expiration_month \u003c \"01\" OR $flow.card_expiration_month \u003e \"12\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, the expiration date does not look quite right. Let's try capturing the month again." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "Please say or enter your $session.params.card_type card's expiration month." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_month",
+        "value": null
+      }, {
+        "parameter": "$flow.card_expiration_year",
+        "value": null
+      }, {
+        "parameter": "$flow.expiration_date",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect month",
+    "name": "ca8d35fd-5ae1-4615-b61a-4f180e486ce4"
+  }, {
+    "condition": "$flow.card_expiration_year \u003e= $sys.func.ADD($flow.current_year, 10)",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, the expiration year \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e is invalid as it is more than 10 years from now. Please say or enter a valid expiration year.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "cf3e835e-6040-4c97-99dc-dffbfa9a8b03"
+  }, {
+    "condition": "$flow.card_expiration_year \u003c= $sys.func.MINUS($flow.current_year, 1)",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, the expiration year \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.card_expiration_year\u003c/say-as\u003e is invalid as it is an expired year. Please say or enter a valid expiration year.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "b4e69f36-e501-468d-8b0e-17809ba246c6"
+  }, {
+    "condition": "$flow.card_expiration_year \u003c= $flow.current_year AND $sys.func.MINUS($flow.current_month, 1) \u003e= $flow.card_expiration_month",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, the expiration date \u003csay-as interpret-as=\"date\" format=\"mmyyyy\"\u003e$flow.expiration_month_spoken $flow.card_expiration_year\u003c/say-as\u003e does not look quite right because it's an expired date. Let's try again by capturing the month first.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "Please say or enter your $session.params.card_type card's expiration month." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect month",
+    "name": "e6efe47c-23b4-4ea9-8195-36ede3410bae"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm date",
+    "name": "dca27bf1-6a6d-4870-a7eb-704359714bcb"
+  } ]
+}

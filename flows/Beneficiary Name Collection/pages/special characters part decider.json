@@ -1,0 +1,36 @@
+{
+  "name": "15025f5c-15e9-435b-af7b-196b606a243b",
+  "displayName": "special characters part decider",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.user_provided_first_name != NULL AND $flow.user_provided_last_name = NULL AND $flow.user_provided_middle_name = NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_part",
+        "value": "last name"
+      } ]
+    },
+    "name": "51e88849-bfd4-4cce-9366-b1029ae69490"
+  }, {
+    "condition": "$flow.user_provided_last_name != NULL AND $flow.user_provided_first_name != NULL AND $flow.user_provided_middle_name = NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_part",
+        "value": "middle name"
+      } ]
+    },
+    "name": "ab355269-4ca0-4072-9d11-ffaebf4c5bab"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect first part of name",
+    "name": "af5d0ad6-3331-4e4a-a15a-54348d9803ac"
+  } ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "203de71c-629e-428f-8aa3-b4ee2222998d",
+  "displayName": "prebuilt_components_make_a_payment:verify_credit_card_number",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"credit_card_number\": \"$flow.payee_last_four_digit_of_credit_card_number\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"verifyCreditCardNumber\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.card_found",
+      "value": "card_found"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

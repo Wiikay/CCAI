@@ -1,0 +1,30 @@
+{
+  "name": "689ece39-6da2-4f3e-a683-e7d3443612e3",
+  "displayName": "check account number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.last_four_digit_of_account_number = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect last 4 digit of account number",
+    "name": "b38cff6b-3dc0-4513-bb50-80742c311df9"
+  }, {
+    "condition": "$session.params.last_four_digit_of_account_number != null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eAre you looking for an account number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$session.params.last_four_digit_of_account_number\u003c/say-as\u003e?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e confirm account number",
+    "name": "7607db0f-3457-4df7-9dd4-49c47476b535"
+  } ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "a2ea4801-d1c6-436c-ad70-2911b1554277",
+  "displayName": "check user email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.email = null OR $session.params.email = \"\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.channel",
+        "value": "mobile"
+      } ]
+    },
+    "targetPage": "\u003e send OTP API",
+    "name": "08c8a204-ebbd-4f96-b254-8b2d5b131254"
+  }, {
+    "condition": "$session.params.email != null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To proceed we will send you a code. Do you prefer to receive the code by phone or email?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect email or phone OTP",
+    "name": "11d676f3-47d7-4033-ad78-9c963b7d0d4e"
+  } ],
+  "description": "$flow.channel = \"mobile\" set at Route $session.params.email = null OR $session.params.email = \"\""
+}

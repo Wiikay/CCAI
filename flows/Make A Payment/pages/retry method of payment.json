@@ -1,0 +1,148 @@
+{
+  "name": "3171c22d-eccd-4584-95ec-5c84b142511f",
+  "displayName": "retry method of payment",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Do you want to retry the payment with another payment method?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.last_four_digit_of_debit_card_number",
+        "value": null
+      }, {
+        "parameter": "$flow.debit_card_exp_date",
+        "value": null
+      }, {
+        "parameter": "$flow.debit_card_cvv_code",
+        "value": null
+      }, {
+        "parameter": "$flow.last_four_digit_of_credit_card_number",
+        "value": null
+      }, {
+        "parameter": "$flow.credit_card_exp_date",
+        "value": null
+      }, {
+        "parameter": "$flow.credit_card_cvv_code",
+        "value": null
+      }, {
+        "parameter": "$flow.user_mop",
+        "value": null
+      }, {
+        "parameter": "last_four_digit_of_account_number",
+        "value": null
+      }, {
+        "parameter": "$flow.payment_mode",
+        "value": null
+      }, {
+        "parameter": "$flow.channel",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_mop_counter",
+        "value": "$sys.func.ADD($flow.retry_mop_counter,1)"
+      } ]
+    },
+    "targetPage": "route check payment mode",
+    "name": "7cc6a8ac-8e15-420d-bcbb-e90e72bb6b73"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "177884d2-66a2-4ee8-9e6a-0a4ed776f8a6"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "d54d6129-a657-4bc5-aa13-3502b895d861"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "04bd6d1a-804e-4a07-95b7-d152556dc7d7"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Do you want to retry the payment with another payment method?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "46fd123e-3b25-4ddc-8ba6-3fd04f69c008"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Do you want to retry the payment with another payment method?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5539e7ae-2a1c-4949-9c23-33a38633a590"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "bf6ca750-164b-4491-bc26-8f7ec84aa91a"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Do you want to retry the payment with another payment method?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "71692fbc-915a-48b1-a3d9-364211d16304"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Do you want to retry the payment with another payment method?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "67073f9c-b00c-4230-9928-5c6b38608031"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "d172be53-8c51-4d6a-b874-e72cd9f6d786"
+  } ]
+}

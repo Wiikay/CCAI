@@ -1,0 +1,51 @@
+{
+  "entities": [ {
+    "value": "01",
+    "synonyms": [ " of", "0 1", "01", "1", "Jan", "January", "January of ", "The first month" ],
+    "languageCode": "en"
+  }, {
+    "value": "02",
+    "synonyms": [ "0 2", "02", "2 ", "Feb", "February", "February of" ],
+    "languageCode": "en"
+  }, {
+    "value": "03",
+    "synonyms": [ "0 3 ", "03", "3", "mar", "March", "March of" ],
+    "languageCode": "en"
+  }, {
+    "value": "04",
+    "synonyms": [ "0 4", "04", "4", "April", "April of" ],
+    "languageCode": "en"
+  }, {
+    "value": "05",
+    "synonyms": [ "0 5", "05", "5", "May", "May of", "me" ],
+    "languageCode": "en"
+  }, {
+    "value": "06",
+    "synonyms": [ "0 6 ", "06", "6", "June", "June of" ],
+    "languageCode": "en"
+  }, {
+    "value": "07",
+    "synonyms": [ "0 7", "07", "7", "July", "July of" ],
+    "languageCode": "en"
+  }, {
+    "value": "08",
+    "synonyms": [ "0 8 ", "08", "8", "Aug", "August", "August of" ],
+    "languageCode": "en"
+  }, {
+    "value": "09",
+    "synonyms": [ "0 9", "09", "9", "Sept", "September", "September of" ],
+    "languageCode": "en"
+  }, {
+    "value": "10",
+    "synonyms": [ "1 0", "10", "Oct", "Oct of", "October", "October of" ],
+    "languageCode": "en"
+  }, {
+    "value": "11",
+    "synonyms": [ "1 1", "11", "nov", "november", "november of" ],
+    "languageCode": "en"
+  }, {
+    "value": "12",
+    "synonyms": [ "1 2", "12", "dec", "december", "december of" ],
+    "languageCode": "en"
+  } ]
+}

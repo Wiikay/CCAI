@@ -1,0 +1,38 @@
+{
+  "name": "ab2c70d8-6430-433a-96fe-53762dff5dc4",
+  "displayName": "check user email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.collect_otp",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.email = null OR $session.params.email = \"\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "For security purposes, we need to validate your identity, so we will send you a code. Can we send the code to your registered phone number?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e confirm OTP on phone",
+    "name": "5bc4430c-92bc-41c2-93b1-95c53b54d154"
+  }, {
+    "condition": "$session.params.email != null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eFor security purposes, we need to validate your identity, so we will send you a code. Do you prefer to receive the code by phone or by email?\u003cbreak time=\"1s\"/\u003e\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect email or mobile OTP",
+    "name": "47255f47-66ed-4b5c-b9dd-038713f36459"
+  } ]
+}

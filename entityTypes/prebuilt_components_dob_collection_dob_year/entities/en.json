@@ -1,0 +1,511 @@
+{
+  "entities": [ {
+    "value": "1900",
+    "synonyms": [ "1900" ],
+    "languageCode": "en"
+  }, {
+    "value": "1901",
+    "synonyms": [ "1901" ],
+    "languageCode": "en"
+  }, {
+    "value": "1902",
+    "synonyms": [ "1902" ],
+    "languageCode": "en"
+  }, {
+    "value": "1903",
+    "synonyms": [ "1903" ],
+    "languageCode": "en"
+  }, {
+    "value": "1904",
+    "synonyms": [ "1904" ],
+    "languageCode": "en"
+  }, {
+    "value": "1905",
+    "synonyms": [ "1905" ],
+    "languageCode": "en"
+  }, {
+    "value": "1906",
+    "synonyms": [ "1906" ],
+    "languageCode": "en"
+  }, {
+    "value": "1907",
+    "synonyms": [ "1907" ],
+    "languageCode": "en"
+  }, {
+    "value": "1908",
+    "synonyms": [ "1908" ],
+    "languageCode": "en"
+  }, {
+    "value": "1909",
+    "synonyms": [ "1909" ],
+    "languageCode": "en"
+  }, {
+    "value": "1910",
+    "synonyms": [ "1910" ],
+    "languageCode": "en"
+  }, {
+    "value": "1911",
+    "synonyms": [ "1911" ],
+    "languageCode": "en"
+  }, {
+    "value": "1912",
+    "synonyms": [ "1912" ],
+    "languageCode": "en"
+  }, {
+    "value": "1913",
+    "synonyms": [ "1913" ],
+    "languageCode": "en"
+  }, {
+    "value": "1914",
+    "synonyms": [ "1914" ],
+    "languageCode": "en"
+  }, {
+    "value": "1915",
+    "synonyms": [ "1915" ],
+    "languageCode": "en"
+  }, {
+    "value": "1916",
+    "synonyms": [ "1916" ],
+    "languageCode": "en"
+  }, {
+    "value": "1917",
+    "synonyms": [ "1917" ],
+    "languageCode": "en"
+  }, {
+    "value": "1918",
+    "synonyms": [ "1918" ],
+    "languageCode": "en"
+  }, {
+    "value": "1919",
+    "synonyms": [ "1919" ],
+    "languageCode": "en"
+  }, {
+    "value": "1920",
+    "synonyms": [ "1920" ],
+    "languageCode": "en"
+  }, {
+    "value": "1921",
+    "synonyms": [ "1921" ],
+    "languageCode": "en"
+  }, {
+    "value": "1922",
+    "synonyms": [ "1922" ],
+    "languageCode": "en"
+  }, {
+    "value": "1923",
+    "synonyms": [ "1923" ],
+    "languageCode": "en"
+  }, {
+    "value": "1924",
+    "synonyms": [ "1924" ],
+    "languageCode": "en"
+  }, {
+    "value": "1925",
+    "synonyms": [ "1925" ],
+    "languageCode": "en"
+  }, {
+    "value": "1926",
+    "synonyms": [ "1926" ],
+    "languageCode": "en"
+  }, {
+    "value": "1927",
+    "synonyms": [ "1927" ],
+    "languageCode": "en"
+  }, {
+    "value": "1928",
+    "synonyms": [ "1928" ],
+    "languageCode": "en"
+  }, {
+    "value": "1929",
+    "synonyms": [ "1929" ],
+    "languageCode": "en"
+  }, {
+    "value": "1930",
+    "synonyms": [ "1930" ],
+    "languageCode": "en"
+  }, {
+    "value": "1931",
+    "synonyms": [ "1931" ],
+    "languageCode": "en"
+  }, {
+    "value": "1932",
+    "synonyms": [ "1932", "32", "nineteen hundred thirty two", "nineteen thirty two", "thirty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "1933",
+    "synonyms": [ "1933", "33", "nineteen hundred thirty three", "nineteen thirty three", "thirty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "1934",
+    "synonyms": [ "1934", "34", "nineteen hundred thirty four", "Nineteen thirty four", "thirty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "1935",
+    "synonyms": [ "1935", "35", "nineteen hundred thirty five", "Nineteen thirty five", "thirty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "1936",
+    "synonyms": [ "1936", "36", "nineteen hundred thirty six", "Nineteen thirty six", "thirty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "1937",
+    "synonyms": [ "1937", "37", "nineteen hundred thirty seven", "Nineteen thirty seven", "thirty seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "1938",
+    "synonyms": [ "1938", "38", "nineteen hundred thirty eight", "Nineteen thirty eight", "thirty eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "1939",
+    "synonyms": [ "1939", "39", "nineteen hundred thirty nine", "Nineteen thirty nine", "thirty nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "1940",
+    "synonyms": [ "1940", "40", "forty", "nineteen forty", "nineteen hundred forty" ],
+    "languageCode": "en"
+  }, {
+    "value": "1941",
+    "synonyms": [ "1941", "41", "forty one", "nineteen forty one", "nineteen hundred forty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "1942",
+    "synonyms": [ "1942", "42", "forty two", "nineteen forty two", "nineteen hundred forty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "1943",
+    "synonyms": [ "1943", "43", "forty three", "nineteen forty three", "nineteen hundred forty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "1944",
+    "synonyms": [ "1944", "44", "forty four", "nineteen forty four", "nineteen hundred forty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "1945",
+    "synonyms": [ "1945", "45", "forty five", "nineteen forty five", "nineteen hundred forty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "1946",
+    "synonyms": [ "1946", "46", "forty six", "nineteen forty six", "nineteen hundred forty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "1947",
+    "synonyms": [ "1947", "47", "forty seven", "nineteen forty seven", "nineteen hundred forty seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "1948",
+    "synonyms": [ "1948", "48", "forty eight", "nineteen forty eight", "nineteen hundred forty eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "1949",
+    "synonyms": [ "1949", "49", "forty nine", "nineteen forty nine", "nineteen hundred forty nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "1950",
+    "synonyms": [ "1950", "50", "fifty", "nineteen fifty", "nineteen hundred fifty" ],
+    "languageCode": "en"
+  }, {
+    "value": "1951",
+    "synonyms": [ "1951", "51", "fifty one", "nineteen fifty one", "nineteen hundred fifty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "1952",
+    "synonyms": [ "1952", "52", "fifty two", "nineteen fifty two", "nineteen hundred fifty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "1953",
+    "synonyms": [ "1953", "53", "fifty three", "nineteen fifty three", "nineteen hundred fifty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "1954",
+    "synonyms": [ "1954", "54", "fifty four", "nineteen fifty four", "nineteen hundred fifty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "1955",
+    "synonyms": [ "1955", "55", "fifty five", "nineteen fifty five", "nineteen hundred fifty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "1956",
+    "synonyms": [ "1956", "56", "fifty six", "nineteen fifty six", "nineteen hundred fifty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "1957",
+    "synonyms": [ "1957", "57", "fifty seven", "nineteen fifty seven", "nineteen hundred fifty seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "1958",
+    "synonyms": [ "1958", "58", "fifty eight", "nineteen fifty eight", "nineteen hundred fifty eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "1959",
+    "synonyms": [ "1959", "59", "fifty nine", "nineteen fifty nine", "nineteen hundred fifty nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "1960",
+    "synonyms": [ "1960", "60", "nineteen hundred sixty", "nineteen sixty", "sixty" ],
+    "languageCode": "en"
+  }, {
+    "value": "1961",
+    "synonyms": [ "1961", "61", "nineteen hundred sixty one", "Nineteen sixty one", "sixty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "1962",
+    "synonyms": [ "1962", "62", "nineteen hundred sixty two", "Nineteen sixty two", "sixty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "1963",
+    "synonyms": [ "1963", "63", "nineteen hundred sixty three", "Nineteen sixty three", "sixty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "1964",
+    "synonyms": [ "1964", "64", "nineteen hundred sixty four", "Nineteen sixty four", "sixty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "1965",
+    "synonyms": [ "1965", "65", "nineteen hundred sixty five", "Nineteen sixty five", "sixty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "1966",
+    "synonyms": [ "1966", "66", "nineteen hundred sixty six", "Nineteen sixty six", "sixty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "1967",
+    "synonyms": [ "1967", "67", "nineteen hundred sixty seven", "Nineteen sixty seven", "sixty seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "1968",
+    "synonyms": [ "1968", "68", "nineteen hundred sixty eight", "Nineteen sixty eight", "sixty eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "1969",
+    "synonyms": [ "1969", "69", "nineteen hundred sixty nine", "Nineteen sixty  nine", "sixty nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "1970",
+    "synonyms": [ "1970", "70", "nineteen hundred seventy", "Nineteen seventy", "seventy" ],
+    "languageCode": "en"
+  }, {
+    "value": "1971",
+    "synonyms": [ "1971", "71", "nineteen hundred seventy one", "Nineteen seventy one", "seventy one" ],
+    "languageCode": "en"
+  }, {
+    "value": "1972",
+    "synonyms": [ "1972", "72", "nineteen hundred seventy two", "Nineteen seventy two", "seventy two" ],
+    "languageCode": "en"
+  }, {
+    "value": "1973",
+    "synonyms": [ "1973", "73", "nineteen hundred seventy three", "Nineteen seventy three", "seventy three" ],
+    "languageCode": "en"
+  }, {
+    "value": "1974",
+    "synonyms": [ "1974", "74", "nineteen hundred seventy four", "Nineteen seventy four", "seventy four" ],
+    "languageCode": "en"
+  }, {
+    "value": "1975",
+    "synonyms": [ "1975", "75", "nineteen hundred seventy five", "Nineteen seventy five", "seventy five" ],
+    "languageCode": "en"
+  }, {
+    "value": "1976",
+    "synonyms": [ "1976", "76", "nineteen hundred seventy six", "Nineteen seventy six", "seventy six" ],
+    "languageCode": "en"
+  }, {
+    "value": "1977",
+    "synonyms": [ "1977", "77", "nineteen hundred seventy seven", "Nineteen seventy seven", "seventy seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "1978",
+    "synonyms": [ "1978", "78", "nineteen hundred seventy eight", "Nineteen seventy eight", "seventy eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "1979",
+    "synonyms": [ "1979", "79", "nineteen hundred seventy nine", "Nineteen seventy nine", "seventy nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "1980",
+    "synonyms": [ "1980", "80", "Nineteen eighty", "nineteen hundred eighty" ],
+    "languageCode": "en"
+  }, {
+    "value": "1981",
+    "synonyms": [ "1981", "81", "eighty one", "Nineteen eighty one", "nineteen hundred eighty one " ],
+    "languageCode": "en"
+  }, {
+    "value": "1982",
+    "synonyms": [ "1982", "82", "eighty two", "Nineteen eighty two", "nineteen hundred eighty two " ],
+    "languageCode": "en"
+  }, {
+    "value": "1983",
+    "synonyms": [ "1983", "83", "eighty three", "Nineteen eighty three", "nineteen hundred eighty three " ],
+    "languageCode": "en"
+  }, {
+    "value": "1984",
+    "synonyms": [ "1984", "84", "eighty four", "Nineteen eighty four", "nineteen hundred eighty four " ],
+    "languageCode": "en"
+  }, {
+    "value": "1985",
+    "synonyms": [ "1985", "85", "eighty five", "Nineteen eighty five", "nineteen hundred eighty five " ],
+    "languageCode": "en"
+  }, {
+    "value": "1986",
+    "synonyms": [ "1986", "86", "eighty six", "Nineteen eighty six", "nineteen hundred eighty six " ],
+    "languageCode": "en"
+  }, {
+    "value": "1987",
+    "synonyms": [ "1987", "87", "eighty seven", "Nineteen eighty seven", "nineteen hundred eighty seven " ],
+    "languageCode": "en"
+  }, {
+    "value": "1988",
+    "synonyms": [ "1988", "88", "eighty eight", "Nineteen eighty eight", "nineteen hundred eighty eight " ],
+    "languageCode": "en"
+  }, {
+    "value": "1989",
+    "synonyms": [ "1989", "89", "eighty nine", "Nineteen eighty nine", "nineteen hundred eighty nine " ],
+    "languageCode": "en"
+  }, {
+    "value": "1990",
+    "synonyms": [ "1990", "90", "nineteen hundred ninety", "Nineteen ninety" ],
+    "languageCode": "en"
+  }, {
+    "value": "1991",
+    "synonyms": [ "1991", "91", "nineteen hundred ninety one", "Nineteen ninety one", "ninety one" ],
+    "languageCode": "en"
+  }, {
+    "value": "1992",
+    "synonyms": [ "1992", "92", "nineteen hundred ninety two", "Nineteen ninety two", "ninety two" ],
+    "languageCode": "en"
+  }, {
+    "value": "1993",
+    "synonyms": [ "1993", "93", "nineteen hundred ninety three", "Nineteen ninety three", "ninety three" ],
+    "languageCode": "en"
+  }, {
+    "value": "1994",
+    "synonyms": [ "1994", "94", "nineteen hundred ninety four", "Nineteen ninety four", "ninety four" ],
+    "languageCode": "en"
+  }, {
+    "value": "1995",
+    "synonyms": [ "1995", "95", "nineteen hundred ninety five", "Nineteen ninety five", "ninety five" ],
+    "languageCode": "en"
+  }, {
+    "value": "1996",
+    "synonyms": [ "1996", "96", "nineteen hundred ninety six", "Nineteen ninety six", "ninety six" ],
+    "languageCode": "en"
+  }, {
+    "value": "1997",
+    "synonyms": [ "1997", "97", "nineteen hundred ninety seven", "Nineteen ninety seven", "ninety seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "1998",
+    "synonyms": [ "1998", "98", "nineteen hundred ninety eight", "Nineteen ninety eight", "ninety eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "1999",
+    "synonyms": [ "1999", "99", "nineteen hundred ninety nine", "Nineteen ninety nine", "ninety nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "2000",
+    "synonyms": [ "00", "2000", "Two thousand" ],
+    "languageCode": "en"
+  }, {
+    "value": "2001",
+    "synonyms": [ "2001", "Two thousand one" ],
+    "languageCode": "en"
+  }, {
+    "value": "2002",
+    "synonyms": [ "2002", "Two thousand two" ],
+    "languageCode": "en"
+  }, {
+    "value": "2003",
+    "synonyms": [ "2003", "Two thousand three" ],
+    "languageCode": "en"
+  }, {
+    "value": "2004",
+    "synonyms": [ "2004", "Two thousand four" ],
+    "languageCode": "en"
+  }, {
+    "value": "2005",
+    "synonyms": [ "2005", "Two thousand five" ],
+    "languageCode": "en"
+  }, {
+    "value": "2006",
+    "synonyms": [ "2006", "Two thousand six" ],
+    "languageCode": "en"
+  }, {
+    "value": "2007",
+    "synonyms": [ "2007", "Two thousand seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "2008",
+    "synonyms": [ "2008", "Two thousand eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "2009",
+    "synonyms": [ "2009", "Two thousand nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "2010",
+    "synonyms": [ "2010", "Two thousand ten" ],
+    "languageCode": "en"
+  }, {
+    "value": "2011",
+    "synonyms": [ "2011", "Two thousand eleven" ],
+    "languageCode": "en"
+  }, {
+    "value": "2012",
+    "synonyms": [ "2012", "Two thousand twelve" ],
+    "languageCode": "en"
+  }, {
+    "value": "2013",
+    "synonyms": [ "2013", "Two thousand thirteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2014",
+    "synonyms": [ "2014", "Two thousand fourteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2015",
+    "synonyms": [ "2015", "Two thousand fifteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2016",
+    "synonyms": [ "2016", "Two thousand sixteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2017",
+    "synonyms": [ "2017", "Two thousand seventeen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2018",
+    "synonyms": [ "2018", "Two thousand eighteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2019",
+    "synonyms": [ "2019", "Two thousand nineteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2020",
+    "synonyms": [ "2020", "Two thousand twenty" ],
+    "languageCode": "en"
+  }, {
+    "value": "2021",
+    "synonyms": [ "2021", "twenty twenty one", "Two thousand twenty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "2022",
+    "synonyms": [ "2022", "twenty twenty two", "Two thousand twenty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "2023",
+    "synonyms": [ "2023", "twenty twenty three", "Two thousand twenty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "2024",
+    "synonyms": [ "2024", "twenty twenty four", "Two thousand twenty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "2025",
+    "synonyms": [ "2025", "twenty twenty five", "two thousand twenty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "2026",
+    "synonyms": [ "2026", "twenty twenty six", "two thousand twenty six" ],
+    "languageCode": "en"
+  } ]
+}

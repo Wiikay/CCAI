@@ -1,0 +1,129 @@
+{
+  "name": "c314a64e-26cb-46f2-89ed-c16cb381a2fe",
+  "displayName": "Beneficiary Name Collection",
+  "description": "This flow collects a first, last, and middle name (if applicable).",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "targetFlow": "Waiting Room",
+    "name": "778c5d34-239f-407a-b0e0-70e3ab9a63f3"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "75f5804c-bec2-4384-9c2e-0098e4df2955"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.is_select_initial_path",
+        "value": true
+      }, {
+        "parameter": "$flow.collect_part",
+        "value": "first name"
+      }, {
+        "parameter": "$flow.collect_first_name",
+        "value": null
+      }, {
+        "parameter": "$flow.collect_last_name",
+        "value": null
+      }, {
+        "parameter": "$flow.collect_middle_name",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_person_name",
+        "value": null
+      }, {
+        "parameter": "collect_name",
+        "value": null
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      }, {
+        "parameter": "$flow.name_separator_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_first_name_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_last_name_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_middle_name_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_first_name_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_last_name_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_middle_name_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_next_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we are having difficulty understanding your response."
+      }, {
+        "parameter": "$flow.first_name_spell_out_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.last_name_spell_out_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.middle_name_spell_out_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.first_name_part_spell_out_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect full name",
+    "name": "6a5a6470-3923-41e2-885f-4cd87ba616fd"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, We didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "bd03666f-e364-47f0-9c21-344f13bd4427"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, We didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "55bd6070-cfb4-451d-953b-ca4cff2c6765"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

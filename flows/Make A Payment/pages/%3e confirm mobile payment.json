@@ -1,0 +1,172 @@
+{
+  "name": "75a38b08-74e5-4681-bf6b-1d5e7ee77889",
+  "displayName": "\u003e confirm mobile payment",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c $flow.max_waiting_room_counter",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "targetFlow": "Waiting Room",
+    "name": "b831535a-3e9b-4729-8316-34e4b936f41b"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Great, now you can open the link and continue your payment." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "c117f2e4-be65-4d5f-b56e-1ce2caa9eafa"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_mobile_payment_counter \u003c $flow.max_retry_mobile_payment_counter",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_mobile_payment_counter",
+        "value": "$sys.func.ADD($flow.retry_mobile_payment_counter,1)"
+      } ]
+    },
+    "targetPage": "select mobile payment",
+    "name": "8087f0af-93a7-4328-b999-eed1b790e739"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.retry_mobile_payment_counter = $flow.max_retry_mobile_payment_counter",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "7dec8fc1-22d1-42be-a130-9b87eeb23652"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = $flow.max_waiting_room_counter",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "4ed8dec2-49f1-4af2-83f0-92f75248980c"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "9538d0a6-8710-4cd1-9237-e920d953b62b"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "26779acf-43bd-4d47-b8fb-f3c244a7e7a2"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Please confirm by saying yes, if you have received the payment link." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "aa0677f8-191f-4506-a353-9c00058f5ef8"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "6b1a7b06-9a93-47af-bb76-5c5a92c2add1"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Please confirm by saying yes, if you have received a payment link." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "2bfd1ef0-2a26-40fc-95ea-e3ad323bacf9"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Please confirm by saying yes, if you have received a payment link." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "aaeba25b-2683-4be9-980a-7a228c27fadd"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "55b7a3f5-c61d-482e-b632-9122a82504cb"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Please confirm by saying yes if you have received a payment link." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8ba46e10-2c30-43e3-a52b-96ba95adaa38"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Please confirm by saying yes if you have received a payment link." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "36431293-5179-4ce1-b26b-40371099094d"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "a167238e-9c1c-4a18-b04e-e3d793d3097e"
+  } ]
+}

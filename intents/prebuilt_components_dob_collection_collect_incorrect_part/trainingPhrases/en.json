@@ -1,0 +1,368 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "change my birth ",
+      "auto": true
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no ",
+      "auto": true
+    }, {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " is wrong",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Actually, I want ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " change the ",
+      "auto": true
+    }, {
+      "text": "entire date",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "full ",
+      "auto": true
+    }, {
+      "text": "date",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "only ",
+      "auto": true
+    }, {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "you have taken ",
+      "auto": true
+    }, {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " incorreclty",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "you have taken ",
+      "auto": true
+    }, {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " incorrectly",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " should be changed",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "year",
+      "parameterId": "incorrect_part"
+    }, {
+      "text": " should be changed"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can you collect "
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part"
+    }, {
+      "text": " again"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "you captured ",
+      "auto": true
+    }, {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " incorrectly",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "year",
+      "parameterId": "incorrect_part"
+    }, {
+      "text": " as well as "
+    }, {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "both ",
+      "auto": true
+    }, {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " are wrong",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " appear ",
+      "auto": true
+    }, {
+      "text": "to",
+      "auto": true
+    }, {
+      "text": " be incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " is captured incorrectly",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "change ",
+      "auto": true
+    }, {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " is incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " are incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "all three",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " are incorrect",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " are wrong",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " is wrong",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "change ",
+      "auto": true
+    }, {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "change ",
+      "auto": true
+    }, {
+      "text": "all three",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " of them",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "month",
+      "parameterId": "incorrect_part",
+      "auto": true
+    }, {
+      "text": " and ",
+      "auto": true
+    }, {
+      "text": "year",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "day",
+      "parameterId": "incorrect_part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

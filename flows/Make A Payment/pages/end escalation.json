@@ -1,0 +1,23 @@
+{
+  "name": "24913c27-5afa-4756-ad25-74c6c7a13e79",
+  "displayName": "end escalation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please hold while we transfer your call in order to assist you better." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "END_FLOW_WITH_HUMAN_ESCALATION",
+    "name": "32c76e82-32ce-4ae1-8a19-fcdde7392d38"
+  } ]
+}

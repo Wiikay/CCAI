@@ -1,0 +1,25 @@
+{
+  "name": "d35ec37a-0f3b-469c-9fe4-e3d64ee67ccd",
+  "displayName": "security question 2 check",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.credit_card_count \u003e= 1",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect security ques 2 credit exp date",
+    "name": "a41072fe-73ed-4174-a36e-e5be48795a35"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect security ques 2 debit card",
+    "name": "81f8a410-bd08-40cc-a8bb-d851566e70e7"
+  } ]
+}

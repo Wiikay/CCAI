@@ -1,0 +1,27 @@
+{
+  "name": "3bd83a14-b46f-4686-9dea-5ffb8b334418",
+  "displayName": "Exit",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Let's get you back to where you were." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "from_waiting_room_reusable_flow",
+      "value": true
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "9a3e4c8f-d727-4cd3-bdb7-1b468c306c53"
+  } ]
+}

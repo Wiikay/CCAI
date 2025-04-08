@@ -1,0 +1,96 @@
+{
+  "name": "4d94d6c6-21ce-42c2-9dbb-79d1dbd7cf60",
+  "displayName": "\u003e process account payment API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Okay, please wait for a few seconds while we are making the payment." ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "prebuilt_components_make_a_payment:process_payment_account",
+    "tag": "processPaymentAccountTransfer"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.payment_status_code = $flow.payment_success_code",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "dd21349e-f0f4-4685-9235-2ef3ed8f1a6e"
+  }, {
+    "condition": "$flow.payment_status_code = $flow.insufficient_fund_code AND $flow.retry_mop_counter \u003c $flow.max_retry_mop_counter",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Your payment failed due to insufficient funds in the $flow.user_mop." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "retry method of payment",
+    "name": "22126978-193f-4f2b-a0bc-5399c0b193e4"
+  }, {
+    "condition": "$flow.payment_status_code = $flow.limit_exceed_code AND $flow.retry_mop_counter \u003c $flow.max_retry_mop_counter",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Your payment failed since the limit was exceeded in the $flow.user_mop." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "retry method of payment",
+    "name": "74ba1ffd-4765-4019-99eb-cb9397d4cd56"
+  }, {
+    "condition": "$flow.retry_mop_counter = $flow.max_retry_mop_counter",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "561b7a77-daa2-4dc7-a575-47d8cc98185f"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "635bac1a-e3d2-4079-83c9-b2f813b97d32"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "8ff934bb-7650-4469-a145-164d9760b590"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "b8d46f84-4653-4e19-ac11-a800befd385d"
+  } ]
+}

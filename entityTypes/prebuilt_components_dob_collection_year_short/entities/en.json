@@ -1,0 +1,127 @@
+{
+  "entities": [ {
+    "value": "2001",
+    "synonyms": [ "01", "2001", "zero one" ],
+    "languageCode": "en"
+  }, {
+    "value": "2002",
+    "synonyms": [ "02", "2002", "zero two" ],
+    "languageCode": "en"
+  }, {
+    "value": "2003",
+    "synonyms": [ "03", "2003", "zero three" ],
+    "languageCode": "en"
+  }, {
+    "value": "2004",
+    "synonyms": [ "04", "2004", "zero four" ],
+    "languageCode": "en"
+  }, {
+    "value": "2005",
+    "synonyms": [ "05", "2005", "zero five" ],
+    "languageCode": "en"
+  }, {
+    "value": "2006",
+    "synonyms": [ "06", "2006", "zero six" ],
+    "languageCode": "en"
+  }, {
+    "value": "2007",
+    "synonyms": [ "07", "2007", "zero seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "2008",
+    "synonyms": [ "08", "2008", "zero eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "2009",
+    "synonyms": [ "09", "2009", "zero nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "2010",
+    "synonyms": [ "10", "2010", "zero ten" ],
+    "languageCode": "en"
+  }, {
+    "value": "2011",
+    "synonyms": [ "11", "2011", "eleven" ],
+    "languageCode": "en"
+  }, {
+    "value": "2012",
+    "synonyms": [ "12", "2012", "twelve" ],
+    "languageCode": "en"
+  }, {
+    "value": "2013",
+    "synonyms": [ "13", "2013", "thirteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2014",
+    "synonyms": [ "14", "2014", "fourteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2015",
+    "synonyms": [ "15", "2015", "fifteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2016",
+    "synonyms": [ "16", "2016", "sixteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2017",
+    "synonyms": [ "17", "2017", "seventeen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2018",
+    "synonyms": [ "18", "2018", "eighteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2019",
+    "synonyms": [ "19", "2019", "nineteen" ],
+    "languageCode": "en"
+  }, {
+    "value": "2020",
+    "synonyms": [ "20", "2020", "twenty" ],
+    "languageCode": "en"
+  }, {
+    "value": "2021",
+    "synonyms": [ "2021", "21", "twenty one" ],
+    "languageCode": "en"
+  }, {
+    "value": "2022",
+    "synonyms": [ "2022", "22", "twenty two" ],
+    "languageCode": "en"
+  }, {
+    "value": "2023",
+    "synonyms": [ "2023", "23", "twenty three" ],
+    "languageCode": "en"
+  }, {
+    "value": "2024",
+    "synonyms": [ "2024", "24", "twenty four" ],
+    "languageCode": "en"
+  }, {
+    "value": "1925",
+    "synonyms": [ "1925", "twenty five" ],
+    "languageCode": "en"
+  }, {
+    "value": "1926",
+    "synonyms": [ "1926", "26", "twenty six" ],
+    "languageCode": "en"
+  }, {
+    "value": "1927",
+    "synonyms": [ "1927", "27", "twenty seven" ],
+    "languageCode": "en"
+  }, {
+    "value": "1928",
+    "synonyms": [ "1928", "28", "twenty eight" ],
+    "languageCode": "en"
+  }, {
+    "value": "1929",
+    "synonyms": [ "1929", "29", "twenty nine" ],
+    "languageCode": "en"
+  }, {
+    "value": "1930",
+    "synonyms": [ "1930", "30", "thirty" ],
+    "languageCode": "en"
+  }, {
+    "value": "1931",
+    "synonyms": [ "1931", "31", "thirty one" ],
+    "languageCode": "en"
+  } ]
+}

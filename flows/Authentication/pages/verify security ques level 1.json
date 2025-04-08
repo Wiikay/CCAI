@@ -1,0 +1,25 @@
+{
+  "name": "db5e0a50-2e93-46ea-a641-d176941a6639",
+  "displayName": "verify security ques level 1",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.secure_ans_count \u003c $flow.security_ans_denial_count OR $flow.secure_ans_count = \"\" OR $flow.secure_ans_count = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "16a14c20-ac4f-4292-9a8d-fa35359304ac"
+  }, {
+    "condition": "$flow.secure_ans_count \u003e= $flow.security_ans_denial_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect security ques 3",
+    "name": "db19980e-a1dd-4e4e-bf45-31f067b5a80f"
+  } ]
+}

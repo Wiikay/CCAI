@@ -1,0 +1,19 @@
+{
+  "entities": [ {
+    "value": "debit_card",
+    "synonyms": [ "debit", "debit card" ],
+    "languageCode": "en"
+  }, {
+    "value": "credit_card",
+    "synonyms": [ "credit", "credit card" ],
+    "languageCode": "en"
+  }, {
+    "value": "account",
+    "synonyms": [ "account", "accounts", "bank", "bank account ", "checking ", "checking account ", "current ", "current account", "saving", "savings", "savings account", "saving account " ],
+    "languageCode": "en"
+  }, {
+    "value": "mobile_payment",
+    "synonyms": [ "mobile", "mobile payment", "phone" ],
+    "languageCode": "en"
+  } ]
+}

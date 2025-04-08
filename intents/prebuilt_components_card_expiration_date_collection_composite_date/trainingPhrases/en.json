@@ -1,0 +1,225 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "in ",
+      "auto": true
+    }, {
+      "text": "the coming month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "previous year",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is for sure ",
+      "auto": true
+    }, {
+      "text": "previous month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it will be ",
+      "auto": true
+    }, {
+      "text": "following month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can you change the expiration month to ",
+      "auto": true
+    }, {
+      "text": "next month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "last month",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": " could have been the expiration month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The card's expiry month falls in "
+    }, {
+      "text": "the upcoming month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The card's expiry date falls in "
+    }, {
+      "text": "the upcoming year",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The expiry year of the card is coming up "
+    }, {
+      "text": "next year",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "In ",
+      "auto": true
+    }, {
+      "text": "the following year",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "In ",
+      "auto": true
+    }, {
+      "text": "the coming year",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Last month",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card expires in "
+    }, {
+      "text": "next year",
+      "parameterId": "end_date"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiration month is ",
+      "auto": true
+    }, {
+      "text": "this month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "During ",
+      "auto": true
+    }, {
+      "text": "this year",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Within ",
+      "auto": true
+    }, {
+      "text": "the current year",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "During ",
+      "auto": true
+    }, {
+      "text": "this month",
+      "parameterId": "end_date",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "current month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "next year",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "next month",
+      "parameterId": "end_date",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "7ee88d92-ac31-4345-b5cf-e8468a2d0ae1",
+  "displayName": "prebuilt_components_make_a_payment:user_card_details",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"cardDetails\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.credit_card_count",
+      "value": "credit_card_count"
+    }, {
+      "key": "$flow.debit_card_count",
+      "value": "debit_card_count"
+    }, {
+      "key": "$flow.last_four_digit_of_credit_card_number",
+      "value": "last_four_digit_of_credit_card_number"
+    }, {
+      "key": "$flow.last_four_digit_of_debit_card_number",
+      "value": "last_four_digit_of_debit_card_number"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

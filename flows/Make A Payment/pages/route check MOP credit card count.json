@@ -1,0 +1,70 @@
+{
+  "name": "69b5393c-398f-40d3-9003-217797aec239",
+  "displayName": "route check MOP credit card count",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.credit_card_count = null OR $flow.credit_card_count = \"\" OR $flow.credit_card_count \u003c 1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we don't have any credit cards associated with your registered mobile number. Please try another mode of payment." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.payment_mode",
+        "value": null
+      }, {
+        "parameter": "$flow.user_mop",
+        "value": null
+      } ]
+    },
+    "targetPage": "route check payment mode",
+    "name": "a03f1148-dc45-4900-b9f9-8edc7f1b3fd6"
+  }, {
+    "condition": "$flow.credit_card_count = 1 AND $flow.last_four_digit_of_credit_card_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "card_type",
+        "value": "credit"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.credit_card_count = 1",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eWe have found a credit card number ending with \u003csay-as interpret-as=\"verbatim\"\u003e$flow.last_four_digit_of_credit_card_number\u003c/say-as\u003e associated with your number.\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect credit card expiration date",
+    "name": "bc5eb034-aabd-4a96-b0af-1192a92dd222"
+  }, {
+    "condition": "$flow.credit_card_count \u003e 1 AND $flow.last_four_digit_of_credit_card_number = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "last_four_digit_of_card_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect card number",
+    "name": "0eb4fbca-0422-4ee8-b5fb-c30c4826134f"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "52a4d163-6681-461f-8bac-89866abcfe79"
+  } ]
+}

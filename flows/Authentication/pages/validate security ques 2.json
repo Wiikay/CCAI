@@ -1,0 +1,44 @@
+{
+  "name": "a4cb578f-3dfa-41ff-a729-1daa0929ae61",
+  "displayName": "validate security ques 2",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.LEN($flow.debit_card_number) = 4",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e verify security ques 2 debit card",
+    "name": "fa942864-9e7f-45ce-a36e-8869fd0ef962"
+  }, {
+    "condition": "$sys.func.LEN($flow.debit_card_number) != 4 AND $flow.invalid_card_counter \u003c $flow.max_retry_card_counter",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_card_counter",
+        "value": "$sys.func.ADD($flow.invalid_card_counter,1)"
+      }, {
+        "parameter": "$flow.debit_card_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect security ques 2 debit card",
+    "name": "1958b202-b9b1-41c3-9963-4fba8aca9c2b"
+  }, {
+    "condition": "$sys.func.LEN($flow.debit_card_number) != 4 AND $flow.invalid_card_counter = $flow.max_retry_card_counter",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "verify security ques level 1",
+    "name": "dbf76d4e-579d-4b54-80bf-6276402c3d89"
+  } ]
+}

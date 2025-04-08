@@ -1,0 +1,29 @@
+{
+  "name": "f6f2e571-8de4-4746-adc4-2e539f10a809",
+  "displayName": "\u003e verify security ques 2 debit card",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.CONTAIN($flow.security_card_number, $flow.debit_card_number) = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.secure_ans_count",
+        "value": "$sys.func.ADD($flow.secure_ans_count, 1)"
+      } ]
+    },
+    "targetPage": "verify security ques level 1",
+    "name": "6047a1fc-65dd-4dbd-a113-58950086b324"
+  }, {
+    "condition": "$sys.func.CONTAIN($flow.security_card_number, $flow.debit_card_number) != true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "verify security ques level 1",
+    "name": "a9a7303b-87a3-4bd8-b194-3b60a64afcf9"
+  } ],
+  "description": "Webhook \"prebuilt_components_authentication:security_answers\" returns 3 response parameters:\n1) $flow.security_card_number, 2) $flow.security_last_trans_amount, 3) $flow.last_payment_mode\nIf Ans is correct, we are using \"$sys.func.ADD($flow.secure_ans_count, 1)\""
+}

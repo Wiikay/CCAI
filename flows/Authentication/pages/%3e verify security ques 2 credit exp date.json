@@ -1,0 +1,37 @@
+{
+  "name": "5e5cef49-4c2b-49d4-98ef-55d5773742c1",
+  "displayName": "\u003e verify security ques 2 credit exp date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.exp_year",
+      "value": "$sys.func.GET_FIELD($session.params.card_expiration_date_collection_card_expiration_date, \"year\")"
+    }, {
+      "parameter": "$flow.exp_month",
+      "value": "$sys.func.GET_FIELD($session.params.card_expiration_date_collection_card_expiration_date, \"month\")"
+    }, {
+      "parameter": "cards_exp_date",
+      "value": "$sys.func.FORMAT_DATE($sys.func.TO_OBJECT(\"{'month': $flow.exp_month, 'year': $sys.func.TO_NUMBER($flow.exp_year)}\"), \"MMyyyy\")"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.CONTAIN($session.params.cards_exp_date_all, $session.params.cards_exp_date) = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.secure_ans_count",
+        "value": "$sys.func.ADD($flow.secure_ans_count, 1)"
+      } ]
+    },
+    "targetPage": "verify security ques level 1",
+    "name": "d9412516-2101-47c1-803e-9367261ec06e"
+  }, {
+    "condition": "$sys.func.CONTAIN($session.params.cards_exp_date_all, $session.params.cards_exp_date) != true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "verify security ques level 1",
+    "name": "b53e5b69-d9b6-4502-bbfb-9b5d99b91214"
+  } ]
+}

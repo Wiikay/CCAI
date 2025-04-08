@@ -1,0 +1,149 @@
+{
+  "name": "41aa5550-f959-4d83-9cc1-bba1a28532e0",
+  "displayName": "\u003e collect 2FA security key",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "conditionalCases": [ {
+      "cases": [ {
+        "condition": "$flow.key_retry_counter = 0",
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "Please share your security key." ]
+            },
+            "languageCode": "en"
+          }
+        }, {
+          "message": {
+            "text": {
+              "text": [ "Generate the $flow.security_key_length digit security key in your bank app or authenticator app. Then say or enter the digits." ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      }, {
+        "caseContent": [ {
+          "message": {
+            "text": {
+              "text": [ "Please generate the $flow.security_key_length digit security key in your bank app or authenticator app. Then say or enter the digits." ]
+            },
+            "languageCode": "en"
+          }
+        } ]
+      } ]
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_authentication_collect_code",
+    "condition": "$session.params.collect_code != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.security_key",
+        "value": "$sys.func.JOIN(\"\", $session.params.collect_code)"
+      }, {
+        "parameter": "collect_code",
+        "value": null
+      } ]
+    },
+    "targetPage": "validate security key length",
+    "name": "2ac474c9-2928-4519-ad7e-33f10e7ee8d4"
+  }, {
+    "intent": "prebuilt_components_authentication_denial",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "9bc809f0-9b26-4df0-bb92-e38338d61349"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "40750b7a-3f2e-45a8-9dc9-aa518b1d3928"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "844faddc-ca05-466a-9349-167f649eb922"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Can you please enter your security key." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "18d71b4a-ab6e-4184-8fd8-21f73b25bfaa"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Can you please enter your security key." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "2be13a98-d7e1-4fea-8327-e8b626cd47e1"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "97bf8f56-92f0-46a1-8e48-f9227a55e92d"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Can you please enter your security key." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "378fb858-f1f5-4a68-9215-7c27d1844f39"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Can you please enter your security key." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "35c0f236-6e93-4888-91fa-28ed2f433a8b"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "8cfc48cd-f663-43d0-8f1e-0fd6ad65c40c"
+  } ],
+  "description": "Conditional response defined"
+}

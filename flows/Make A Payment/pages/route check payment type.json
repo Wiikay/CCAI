@@ -1,0 +1,25 @@
+{
+  "name": "5168ee18-181e-499f-ac0e-802c731f95bf",
+  "displayName": "route check payment type",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.payment_type = \"beneficiary_pay\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect beneficiary name",
+    "name": "9893db51-8e22-447a-a626-eddeff919d22"
+  }, {
+    "condition": "$flow.payment_type = \"credit_card_pay\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "route check credit card count",
+    "name": "585faec0-1a44-494b-b27e-aee8926d807c"
+  } ]
+}

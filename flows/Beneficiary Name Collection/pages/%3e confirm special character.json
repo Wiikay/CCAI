@@ -1,0 +1,187 @@
+{
+  "name": "ea178ded-c776-4054-ae78-d9d06122077f",
+  "displayName": "\u003e confirm special character",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect specific path",
+    "name": "13f3e1a2-fc00-4423-a78a-999d45e46f6e"
+  }, {
+    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "condition": "$session.params.user_provided_first_name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_first_name",
+        "value": "$session.params.user_provided_first_name"
+      }, {
+        "parameter": "user_provided_first_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm first name",
+    "name": "135a9d7f-ee86-4261-bbe2-a35f3adef860"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's start by capturing the first name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect first name",
+    "name": "b72f2dd8-c67a-41fa-8197-6c454b36b4d6"
+  }, {
+    "intent": "prebuilt_components_name_collection_special_characters_decider",
+    "condition": "$session.params.collect_name != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_name",
+        "value": "$sys.func.IDENTITY($session.params.collect_name)"
+      }, {
+        "parameter": "$flow.name_separator",
+        "value": "$sys.func.IF(\"$session.params.spelling_separator.original = null\", null, $session.params.spelling_separator.original)"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$sys.func.IF(\"$session.params.spelling_separator = null\", null, $session.params.spelling_separator)"
+      } ]
+    },
+    "targetPage": "\u003e collect specific path",
+    "name": "0b25ee2f-8301-4a41-b4ce-bf81018f0f03"
+  }, {
+    "intent": "prebuilt_components_name_collection_special_characters_decider",
+    "condition": "$session.params.spelling_separator != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.name_separator",
+        "value": "$sys.func.IF(\"$session.params.spelling_separator.original = null\", null, $session.params.spelling_separator.original)"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$session.params.spelling_separator"
+      } ]
+    },
+    "targetPage": "\u003e collect specific path",
+    "name": "abaa438f-f0f2-4f36-9942-be00f1a589aa"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "65da7694-9913-472f-808d-bb0904882595"
+  }, {
+    "intent": "prebuilt_components_name_collection_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect first name",
+    "name": "e5eedb38-7ae2-4cb3-9a90-b0413b3fe1f8"
+  }, {
+    "intent": "prebuilt_components_name_collection_special_characters_decider",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Could you please help us confirm whether you have any hyphens, extra spaces, or apostrophes in your name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b1c91081-c0c3-4458-b40e-5af7029412a4"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "ea85ce4e-a228-4704-981c-c0983cab905b"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5da43d8c-09b5-41e0-a1c5-c312aedfe197"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Could you please help us confirm whether you have any hyphens, extra spaces, or apostrophes in the name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "62bd4a43-6352-4ff3-bcbc-a667e230a82f"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d80af2af-5e05-4443-b93d-055f7237af21"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "e0de1e6b-c0c2-4817-adcc-68adc38c9941"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Could you please help us confirm whether you have any hyphens, extra spaces, or apostrophes in the name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fd2a25d5-bb73-4cf5-a266-92288758215e"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please make sure you're confirming whether you have any hyphens, extra spaces, or apostrophes in the name?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5490674b-ce4f-43e5-ba85-2b9603b8183d"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "23ee629d-cc5c-4f01-8d6b-02824de1daa6"
+  } ]
+}

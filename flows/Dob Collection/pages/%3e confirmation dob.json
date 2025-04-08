@@ -1,0 +1,219 @@
+{
+  "name": "755e5488-818b-4282-b11b-b4aea9b42d19",
+  "displayName": "\u003e confirmation dob",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    }, {
+      "parameter": "year",
+      "value": null
+    }, {
+      "parameter": "day",
+      "value": null
+    }, {
+      "parameter": "month",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.month",
+        "value": "$sys.func.GET_FIELD($flow.month_convert,$flow.month)"
+      }, {
+        "parameter": "$flow.day",
+        "value": "$sys.func.TO_TEXT($flow.day)"
+      }, {
+        "parameter": "$flow.year",
+        "value": "$sys.func.TO_TEXT($flow.year)"
+      } ]
+    },
+    "targetPage": "dob type transformation",
+    "name": "f537d9e4-e6d8-49ab-bcd3-c8a044f175e8"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_dob \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Okay, please let us know what we need to change. Should we change the month, the day, or the year?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.incorrect_dob",
+        "value": "$sys.func.ADD($flow.incorrect_dob, 1)"
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "What do we need to change? Should we change the month, the day, or the year?"
+      } ]
+    },
+    "targetPage": "\u003e collect incorrect part",
+    "name": "18d1d2ad-7030-4d0e-921c-3f12b8cdaf3e"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_dob = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "bd342836-1aa8-4f3d-b0f8-192eb615d4cb"
+  }, {
+    "intent": "prebuilt_components_dob_collection_collect_incorrect_part",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.incorrect_day",
+        "value": "$sys.func.CONTAIN($session.params.incorrect_part, \"day\")"
+      }, {
+        "parameter": "$flow.incorrect_month",
+        "value": "$sys.func.CONTAIN($session.params.incorrect_part, \"month\")"
+      }, {
+        "parameter": "$flow.incorrect_year",
+        "value": "$sys.func.CONTAIN($session.params.incorrect_part, \"year\")"
+      }, {
+        "parameter": "$flow.incorrect_entire",
+        "value": "$sys.func.CONTAIN($session.params.incorrect_part, \"entire\")"
+      }, {
+        "parameter": "incorrect_part",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e collect incorrect part",
+    "name": "28716ccd-2ff4-4622-9afd-c7578ea3a63a"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "533b9a31-3d61-4b5c-b564-b119be272710"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eWe have collected date of birth as $flow.conv_month $flow.day, \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.year\u003c/say-as\u003e,is it correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "\u003cspeak\u003eWe have collected date of birth as $flow.conv_month $flow.day, \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.year\u003c/say-as\u003e. Is it correct?\u003c/speak\u003e"
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": "$sys.func.ADD($flow.playback_counter,1)"
+      } ]
+    },
+    "name": "befc3943-dc66-4220-8eff-5d7682b9d622"
+  }, {
+    "intent": "prebuilt_components_playback",
+    "condition": "$flow.playback_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "8809bd3a-10cb-42b3-b356-e92824083b52"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "7648e6e6-29a9-47c8-be1a-f6424778032f"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "0687aff0-84b4-4984-87a5-3c8bb19a1371"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we didn't get that. Your date of birth is $flow.conv_month $flow.day, \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.year\u003c/say-as\u003e. Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c85e1675-d38a-4a93-b3de-6e62603b70b3"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please make sure you are saying yes or no." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3d284f65-9543-47ca-92a0-755f49f8351c"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "15fc1c55-452b-476f-a646-20689c782920"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eSorry, we weren't able to hear you. Your date of birth is $flow.conv_month $flow.day, \u003csay-as interpret-as=\"date\" format=\"yyyy\"\u003e$flow.year\u003c/say-as\u003e. Is that correct?\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cdb57327-8fd7-4f2c-96f6-d9d1bb5e4c28"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "0106d888-4437-455c-bef7-6f8a29386fe6"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "aea123ca-f1d6-4dbf-bf0e-0404f104aaf9"
+  } ]
+}

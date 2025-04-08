@@ -1,0 +1,29 @@
+{
+  "name": "c84c7e70-5bb8-4e6a-ae7a-f3fc284035a2",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Great, we are done collecting the telephone number." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "telephone_number_collection_telephone_number",
+        "value": "$flow.phone_number"
+      }, {
+        "parameter": "telephone_number_collection_country_code",
+        "value": "$sys.func.CONCATENATE(\"+\", $flow.country_code)"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "d4d4c125-6d73-47a0-9697-6b5cf2432de0"
+  } ]
+}

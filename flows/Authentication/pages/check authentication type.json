@@ -1,0 +1,25 @@
+{
+  "name": "06a431e8-674a-4d5d-8acf-10c016063b6e",
+  "displayName": "check authentication type",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.card_auth_enabled = \"true\" AND $session.params.account_auth_enabled = \"false\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e fetch card details API",
+    "name": "73acabf6-0b51-44be-886f-70bf6c0d441e"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e fetch account details API",
+    "name": "1d7c91a3-c62f-423a-8aa5-7a4b830b6367"
+  } ]
+}

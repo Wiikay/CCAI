@@ -1,0 +1,34 @@
+{
+  "name": "88c6b5ec-1bdf-46de-880e-9659a9579914",
+  "displayName": "special character initial",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.spelling_person_name != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": "$flow.spelling_person_name"
+      } ]
+    },
+    "targetPage": "\u003e collect next part of name",
+    "name": "a0631f1e-746f-4dba-b859-8e09219ed65f"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.spell_out_person_name",
+        "value": null
+      }, {
+        "parameter": "$flow.alternative_person_name",
+        "value": null
+      } ]
+    },
+    "targetPage": "special characters part decider",
+    "name": "8ac9f225-e2af-49a9-b026-078bca0ed4c0"
+  } ]
+}

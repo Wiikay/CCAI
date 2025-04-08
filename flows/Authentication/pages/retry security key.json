@@ -1,0 +1,30 @@
+{
+  "name": "fd9000ad-4c05-4a23-9de4-e6e858410b88",
+  "displayName": "retry security key",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.key_retry_counter \u003e= $flow.max_retry_security_key",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "290e6da3-ee4f-4c9b-8ff6-660d3737080c"
+  }, {
+    "condition": "$flow.key_retry_counter \u003c $flow.max_retry_security_key",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The security key you provided is incorrect." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect 2FA security key",
+    "name": "339dc5c5-4d1e-4152-a1c6-91f5d8c09b8a"
+  } ]
+}

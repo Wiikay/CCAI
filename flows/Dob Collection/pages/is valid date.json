@@ -1,0 +1,91 @@
+{
+  "name": "27941df7-510f-4de3-a0f0-e887058c5738",
+  "displayName": "is valid date",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.is_valid_date",
+      "value": "$sys.func.IS_DATE($flow.format_date, \"uuuu-MM-dd\")"
+    }, {
+      "parameter": "dob",
+      "value": null
+    }, {
+      "parameter": "$flow.day",
+      "value": "$sys.func.TO_NUMBER($flow.day)"
+    }, {
+      "parameter": "$flow.month",
+      "value": "$sys.func.TO_NUMBER($flow.month)"
+    }, {
+      "parameter": "$flow.year",
+      "value": "$sys.func.TO_NUMBER($flow.year)"
+    }, {
+      "parameter": "$flow.format_date",
+      "value": null
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.is_valid_date = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.invalid_dob_count",
+        "value": 0
+      }, {
+        "parameter": "$flow.dob_object",
+        "value": "$sys.func.TO_OBJECT(\"{'day':$flow.day, 'year':$flow.year, 'month':$flow.month}\")"
+      } ]
+    },
+    "targetPage": "is future date",
+    "name": "f0a63964-6789-4b2e-a7aa-15593f0215a2"
+  }, {
+    "condition": "$flow.is_valid_date = false AND $flow.invalid_dob_count \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The date you have provided is invalid. Let's start again." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "Which month were you born in?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.day",
+        "value": null
+      }, {
+        "parameter": "$flow.month",
+        "value": null
+      }, {
+        "parameter": "$flow.year",
+        "value": null
+      }, {
+        "parameter": "$flow.invalid_dob_count",
+        "value": "$sys.func.ADD($flow.invalid_dob_count, 1)"
+      }, {
+        "parameter": "$flow.is_validate_date",
+        "value": null
+      }, {
+        "parameter": "$flow.dob",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "The date you have provided is invalid. Let's start again. Which month were you born in?"
+      } ]
+    },
+    "targetPage": "\u003e collect month",
+    "name": "4464dee2-5c53-4d5e-bea3-ea253fbdae49"
+  }, {
+    "condition": "$flow.is_valid_date = false AND $flow.invalid_dob_count = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, we have used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "540c32cd-b73f-41ee-88d1-8a8eda8de273"
+  } ]
+}

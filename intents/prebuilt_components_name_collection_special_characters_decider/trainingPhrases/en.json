@@ -1,0 +1,429 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "There's a "
+    }, {
+      "text": "gap",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I go by a ",
+      "auto": true
+    }, {
+      "text": "middle name",
+      "parameterId": "collect_name",
+      "auto": true
+    }, {
+      "text": " that has a ",
+      "auto": true
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The ",
+      "auto": true
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator",
+      "auto": true
+    }, {
+      "text": " is part of my ",
+      "auto": true
+    }, {
+      "text": "middle name",
+      "parameterId": "collect_name",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The ",
+      "auto": true
+    }, {
+      "text": "middle name",
+      "parameterId": "collect_name",
+      "auto": true
+    }, {
+      "text": " includes a ",
+      "auto": true
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator",
+      "auto": true
+    }, {
+      "text": " in my name.",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "apostrophe",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "there is "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "middle name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " have "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "last name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " having "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "first name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " has "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Yes, my "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " has a "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "hyphen in "
+    }, {
+      "text": "firstname",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no my "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " is wrong"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no my "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " is wrong"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my "
+    }, {
+      "text": "middle",
+      "parameterId": "collect_name"
+    }, {
+      "text": " and "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have an "
+    }, {
+      "text": "extra space",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "more than 1 word in my "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i have "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "apostrophes",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my only "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i am having "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my "
+    }, {
+      "text": "middle name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "last name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " and "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i have a "
+    }, {
+      "text": "space",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my "
+    }, {
+      "text": "middle name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " has two parts separated by "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my "
+    }, {
+      "text": "full name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " consists of more than one words"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i have "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " with multiple words"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "just to let you know, i have multiple words in my "
+    }, {
+      "text": "middle name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " includes more than one word"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "in "
+    }, {
+      "text": "all of them",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "first",
+      "parameterId": "collect_name"
+    }, {
+      "text": " and "
+    }, {
+      "text": "middle name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have multiple words in my "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have an "
+    }, {
+      "text": "apostrophe",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have some "
+    }, {
+      "text": "hyphens",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have multiple words in my "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    }, {
+      "text": " and "
+    }, {
+      "text": "last name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "first name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "i have hyphen in my "
+    }, {
+      "text": "middle",
+      "parameterId": "collect_name"
+    }, {
+      "text": " and "
+    }, {
+      "text": "first name",
+      "parameterId": "collect_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

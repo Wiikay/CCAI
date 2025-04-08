@@ -1,0 +1,144 @@
+{
+  "name": "2d949109-d3c2-4d01-a07a-3cacae0a9eda",
+  "displayName": "\u003e collect security ques 3",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003ePlease tell us the dollar amount of your last transaction. For example, if your last transaction amount was \u003csay-as interpret-as='currency' language='en-US'\u003e$100.30\u003c/say-as\u003e, say \"100\".\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_authentication_collect_transaction_amount",
+    "condition": "$session.params.transaction_amount != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.security_last_trans_amount",
+        "value": "$sys.func.GET($sys.func.SPLIT($flow.security_last_trans_amount, \"\\.\"),0)"
+      }, {
+        "parameter": "$flow.transaction_amount",
+        "value": "$sys.func.JOIN(\"\", $session.params.transaction_amount)"
+      } ]
+    },
+    "targetPage": "\u003e verify security ques 3",
+    "name": "12f4c5ce-bfba-4040-a3cc-b7e138424671"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "9f00f309-1e78-4ef0-ae3b-f7c79b7b514f"
+  }, {
+    "intent": "prebuilt_components_denial_of_information",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "denial_of_information"
+      } ]
+    },
+    "targetPage": "verify security ques level 2",
+    "name": "95c30b70-f478-48c9-a24e-3df165d4ebb3"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we were not able to hear you. Please tell us the dollar amount of your last transaction." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4b82028a-2844-4db3-8377-7adfed1e74dc"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Please tell us the dollar amount of your last transaction." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "534d7778-eff1-45b9-aafa-7384032e7d9c"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "4e755c3d-f42b-4ee4-8aa4-c5b524db1fff"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn’t get that. Please tell us the dollar amount of your last transaction." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "30544b31-c877-4c92-9ed6-d0700b86dfc7"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we're still not getting that. Please tell us the dollar amount of your last transaction." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b22ae160-8cc1-4295-be9f-40c9630808ef"
+  }, {
+    "targetPage": "verify security ques level 2",
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.secure_ans_count = 2 AND $flow.max_retry_security_key = 3",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "We're sorry, but the maximum number of retries has been exceeded." ]
+              },
+              "languageCode": "en"
+            }
+          }, {
+            "message": {
+              "text": {
+                "text": [ "We will need some more information to validate your identity." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "We're sorry, but the maximum number of retries has been exceeded." ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "name": "e587dd7f-d718-4e07-99e5-cb71b0533453"
+  } ]
+}

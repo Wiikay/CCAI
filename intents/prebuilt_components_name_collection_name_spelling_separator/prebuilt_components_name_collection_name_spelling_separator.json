@@ -1,0 +1,13 @@
+{
+  "name": "0c62fa02-bb9e-4132-980a-8a048756ce7f",
+  "displayName": "prebuilt_components_name_collection_name_spelling_separator",
+  "parameters": [ {
+    "id": "spelling_separator",
+    "entityType": "@prebuilt_components_name_collection_seperator"
+  }, {
+    "id": "prebuilt_components_name_collection_collect_name",
+    "entityType": "@prebuilt_components_name_collection_collect_name"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 24
+}

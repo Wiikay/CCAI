@@ -1,0 +1,101 @@
+{
+  "name": "a84901b5-6758-4109-aa50-a891d53003ef",
+  "displayName": "\u003e collect next part of name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please spell out the next part of the $flow.collect_part, after the $flow.name_separator. Say only the letters, for example J-O-H-N." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please spell out the next part of your $flow.collect_part, after the $flow.name_separator. Say only the letters, for example J-O-H-N."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_next_part_name",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_name_part",
+        "value": "$sys.func.SUBSTITUTE($session.params.verify_name_part, \"[^a-zA-Z0-9]\", \"\")"
+      }, {
+        "parameter": "$flow.verifying_person_name",
+        "value": false
+      }, {
+        "parameter": "verify_name_part",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm second part after name separator",
+    "name": "637fe93f-e0f9-4a21-b069-0ccdb6ecb195"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "181e0743-a2ca-48a3-81fd-843258648e3c"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "d35f5bb3-f1e9-4205-86d8-a4783a93c353"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "aebbff25-c85c-432f-818a-1a1126a9c103"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please spell out the next part of the $flow.collect_part, after the $flow.name_separator. Say only the letters, for example J-O-H-N." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5c005829-60ab-4951-9318-03e943c3da00"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "926d51b9-6623-4693-837b-85824a6500d7"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "07648076-8315-444d-aa30-29e0776b75b8"
+  } ]
+}

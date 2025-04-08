@@ -1,0 +1,116 @@
+{
+  "name": "b8906aa6-4d6f-4fc5-8ed7-86ed1d70bf34",
+  "displayName": "Cvv Collection",
+  "description": "This flow collects a Card Verification Value (CVV).",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "targetFlow": "Waiting Room",
+    "name": "13cc8367-d798-4877-89dc-342a10d4a077"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "8753c8fc-567a-4d77-823a-d2d9d5cd7b7e"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, let me repeat it" ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": "$sys.func.ADD($flow.replay_counter,1)"
+      } ]
+    },
+    "name": "a92fa073-f0a3-4c64-8fce-85a414ef5e47"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "cf372361-abdf-42fc-896f-82e0c1477e24"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.retry_no_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.invalid_cvv_code_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.replay_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.playback_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "Please say or enter the 3 or 4 digit CVV present on your card."
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we are having difficulty understanding your response."
+      }, {
+        "parameter": "$flow.intent_trigger",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect cvv",
+    "name": "b30cc3e1-d6a7-474d-aa89-29a606455cf2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "We didn't get that. Can you repeat?", "We missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cec689ae-8044-4c8a-8eeb-4b490515317a"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We didn't get that. Can you say it again?", "We missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, we didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "we didn't get that. Can you repeat?", "we missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9ca2c819-73ef-48b9-8fd4-c268a3956252"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

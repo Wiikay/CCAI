@@ -1,0 +1,32 @@
+{
+  "name": "122d524f-88ed-46b7-b7d9-4c56958e9839",
+  "displayName": "route payment mode",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.payment_mode = \"account\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e process account payment API",
+    "name": "52366106-5429-4691-ba13-92f898fd19e2"
+  }, {
+    "condition": "$flow.payment_mode = \"credit_card\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e process credit card payment API",
+    "name": "90ed30d6-8a5c-4ade-aff6-357db2cca4d1"
+  }, {
+    "condition": "$flow.payment_mode = \"debit_card\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e process debit card payment API",
+    "name": "c2ffeeaf-17d7-4781-9fcf-3126ad8d54f4"
+  } ]
+}

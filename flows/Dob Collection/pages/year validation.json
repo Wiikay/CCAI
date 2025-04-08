@@ -1,0 +1,53 @@
+{
+  "name": "73ce394b-2791-49dd-933b-6787e00aec20",
+  "displayName": "year validation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.intent_triggered",
+      "value": false
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.year \u003e $flow.current_year AND $flow.future_year \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, it looks like you have provided a year in the future. Please say the birth year again." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.future_year",
+        "value": "$sys.func.ADD($flow.future_year, 1)"
+      }, {
+        "parameter": "$flow.year",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "It looks like you have provided a year in the future. Please say the birth year again."
+      } ]
+    },
+    "targetPage": "\u003e collect year",
+    "name": "2dd65061-84d6-4396-b8a7-02584220863e"
+  }, {
+    "condition": "$flow.year \u003e $flow.current_year AND $flow.future_year = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_message",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d73437ae-1891-4a6e-9a26-36c3bdc13e4c"
+  }, {
+    "condition": "$flow.year \u003c= $flow.current_year",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "format dob",
+    "name": "e3bb8dd8-a1dc-4fe8-bdbe-714ab4435a78"
+  } ]
+}

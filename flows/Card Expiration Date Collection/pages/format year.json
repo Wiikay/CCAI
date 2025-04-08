@@ -1,0 +1,54 @@
+{
+  "name": "20874887-81e1-448f-a0a8-f5b6e52d0828",
+  "displayName": "format year",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_year",
+        "value": "$sys.func.IDENTITY($flow.expiration_date.year)"
+      } ]
+    },
+    "name": "127d0632-5e26-4ec6-b37f-de9d9ede460b"
+  }, {
+    "condition": "$flow.card_expiration_year = null AND $sys.func.LEN($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \\\"\\\\s+\\\", \\\"\\\")) \u003e 4",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_year",
+        "value": "$sys.func.MID($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \"\\s+\", \"\"), $sys.func.MINUS($sys.func.LEN($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \"\\s+\", \"\")), 3), 4)"
+      } ]
+    },
+    "name": "70c30c27-9ebf-4199-933b-d925d8f2c1eb"
+  }, {
+    "condition": "$flow.card_expiration_year = null AND $sys.func.LEN($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \\\"\\\\s+\\\", \\\"\\\")) \u003c= 4",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_year",
+        "value": "$sys.func.MID($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \"\\s+\", \"\"), $sys.func.MINUS($sys.func.LEN($sys.func.SUBSTITUTE($flow.expiration_date.month_year, \"\\s+\", \"\")), 1), 2)"
+      } ]
+    },
+    "name": "e4cc0132-1346-4fb5-9759-9c5639e3121d"
+  }, {
+    "condition": "$sys.func.LEN($flow.card_expiration_year) = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.card_expiration_year",
+        "value": "$sys.func.CONCATENATE(\"20\", $flow.card_expiration_year)"
+      } ]
+    },
+    "name": "a416f1b3-8336-422b-9484-f4bbf28c4a89"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "validate date",
+    "name": "e41d9faa-afbf-4499-ac66-e436721b8066"
+  } ]
+}

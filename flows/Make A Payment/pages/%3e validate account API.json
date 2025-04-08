@@ -1,0 +1,73 @@
+{
+  "name": "08a63efc-e138-4b88-be1c-34d57a0a4915",
+  "displayName": "\u003e validate account API",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "prebuilt_components_account_services:validate_account",
+    "tag": "validateAccount"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.account_found = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "route payment confirmation",
+    "name": "08a3eb18-941c-413a-852f-1bf5cb8007af"
+  }, {
+    "condition": "($flow.account_found != true OR $flow.account_found = null OR $flow.account_found = \"\") AND $flow.retry_acc_number \u003c $flow.max_retry_acc_number",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "last_four_digit_of_account_number",
+        "value": null
+      }, {
+        "parameter": "$flow.retry_acc_number",
+        "value": "$sys.func.ADD($flow.retry_acc_number,1)"
+      } ]
+    },
+    "targetPage": "\u003e confirm user account retry",
+    "name": "4bf1b106-2d8a-4549-97ec-bb5e82f85058"
+  }, {
+    "condition": "$flow.retry_acc_number = $flow.max_retry_acc_number",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "017bea33-bb4a-447b-9b99-f29d932a3f19"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_error"
+      } ]
+    },
+    "name": "68b94fe7-99de-4425-832a-b3c9051e38f5"
+  }, {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "webhook.error.not-found",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We apologize for the inconvenience. Our system is currently experiencing technical issues. Our technical team is actively working to resolve this issue. Please try again after sometime." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "webhook_not_found"
+      } ]
+    },
+    "name": "4d8bea6e-0d27-4309-ae82-3dcc8fd106c7"
+  } ],
+  "description": "For Route $flow.account_found != \"true\" OR $flow.account_found = null OR $flow.account_found = \"\", setting last_four_digit_of_account_number = null"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "58c84ebf-101e-4ba8-b260-e311d58d8444",
+  "displayName": "validate OTP length",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$sys.func.LEN($flow.collect_otp) = $flow.otp_length",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e verify OTP",
+    "name": "def105af-a893-42f2-9ca5-31e77a0482dd"
+  }, {
+    "condition": "$sys.func.LEN($flow.collect_otp) != $flow.otp_length",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.otp_retry_count",
+        "value": "$sys.func.ADD($flow.otp_retry_count,1)"
+      }, {
+        "parameter": "$flow.collect_otp",
+        "value": null
+      } ]
+    },
+    "targetPage": "retry OTP",
+    "name": "ae36c8cc-366f-42d7-be8f-77bfabb3479a"
+  } ]
+}

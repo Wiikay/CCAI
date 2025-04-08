@@ -1,0 +1,80 @@
+{
+  "name": "85ffab72-c68f-4c4d-9f72-0048857a4623",
+  "displayName": "retry OTP",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.retry_otp_count \u003c $flow.max_retry_otp_count AND $flow.otp_not_received != \"true\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, you have entered an invalid code. Please try again." ]
+        },
+        "languageCode": "en"
+      } ],
+      "conditionalCases": [ {
+        "cases": [ {
+          "condition": "$flow.otp_retry_count = 1 AND $flow.channel = mobile",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eWe have sent a code to your registered phone number ending with \u003csay-as interpret-as=\"telephone\"\u003e$session.params.last_4_digits\u003c/say-as\u003e. This may take a few seconds. Can you please confirm the code?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.otp_retry_count = 1 AND $flow.channel = email",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "We have sent a code to your registered email address $session.params.email. This may take a few seconds. Can you please confirm the code?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.otp_retry_count = 2 AND $flow.channel = mobile",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "\u003cspeak\u003eWe have sent a code to your registered phone number ending with \u003csay-as interpret-as=\"telephone\"\u003e$session.params.last_4_digits\u003c/say-as\u003e. This may take a few seconds. Can you please confirm the code?\u003c/speak\u003e" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        }, {
+          "condition": "$flow.otp_retry_count = 2 AND $flow.channel = email",
+          "caseContent": [ {
+            "message": {
+              "text": {
+                "text": [ "We have sent a code to your registered email address $session.params.email. This may take a few seconds. Can you please confirm the code?" ]
+              },
+              "languageCode": "en"
+            }
+          } ]
+        } ]
+      } ]
+    },
+    "targetPage": "\u003e collect OTP",
+    "name": "8a628e2b-4f0c-47a9-9c62-35b34a2735c1"
+  }, {
+    "condition": "$flow.retry_otp_count \u003c $flow.max_retry_otp_count AND $flow.otp_not_received = \"true\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check user email",
+    "name": "6a1bb140-c45e-43bb-9758-84bf9220c1b9"
+  }, {
+    "condition": "$flow.retry_otp_count = $flow.max_retry_otp_count",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "f846f70e-2a38-4dcc-9ed7-38812a69c50b"
+  } ]
+}

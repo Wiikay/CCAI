@@ -1,0 +1,25 @@
+{
+  "name": "07fa3729-7237-4f8b-9bad-0a098eea4c6f",
+  "displayName": "verify unidentified user auth level",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.auth_level_req = null OR $session.params.auth_level_req = \"\" OR $session.params.auth_level_req \u003c 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "0210db72-e306-4d05-9bdd-dd6f69167500"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "check power of attorney",
+    "name": "374304dc-a60d-4a73-b110-575ab66200e0"
+  } ]
+}

@@ -1,0 +1,184 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "W a r y n e",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "L E o e",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " is the "
+    }, {
+      "text": "first name",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my name is "
+    }, {
+      "text": "selana",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "kaul",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " this is my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please proceed with "
+    }, {
+      "text": "liza",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please write down my name, its "
+    }, {
+      "text": "rose",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "you can take my first name as "
+    }, {
+      "text": "eliza",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my middle name would be "
+    }, {
+      "text": "smith",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my last name would be "
+    }, {
+      "text": "jones",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my first name would be "
+    }, {
+      "text": "maria",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jack",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " this is my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "smith",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " is the first part of my first name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My preferred name is "
+    }, {
+      "text": "Chris",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "rocky",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " this is my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my middle name is "
+    }, {
+      "text": "davis",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my last name is "
+    }, {
+      "text": "jack",
+      "parameterId": "alternative_name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jacky",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " its my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jones",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " its my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "jack",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " is my middle name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "maria",
+      "parameterId": "alternative_name"
+    }, {
+      "text": " is my last name"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,218 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "card will expire in zero "
+    }, {
+      "text": "nine",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card expires on "
+    }, {
+      "text": "2",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiration month is ",
+      "auto": true
+    }, {
+      "text": "may",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "may",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 2,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it's "
+    }, {
+      "text": "may",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "September",
+      "parameterId": "month",
+      "auto": true
+    }, {
+      "text": " is the card's expiration month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "it is "
+    }, {
+      "text": "July",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiry month is ",
+      "auto": true
+    }, {
+      "text": "10",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "month: ",
+      "auto": true
+    }, {
+      "text": "mar",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "take the month as ",
+      "auto": true
+    }, {
+      "text": "eight",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "nov",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "07",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "feb",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "april",
+      "parameterId": "month"
+    }, {
+      "text": " is my expiration month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "dec",
+      "parameterId": "month",
+      "auto": true
+    }, {
+      "text": " is the card's expiration month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiration month: "
+    }, {
+      "text": "jan",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Please take the expiration month as "
+    }, {
+      "text": "four",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card expires in month "
+    }, {
+      "text": "11",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "card expiration month is "
+    }, {
+      "text": "04",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my card expires in month "
+    }, {
+      "text": "feb",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "expiration month is ",
+      "auto": true
+    }, {
+      "text": "12",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my month is ",
+      "auto": true
+    }, {
+      "text": "1",
+      "parameterId": "month",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "5",
+      "parameterId": "month"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

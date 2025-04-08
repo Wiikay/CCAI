@@ -1,0 +1,17 @@
+{
+  "name": "5a8f4315-ca0e-4a02-a08a-442732f7291d",
+  "displayName": "prebuilt_components_make_a_payment:process_payment_debit_card",
+  "genericWebService": {
+    "uri": "https://www.example.com",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"phone_number\": \"$session.params.phone_number\",\n  \"payee_number\": \"$flow.payee_number\",\n  \"payment_type\": \"$flow.payment_type\",\n  \"debit_card_number\": \"$flow.last_four_digit_of_debit_card_number\",\n  \"debit_card_exp_date\": \"$flow.debit_card_exp_date\",\n  \"debit_card_cvv_code\": \"$flow.debit_card_cvv_code\",\n  \"payment_amount\": \"$flow.payment_amount\",\n  \"fulfillmentInfo\": {\n    \"tag\": \"processPaymentDebitCard\"\n  }\n}",
+    "parameterMapping": [ {
+      "key": "$flow.payment_status_code",
+      "value": "payment_status_code"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

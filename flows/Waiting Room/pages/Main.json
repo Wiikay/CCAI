@@ -1,0 +1,88 @@
+{
+  "name": "8d2fd641-2401-4a9a-8bde-d00e9e745fc7",
+  "displayName": "Main",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "No worries. Let me know when you're ready." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_ready",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Exit",
+    "name": "d586d90c-6632-4746-9b2d-c623ada8517a"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. We are waiting until you're ready to proceed. You can say, \"I'm ready\" and we'll continue where we left off." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "808fbd1f-9c8a-4543-bb24-b9ebdc5f5869"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren’t able to get that. Please make sure you're saying \"ready\"." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9faa7d04-558a-48bc-b546-76cdec704ebe"
+  }, {
+    "targetPage": "End Flow",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": true
+      } ]
+    },
+    "name": "73d4fd93-e40e-4eea-bfc6-bbee3da52886"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren’t able to hear you. We are waiting until you're ready to proceed. You can say, \"I'm ready\" and we'll continue where we left off." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ef9bec60-fee8-440a-9d42-53fbcc6fb565"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "be00db2d-8918-4ec6-bee9-972d6d562aa8"
+  }, {
+    "targetPage": "End Flow",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": true
+      } ]
+    },
+    "name": "d8cc17eb-c1df-447b-90c4-52b98ffb6cd0"
+  } ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "99e50dc1-9bc0-4b22-b083-3e949e0b062c",
+  "displayName": "OTP not received",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.retry_otp_not_received \u003e= $flow.max_retry_otp_not_received",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "security question message",
+    "name": "4aa5fddf-f50d-457a-a9a1-39b82b507f8a"
+  }, {
+    "condition": "$flow.channel = \"mobile\" AND $session.params.email = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "security question message",
+    "name": "13421f5f-470d-42fd-a503-568610249856"
+  }, {
+    "condition": "$flow.channel = \"mobile\" AND $session.params.email = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "security question message",
+    "name": "497af0d8-ac4c-4a5a-a72a-6e253a8c4c13"
+  }, {
+    "condition": "$flow.channel = \"mobile\" AND $session.params.email != null AND $flow.retry_otp_not_received \u003c $flow.max_retry_otp_not_received",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry about that. Can we send the code to your registered email?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.new_channel",
+        "value": "email"
+      }, {
+        "parameter": "$flow.retry_otp_not_received",
+        "value": "$sys.func.ADD($flow.retry_otp_not_received,1)"
+      } ]
+    },
+    "targetPage": "\u003e confirm channel",
+    "name": "21859f75-6a31-46f6-8362-32c7679c362e"
+  }, {
+    "condition": "$flow.channel = \"email\" AND $flow.retry_otp_not_received \u003c $flow.max_retry_otp_not_received",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry about that. Can we send the code to your registered phone number?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.new_channel",
+        "value": "mobile"
+      }, {
+        "parameter": "$flow.retry_otp_not_received",
+        "value": "$sys.func.ADD($flow.retry_otp_not_received,1)"
+      } ]
+    },
+    "targetPage": "\u003e confirm channel",
+    "name": "69242090-f137-424d-81fa-9e90b2f16ebf"
+  } ]
+}

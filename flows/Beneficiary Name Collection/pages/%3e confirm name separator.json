@@ -1,0 +1,149 @@
+{
+  "name": "38ff766e-bb2d-4983-aae1-438e3b48db52",
+  "displayName": "\u003e confirm name separator",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\"$flow.name_separator\". Did we capture the name separator after the first part of the $flow.collect_part correctly?" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.verify_name_part",
+      "value": null
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\"$flow.name_separator\". Did we capture the name separator after the first part of the $flow.collect_part correctly?"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_person_name",
+        "value": "$sys.func.CONCATENATE($flow.verify_person_name, $sys.func.SUBSTITUTE($flow.spelling_separator, \":\", \"\"))"
+      } ]
+    },
+    "targetPage": "\u003e collect next part of name",
+    "name": "6626ed5c-5be6-440f-a887-3c43ed9c2865"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.name_separator_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.name_separator_counter",
+        "value": "$sys.func.ADD($flow.name_separator_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect name separator",
+    "name": "541ac308-54fa-4cc7-9d15-d5d1f8313556"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.name_separator_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "d6bdaa33-72b0-40be-8c8b-9964d169c4b7"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "6b309237-5eda-4215-992e-e0e1e5d5eb25"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "a9e781b6-c982-4e50-884a-06e887e708aa"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "c8791343-f1ee-4373-8cc2-8932fbc0fc0c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. \"$flow.name_separator\". Did we capture the name separator after the first part of the $flow.collect_part correctly?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "8fccefb0-e90e-4159-b9bc-b37a8a92f754"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. \"$flow.name_separator\". Did we capture the name separator after the first part of the $flow.collect_part correctly?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "667454a1-652f-4a15-8b75-d0b5c30dbbe8"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. \"$flow.name_separator\". Did we capture the name separator after the first part of the $flow.collect_part correctly?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9a4f84dc-276e-40c2-b0b3-4a197d6bf7de"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "912ee751-6723-4333-880c-4224a681a46b"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "834de1a1-9d76-428a-91d2-fed5d78cfbf8"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "de981cfc-86da-47d4-ae6d-2245cd0f755c"
+  } ]
+}

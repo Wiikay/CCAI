@@ -1,0 +1,210 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "2902",
+      "parameterId": "cvv_code"
+    }, {
+      "text": " can be my accurate cvv",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "modify the cvv as ",
+      "auto": true
+    }, {
+      "text": "0432",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "cvv captured by you is wrong.The correct one is "
+    }, {
+      "text": "7223",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the cvv captured is invalid.Valid cvv is "
+    }, {
+      "text": "823",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "can someone assit me to change my cvv to "
+    }, {
+      "text": "8932",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Please change the cvv to "
+    }, {
+      "text": "7229",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no change cvv to ",
+      "auto": true
+    }, {
+      "text": "980",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "change cvv to "
+    }, {
+      "text": "3.845",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "not correct. Correct cvv is ",
+      "auto": true
+    }, {
+      "text": "345",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no cvv is invalid, collect cvv as "
+    }, {
+      "text": "567",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "cvv should be "
+    }, {
+      "text": "1.3455",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The ",
+      "auto": true
+    }, {
+      "text": "four"
+    }, {
+      "text": " digit cvv code is ",
+      "auto": true
+    }, {
+      "text": "1234",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want to change the 4 digit cvv code to "
+    }, {
+      "text": "1479",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no it is "
+    }, {
+      "text": "3456",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no cvv is "
+    }, {
+      "text": "4567",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It is ",
+      "auto": true
+    }, {
+      "text": "1234",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "please recollect my cvv as ",
+      "auto": true
+    }, {
+      "text": "245",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "sorry cvv collected is wrong. It is ",
+      "auto": true
+    }, {
+      "text": "4567",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2346",
+      "parameterId": "cvv_code"
+    }, {
+      "text": " is my new cvv"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no please recollect my cvv as "
+    }, {
+      "text": "123",
+      "parameterId": "cvv_code"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "no, that's not correct. The CVV is ",
+      "auto": true
+    }, {
+      "text": "456",
+      "parameterId": "cvv_code",
+      "auto": true
+    }, {
+      "text": ".",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

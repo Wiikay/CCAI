@@ -1,0 +1,155 @@
+{
+  "name": "8fdf0786-1edd-494b-bcb3-c596801a8098",
+  "displayName": "\u003e collect spelling middle name",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please spell out the middle name." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please spell out the middle name."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_name_collection_spell_out_name",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_middle_name",
+        "value": "$sys.func.SUBSTITUTE($session.params.spell_out_name, \"[^a-zA-Z]\", \"\")"
+      }, {
+        "parameter": "spell_out_name",
+        "value": null
+      } ]
+    },
+    "name": "c3009ca1-163c-410f-8ef0-1ed510f661b7"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end escalation",
+    "name": "919108be-d530-4901-8431-4153215a28c0"
+  }, {
+    "condition": "$flow.middle_name_spell_out_counter = 2 AND $flow.user_provided_middle_name = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "eea82514-2796-4821-878a-14c6bf504491"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "39a1282f-7bce-49b3-b7fc-2d4f0c1ad8d9"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "aaf25ab0-c1be-4fa6-aa94-1eb3f162644d"
+  }, {
+    "condition": "$flow.user_provided_middle_name = \"\" AND $flow.user_provided_middle_name \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell the middle name." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.middle_name_spell_out_counter",
+        "value": "$sys.func.ADD($flow.middle_name_spell_out_counter,1)"
+      } ]
+    },
+    "name": "e3cb8251-dca2-4e65-808e-027487d35705"
+  }, {
+    "condition": "$flow.user_provided_middle_name != null AND $flow.user_provided_middle_name != \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm middle name",
+    "name": "5644d068-f11b-45d0-8dd9-e2b4f7bb2926"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please spell the middle name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "29d57947-98a1-4d5b-824d-d12a8bc719a3"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "18582334-ac93-4bf6-b6f0-cea5417f823e"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "df9f5026-13db-46dc-a951-22cb55702d6e"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell the middle name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "819a7517-fa16-4d29-9b3f-47611c3c1479"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please spell the middle name." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e3feb1c2-083b-4385-9e60-ce3d94d0cf9c"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+    
+    },
+    "name": "142ec79d-a262-4ab6-9105-3b6f2db5461b"
+  } ]
+}

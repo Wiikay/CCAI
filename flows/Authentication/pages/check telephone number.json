@@ -1,0 +1,49 @@
+{
+  "name": "cf699ebb-ba52-49d0-bb8a-9eb40f3dcc15",
+  "displayName": "check telephone number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.telephone_number_collection_telephone_number = null OR $session.params.telephone_number_collection_telephone_number = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Telephone Number Collection",
+    "name": "932ba216-d380-4bec-8efe-be30a1f3ed02"
+  }, {
+    "condition": "$session.params.telephone_number_collection_telephone_number != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "phone_number",
+        "value": "$session.params.telephone_number_collection_telephone_number"
+      }, {
+        "parameter": "$flow.retry_telephone_counter",
+        "value": "$sys.func.ADD($flow.retry_telephone_counter, 1)"
+      }, {
+        "parameter": "telephone_number_collection_telephone_number",
+        "value": null
+      } ]
+    },
+    "targetPage": "check authentication type",
+    "name": "812c7055-05ff-4eb8-9b09-1b484b4c2d38"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "end failure",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "d927ca46-ca18-429c-9cab-0a3c9044abaf"
+  }, {
+    "targetPage": "end escalation",
+    "event": "flow.failed.human-escalation",
+    "triggerFulfillment": {
+    
+    },
+    "name": "8e61663c-46fd-4a98-ad82-c5e24c7a1121"
+  } ]
+}
