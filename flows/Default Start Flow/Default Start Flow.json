@@ -48,6 +48,13 @@
     },
     "targetPage": "Menu_Options",
     "name": "3ea27316-ba8c-442d-9747-a6811b31797c"
+  }, {
+    "intent": "Care",
+    "triggerFulfillment": {
+    
+    },
+    "name": "de1f89ba-1ce5-4fcf-a493-a52e8ae1af86",
+    "targetPlaybook": "Telecom geet"
   } ],
   "eventHandlers": [ {
     "event": "sys.no-match-default",

@@ -1,0 +1,15 @@
+{
+  "name": "ee61cd55-e3c7-4a96-a0a9-a03bd9083dab",
+  "displayName": "Telecom geet",
+  "goal": "Help user query",
+  "tokenCount": 10,
+  "instruction": {
+    "steps": [ {
+      "text": "Greet the User"
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}
